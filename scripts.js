@@ -1,8 +1,13 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
+
   var pagesObj = {
-    Home: "index.html"
+    Home: "index.html",
   };
+
+  var contentObj = {
+     "0": ["Introduction to WebDev Lessons", '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', ""]
+  }
 
   var buildNavBar = function() {
     //Build a navbar on each page when it loads.
