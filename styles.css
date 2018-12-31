@@ -5,7 +5,10 @@ body {
 h1,
 h2,
 h3 {
-   font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
+}
+.main-header{
+   padding-top:45px;
 }
 .main {
   background-color: rgb(130, 180, 143);
@@ -18,6 +21,51 @@ h3 {
 .welcome-h2 {
   font-weight: normal;
 }
-.navDiv{
-   
+.navDiv {
+  /* background-color: lightgrey;
+  margin: 0px;
+  padding: 0.2px;
+  border-radius: 5px;
+  width: 100%;
+  margin: auto;
+  height: 55px; */
+  /* position: fixed; */
+}
+.navbarListItem a {
+  /* 
+   display: inline;
+   text-align:center;
+   width: 60px;
+   width: 10%;
+   background-color:white;
+   padding: 8px;
+   font-size:20px;
+   */
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navbarListItem {
+   padding-left:10px;
+  float: left;
+}
+.navbarListItem a:hover {
+  background-color: #111;
+}
+.navList {
+  /* list-style-type: none;
+  padding-left: 10px;
+  text-align: left; */
+  left:0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }

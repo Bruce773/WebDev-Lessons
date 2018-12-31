@@ -20,7 +20,7 @@ $(document).ready(function() {
        currentItemName = Object.keys(pagesObj)[i];
        currentItemLink = pagesObj[currentItemName];
        console.log(currentItemName, currentItemLink);
-       var listItem = $(`<li><a href='${currentItemLink}'>${currentItemName}</a></li>`);
+       var listItem = $(`<li class='navbarListItem'><a href='${currentItemLink}'>${currentItemName}</a></li>`);
        navList.append(listItem);
     }
     navDiv.append(navList);
