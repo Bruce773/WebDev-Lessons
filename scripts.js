@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
   var pagesObj = {
-    Home: "index.html",
+    Home: "index.html"
   };
 
   var buildNavBar = function() {
@@ -16,12 +16,14 @@ $(document).ready(function() {
     var currentItemLink;
     //iterate over pagesObj
     for (var i = 0; i < Object.keys(pagesObj).length; i++) {
-       console.log(i);
-       currentItemName = Object.keys(pagesObj)[i];
-       currentItemLink = pagesObj[currentItemName];
-       console.log(currentItemName, currentItemLink);
-       var listItem = $(`<li class='navbarListItem'><a href='${currentItemLink}'>${currentItemName}</a></li>`);
-       navList.append(listItem);
+      console.log(i);
+      currentItemName = Object.keys(pagesObj)[i];
+      currentItemLink = pagesObj[currentItemName];
+      console.log(currentItemName, currentItemLink);
+      var listItem = $(
+        `<li class='navbarListItem'><a href='${currentItemLink}'>${currentItemName}</a></li>`
+      );
+      navList.append(listItem);
     }
     navDiv.append(navList);
     //
