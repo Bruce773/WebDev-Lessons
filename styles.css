@@ -59,14 +59,14 @@ h3 {
 .content{
    margin-top:15px;
 }
-.iframe-container {
+.iframe-container-intro {
    overflow: hidden;
    padding-top: 56.25%;
    position: relative;
    margin:auto;
  }
  
- .iframe-container iframe {
+ .iframe-container-intro iframe {
     border: 0;
     height: 80%;
     left:0;
