@@ -17,13 +17,14 @@ h3 {
   padding: 10px;
   width: 40%;
   border-radius: 8px;
+  box-shadow: 7px 7px lightgrey;
 }
-.main{
-   padding:10px;
-   background-color:rgb(238, 238, 238);
-   width:60%;
-   margin:auto;
-   border-radius:10px;
+.main {
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+  width: 60%;
+  margin: auto;
+  border-radius: 10px;
 }
 .welcome-h2 {
   font-weight: normal;
@@ -56,23 +57,38 @@ h3 {
   overflow: hidden;
   background-color: #333;
 }
-.content{
-   margin-top:15px;
+.content {
+  margin-top: 15px;
+  padding-bottom: 10px;
 }
 .iframe-container-intro {
-   overflow: hidden;
-   padding-top: 56.25%;
-   position: relative;
-   margin:auto;
- }
- 
- .iframe-container-intro iframe {
-    border: 0;
-    height: 80%;
-    left:0;
-    right:0;
-    margin:auto;
-    position: absolute;
-    top: 0;
-    width: 80%;
- }
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  margin: auto;
+}
+
+.iframe-container-intro iframe {
+  border: 0;
+  height: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  width: 80%;
+}
+.start-btn {
+  margin-top: 10px;
+  font-size: 20px;
+  background-color: rgba(8, 187, 8, 0.726);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.start-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(8, 187, 8);
+}
