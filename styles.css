@@ -7,8 +7,36 @@ h2,
 h3 {
   font-family: "Thasadith", sans-serif;
 }
-.main-header {
+h1 {
   padding-top: 45px;
+}
+button {
+  background-color: rgba(70, 221, 70, 0.719);
+  border-radius: 6px;
+  padding: 10px;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(8, 187, 8);
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+p{
+  font-family: 'Thasadith', sans-serif;
+  font-weight: bold;
+}
+.main-header {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+.main-sub-header {
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 .headers-container {
   background-color: rgb(130, 180, 143);
@@ -22,7 +50,7 @@ h3 {
 .main {
   padding: 10px;
   background-color: rgb(238, 238, 238);
-  width: 60%;
+  width: 70%;
   margin: auto;
   border-radius: 10px;
 }
@@ -30,6 +58,7 @@ h3 {
   font-weight: normal;
 }
 .navDiv {
+  /* z-index: 99999; */
 }
 .navbarListItem a {
   display: block;
@@ -47,6 +76,7 @@ h3 {
   background-color: #111;
 }
 .navList {
+  z-index: 99999;
   left: 0px;
   position: fixed;
   top: 0;
@@ -66,17 +96,50 @@ h3 {
   padding-top: 56.25%;
   position: relative;
   margin: auto;
+  width: 90%;
 }
 
 .iframe-container-intro iframe {
   border: 0;
-  height: 80%;
+  height: 100%;
   left: 0;
   right: 0;
   margin: auto;
   position: absolute;
   top: 0;
-  width: 80%;
+  width: 100%;
+}
+.iframe-container{
+  display:block;
+  overflow: hidden;
+  padding: 0px;
+  bottom:0;
+  left:0;
+  right:0;
+  padding-top: 50%;
+  position: relative;
+  width:90%;
+  margin:auto;
+}
+.iframe-container iframe {
+  display:block;
+  /* width: 560px; 
+  height: 315px; */
+  border: 0;
+  overflow: hidden;
+  height: 100%;
+  left: 0;
+  bottom:0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.lesson-div{
+  background-color:rgba(167, 241, 167, 0.308);
+  padding:10px;
+  margin:20px;
+  border-radius:8px;
+  min-height: 300px;
 }
 .start-btn {
   margin-top: 10px;
@@ -84,11 +147,29 @@ h3 {
   background-color: rgba(8, 187, 8, 0.726);
   color: white;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: all 0.2s ease-in-out;
 }
 .start-btn:hover {
   cursor: pointer;
   transform: scale(1.1);
   background-color: rgb(8, 187, 8);
+}
+.green-accent {
+  color: rgba(27, 160, 27, 0.938);
+}
+.lesson-title{
+  font-size:30px;
+  display:inline-block;
+  text-align: right;
+}
+.lesson-description{
+  font-size:25px;
+  display: inline-block;
+  padding-right:30px;
+  padding-left:30px;
+}
+.lesson-link-button{
+  display:inline-block;
+  margin-bottom:20px;
 }

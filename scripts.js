@@ -2,13 +2,20 @@ $(document).ready(function() {
   console.log("jQuery is loaded");
 
   var pagesObj = {
-    Home: "index.html"
+    Home: "index.html",
+    Contact: "contact.html"
   };
 
   var contentObj = {
     "0": [
       "Introduction to WebDev Lessons",
       '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    ],
+    "1": [
+      "WebDev Lessons #1-A",
+      '<iframe src="https://www.youtube-nocookie.com/embed/dKfXAoPhDmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      "This video is longer than most of the other lesson videos. In this video you'll learn how to setup the workspace you'll need when taking WebDev lessons. We cover GitHub, Terminal, and finally some of the basics of javascript functions. After watching this video, follow the link below for the GitHub exercise.",
+      "https://github.com/Bruce773/WebDev-functions"
     ]
   };
 
@@ -48,7 +55,7 @@ $(document).ready(function() {
     for (var i = 0; i < Object.keys(contentObj).length; i++) {
       //each array looks like this: [title, html for video, description and links]
       //append html to $('.content') with correct data
-      // console.log(Object.keys(contentObj)[i]);
+      console.log(Object.keys(contentObj)[i]);
       if (Object.keys(contentObj)[i] === "0") {
         //if this is the intro video
         var currentItemVideo = contentObj[i][1];
@@ -58,9 +65,22 @@ $(document).ready(function() {
         $(".iframe-container-intro").append(currentItemVideo);
       } else {
         //Build each lesson "box" here
-
-        var currentItemVideo = $(`${contentObj[i][1]}`);
-        $(".content").append(currentItemVideo);
+        var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
+        var currentItemTitle = contentObj[i][0];//Get title
+        var currentItemVideo = contentObj[i][1];//Get video link      
+        var currentItemDescr = contentObj[i][2];//Get description
+        var currentItemLink = contentObj[i][3];
+        // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
+        var title = $(`<div class='lesson-title'><h3>${currentItemTitle}</h3></div>`); //Build title
+        lessonDiv.append(title);//Place title inside the lesson box
+        var lessonVideoContainer = $("<div class='iframe-container'></div>"); //Build container for video
+        lessonVideoContainer.append(currentItemVideo); //Place video in video container
+        lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
+        var description = $(`<div class='lesson-description'><p class='lesson-description'>${currentItemDescr}</p></div>`);//Build description
+        lessonDiv.append(description);//Place description inside lesson box
+        var link = $(`<button class='lesson-link-button'><a href='${currentItemLink}'>Link to GitHub Repo</a></button>`);//Build link button
+        lessonDiv.append(link);//Place link button inside lesson box
+        $('.content').append(lessonDiv);//Place the lesson box inside the content area
       }
     }
   };
