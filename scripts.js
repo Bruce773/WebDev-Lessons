@@ -46,6 +46,15 @@ $(document).ready(function() {
   };
   buildNavBar();
 
+  var buildFooter = function(){
+    var date = new Date;
+    var year = date.getFullYear();
+    var hr = $('<hr></hr>');
+    var footer = $('<p>Copyright &copy; WebDev Lessons</p>').prepend(hr);
+    $('.main').append(footer);
+  };
+  buildFooter();
+
   var populateHomePageContent = function() {
     //iterate over contentObj
     localStorage.setItem("WebDev-Lessons has been here", true);
