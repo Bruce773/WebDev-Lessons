@@ -172,4 +172,7 @@ p{
 .lesson-link-button{
   display:inline-block;
   margin-bottom:20px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
 }

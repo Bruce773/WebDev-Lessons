@@ -78,7 +78,7 @@ $(document).ready(function() {
         lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
         var description = $(`<div class='lesson-description'><p class='lesson-description'>${currentItemDescr}</p></div>`);//Build description
         lessonDiv.append(description);//Place description inside lesson box
-        var link = $(`<button class='lesson-link-button'><a href='${currentItemLink}' target='_blank'>Link to GitHub Repo</a></button>`);//Build link button
+        var link = $(`<a href='${currentItemLink}' target='_blank'><button class='lesson-link-button'>Link to GitHub Repo</button></a>`);//Build link button
         lessonDiv.append(link);//Place link button inside lesson box
         $('.content').append(lessonDiv);//Place the lesson box inside the content area
       }
