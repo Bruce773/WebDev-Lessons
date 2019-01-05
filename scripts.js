@@ -1,9 +1,27 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
 
+
+  // //Contentful stuff needed for it to run
+  // const contentful = require(['contentful']);
+
+  // const client = contentful.createClient({
+  //   space: 'w7qayaxgvtbf',
+  //   environment: 'master', // defaults to 'master' if not set
+  //   accessToken: '7e5c39ff9dcbb5e5409dd4f179073526d1e894b79226b6f4fa2e6f68d25407e3'
+  // })
+  // client.getContentTypes()
+  // .then((response) => console.log(response.items))
+  // .catch(console.error);
+  // client.getSpace()
+  // .then((space) => console.log(space))
+  // .catch(console.error)
+
+
+
   var pagesObj = {
     Home: "index.html",
-    Contact: "contact.html"
+    Contact: "contact.html",
   };
 
   var contentObj = {
@@ -64,13 +82,13 @@ $(document).ready(function() {
     for (var i = 0; i < Object.keys(contentObj).length; i++) {
       //each array looks like this: [title, html for video, description and links]
       //append html to $('.content') with correct data
-      console.log(Object.keys(contentObj)[i]);
+      // console.log(Object.keys(contentObj)[i]);
       if (Object.keys(contentObj)[i] === "0") {
         //if this is the intro video
         var currentItemVideo = contentObj[i][1];
         var currentItemTitle = contentObj[i][0];
-        $(".content").append($(`<h2>${currentItemTitle}</h2>`));
-        $(".content").append('<div class="iframe-container-intro"></div>');
+        $(".content").append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
+        $(".content").append('<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>');
         $(".iframe-container-intro").append(currentItemVideo);
       } else {
         //Build each lesson "box" here
@@ -82,7 +100,7 @@ $(document).ready(function() {
         // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
         var title = $(`<div class='lesson-title'><h3>${currentItemTitle}</h3></div>`); //Build title
         lessonDiv.append(title);//Place title inside the lesson box
-        var lessonVideoContainer = $("<div class='iframe-container'></div>"); //Build container for video
+        var lessonVideoContainer = $("<div class='iframe-container embed-responsive embed-responsive-4by3'></div>"); //Build container for video
         lessonVideoContainer.append(currentItemVideo); //Place video in video container
         lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
         var description = $(`<div class='lesson-description'><p class='lesson-description'>${currentItemDescr}</p></div>`);//Build description

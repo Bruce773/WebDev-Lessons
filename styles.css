@@ -13,7 +13,7 @@ h1 {
 button {
   background-color: rgba(70, 221, 70, 0.719);
   border-radius: 6px;
-  padding: 10px;
+  padding: 5px;
 }
 button:hover {
   cursor: pointer;
@@ -23,13 +23,18 @@ button:hover {
 a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 18px;
+}
+a:hover{
+  text-decoration: none;
+  color:white;
 }
 p{
   font-family: 'Thasadith', sans-serif;
   font-weight: bold;
 }
 .main-header {
+  margin-top:20px;
   font-size: 40px;
   margin-bottom: 0px;
 }
@@ -42,8 +47,8 @@ p{
   background-color: rgb(130, 180, 143);
   color: rgb(255, 249, 249);
   margin: auto;
-  padding: 10px;
-  width: 40%;
+  padding: 20px;
+  width: 45%;
   border-radius: 8px;
   box-shadow: 7px 7px lightgrey;
 }
@@ -56,6 +61,15 @@ p{
 }
 .welcome-h2 {
   font-weight: normal;
+  font-size:30px;
+}
+.welcome-h3{
+  font-weight: normal;
+  font-size:20px;
+}
+.intro-title{
+  margin-top:40px;
+  margin-bottom:0px;
 }
 .navDiv {
   /* z-index: 99999; */
@@ -157,15 +171,30 @@ p{
 }
 .green-accent {
   color: rgba(27, 160, 27, 0.938);
+  margin:auto;
+  font-size:25px;
+  margin: 20px 5px 20px 5px;
+}
+.contact-page-header{
+  margin-top:10px;
+}
+.contact-page-header h3{
+  margin-top: 10px;
 }
 .lesson-title{
-  font-size:30px;
+  font-size:20px;
   display:inline-block;
   text-align: right;
+}
+.lesson-title h3{
+  font-size:35px;
+  font-weight: bolder;
+  padding:10px;
 }
 .lesson-description{
   font-size:25px;
   display: inline-block;
+  padding-top:10px;
   padding-right:30px;
   padding-left:30px;
 }
@@ -175,4 +204,11 @@ p{
   text-decoration: none;
   color: white;
   font-size: 15px;
+}
+.italic-md{
+  font-style: italic;
+  font-size: 25px;
+}
+.margin-left{
+  margin-left: 8px;
 }
