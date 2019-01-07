@@ -189,16 +189,20 @@ p{
   text-align: right;
 }
 .lesson-title h3{
-  font-size:35px;
+  font-size:2rem;
   font-weight: bolder;
-  padding:10px;
+  padding:6px;
+  margin:auto;
+  text-align: center;
 }
 .lesson-description{
-  font-size:25px;
+  font-size:1.4rem;
   display: inline-block;
   padding-top:10px;
-  padding-right:30px;
-  padding-left:30px;
+  padding-bottom:10px;
+  margin:auto;
+  /* padding-right:30px;
+  padding-left:30px; */
 }
 .lesson-link-button{
   display:inline-block;

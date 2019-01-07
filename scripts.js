@@ -116,7 +116,7 @@ $(document).ready(function() {
 
         // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
         var title = $(
-          `<div class='lesson-title'><h3>${currentItemTitle}</h3></div>`
+          `<div class='lesson-title text-wrap'><h3>${currentItemTitle}</h3></div>`
         ); //Build title
         lessonDiv.append(title); //Place title inside the lesson box
         var lessonVideoContainer = $(
@@ -125,7 +125,7 @@ $(document).ready(function() {
         lessonVideoContainer.append(currentItemVideo); //Place video in video container
         lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
         var description = $(
-          `<div class='lesson-description'><p class='lesson-description'>${currentItemDescr}</p></div>`
+          `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
         ); //Build description
         lessonDiv.append(description); //Place description inside lesson box
 
