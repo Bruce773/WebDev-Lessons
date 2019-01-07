@@ -80,7 +80,7 @@ $(document).ready(function() {
     var date = new Date();
     var year = date.getFullYear();
     var hr = $("<hr></hr>");
-    var footer = $("<p>Copyright &copy; WebDev Lessons</p>").prepend(hr);
+    var footer = $(`<p>Copyright ${year} &copy; WebDev Lessons</p>`).prepend(hr);
     $(".main").append(footer);
   };
   buildFooter();
