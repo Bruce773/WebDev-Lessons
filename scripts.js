@@ -1,20 +1,32 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
 
-  // //Contentful stuff needed for it to run
-  // const contentful = require(['contentful']);
 
-  // const client = contentful.createClient({
-  //   space: 'w7qayaxgvtbf',
-  //   environment: 'master', // defaults to 'master' if not set
-  //   accessToken: '7e5c39ff9dcbb5e5409dd4f179073526d1e894b79226b6f4fa2e6f68d25407e3'
-  // })
-  // client.getContentTypes()
-  // .then((response) => console.log(response.items))
-  // .catch(console.error);
-  // client.getSpace()
-  // .then((space) => console.log(space))
-  // .catch(console.error)
+  //Grab all the titles:
+  //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
+  //Change the word title on the last line to the field you want to get data from
+
+  
+  // require(['contentful'], function(contentful) {
+  //   // //Contentful stuff needed for it to run
+  //   // const contentful = require(['contentful']);
+  //   const client = contentful.createClient({
+  //     space: "w7qayaxgvtbf",
+  //     environment: "master", // defaults to 'master' if not set
+  //     accessToken:
+  //       "7e5c39ff9dcbb5e5409dd4f179073526d1e894b79226b6f4fa2e6f68d25407e3"
+  //   });
+  //   client
+  //     .getContentTypes()
+  //     .then(response => console.log(response.items))
+  //     .catch(console.error);
+  //   client
+  //     .getSpace()
+  //     .then(space => console.log(space))
+  //     .catch(console.error);
+  // });
+
+
 
   var pagesObj = {
     Home: "index.html",
@@ -80,7 +92,9 @@ $(document).ready(function() {
     var date = new Date();
     var year = date.getFullYear();
     var hr = $("<hr></hr>");
-    var footer = $(`<p>Copyright ${year} &copy; WebDev Lessons</p>`).prepend(hr);
+    var footer = $(`<p>Copyright ${year} &copy; WebDev Lessons</p>`).prepend(
+      hr
+    );
     $(".main").append(footer);
   };
   buildFooter();
