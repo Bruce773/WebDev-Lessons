@@ -2,11 +2,11 @@
 The WebDev Lessons site
 
 ## Requirements:
-- [ ] Home Page
-  - [ ] Contain videos and information about each video
+- [x] Home Page
+  - [x] Contain videos and information about each video
 - [ ] About Page
-- [ ] Contact Page
+- [x] Contact Page
   - [ ] Should contain my contact information:
-    - [ ] Slack information
-    - [ ] Email address
+    - [x] Slack information
+    - [x] Email address
     - [ ] GitHub handle
