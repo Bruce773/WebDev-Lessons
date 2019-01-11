@@ -111,70 +111,45 @@ $(document).ready(function() {
       .then(function(response) {
         console.log(response.items);
         for (var i = 0; i < response.items.length; i++) {
-          // for(var j = 0; j < )
           var lessonData = response.items;
+          var type = lessonData[i].sys.contentType.sys.id;
+          // console.log(type);
           //append html to $('.content') with correct data
-          // console.log(Object.keys(contentObj)[i]);
           //Build each lesson "box" here
-          var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
-          var currentItemTitle = lessonData[i].fields.title; //Get title
-          var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
-          var currentItemDescr = lessonData[i].fields.description; //Get description
-          var currentItemLink = lessonData[i].fields.gitHubRepoLinks;
-          // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
-          var title = $(
-            `<div class='lesson-title text-wrap'><h3>${currentItemTitle}</h3></div>`
-          ); //Build title
-          lessonDiv.append(title); //Place title inside the lesson box
-          var lessonVideoContainer = $(
-            "<div class='iframe-container embed-responsive embed-responsive-4by3'></div>"
-          ); //Build container for video
-          lessonVideoContainer.append(currentItemVideo); //Place video in video container
-          lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
-          var description = $(
-            `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
-          ); //Build description
-          lessonDiv.append(description); //Place description inside lesson box
-
-
-          //Strategy: build an array where each item is a chracter of the link. Iterate over it and
-          //search for a comma seperating two links. If a comma is found, save everything up until that point as one link. Then, before moving onto the next link, build the button with an <a> tag that has the link as it's href. Then, move on and build the rest of the buttons with the correct hrefs.
-
-          //create an array called linksArr
-          var linksArr = [];
-          //iterate over each character currentItemLink
-          // console.log(currentItemLink.length);
-          for(var j = 0; j < currentItemLink.length; j++){
-            //place each into linksArr as a string
-            var currentChar = currentItemLink.charAt(j);
-            // console.log(currentChar);
-            linksArr.push(currentChar);
-          //end iteration
+          if (type === "lesson") {
+            var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
+            var currentItemTitle = lessonData[i].fields.title; //Get title
+            var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
+            var currentItemDescr = lessonData[i].fields.description; //Get description
+            // console.log('Title: ', currentItemLinkTitle, 'Link: ', currentItemLinkUrl);
+            // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
+            var title = $(
+              `<div class='lesson-title text-wrap'><h3>${currentItemTitle}</h3></div>`
+            ); //Build title
+            lessonDiv.append(title); //Place title inside the lesson box
+            var lessonVideoContainer = $(
+              "<div class='iframe-container embed-responsive embed-responsive-4by3'></div>"
+            ); //Build container for video
+            lessonVideoContainer.append(currentItemVideo); //Place video in video container
+            lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
+            var description = $(
+              `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
+            ); //Build description
+            lessonDiv.append(description); //Place description inside lesson box
+            // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
+            // var currentItemLinkTitle = lessonData[i].fields.gitHubLink[0].fields.title
+            for (var j = 0; j < lessonData[i].fields.gitHubLink.length; j++) {
+              var currentItemLinkUrl =
+                lessonData[i].fields.gitHubLink[j].fields.link;
+              var currentItemLinkTitle =
+                lessonData[i].fields.gitHubLink[j].fields.title;
+              var link = $(
+                `<a href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
+              ); //Build link button
+              lessonDiv.append(link); //Place link button inside lesson box
+            }
+            $(".content").append(lessonDiv); //Place the lesson box inside the content area
           }
-          // console.log(linksArr);
-
-          //create an array called allLinksArr
-
-          //Build a new function called iterateAndBuildAllLinksArr and pass in linksArr
-            //create var counter = 0;
-            //iterate over the array passed in as an argument to this function
-              //if charAt !== ,
-                //counter++
-              //else if the array passed in as an argument to the iterateAndBuildAllLinksArr function is .length === 0
-                //return null
-              //else
-                //this spot is going to take some experimenting...
-                //you need to grab all the chars in linksArr up until this point and join them
-                //then, push them into allLinksArr
-                //then you need to have a recursion call where you slice the array (using counter... like I said... it's going to take some experimenting) and pass the new arr back into iterateAndBuildAllLinksArr().
-            //end iteration
-          //end iterateAndBuildAllLinksArr function
-
-          var link = $(
-            `<a href='${currentItemLink}' target='_blank'><button class='lesson-link-button'>Link to GitHub Repo</button></a>`
-          ); //Build link button
-          lessonDiv.append(link); //Place link button inside lesson box
-          $(".content").append(lessonDiv); //Place the lesson box inside the content area
         }
       })
       .catch(console.error);
