@@ -121,6 +121,7 @@ $(document).ready(function() {
             var currentItemTitle = lessonData[i].fields.title; //Get title
             var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
             var currentItemDescr = lessonData[i].fields.description; //Get description
+            var currentItemClassType = lessonData[i].fields.classType; //Get the classType ie(Javascript, HTML, CSS)
             // console.log('Title: ', currentItemLinkTitle, 'Link: ', currentItemLinkUrl);
             // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
             var title = $(
@@ -132,6 +133,8 @@ $(document).ready(function() {
             ); //Build container for video
             lessonVideoContainer.append(currentItemVideo); //Place video in video container
             lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
+            var lessonClassType = $(`<div class='class-type'>${currentItemClassType}</div>`);
+            lessonDiv.append(lessonClassType);
             var description = $(
               `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
             ); //Build description
