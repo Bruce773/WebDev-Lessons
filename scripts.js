@@ -1,5 +1,8 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
+  var classSelectBtn = false;
+  // var htmlBtn = false;
+  // var cssBtn = false;
 
   //Grab all the titles:
   //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
@@ -105,55 +108,131 @@ $(document).ready(function() {
       '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
     );
     $(".iframe-container-intro").append(currentItemVideo);
+    $(".content").append(
+      $(
+        '<div class="class-html"><button class="full-width class-html">HTML Lessons <i class="right-arrow"></i></button></div>'
+      )
+    );
+    $(".content").append(
+      $(
+        '<div class="class-css"><button class="full-width class-css">CSS Lessons <i class="right-arrow"></i></button></div>'
+      )
+    );
+    $(".content").append(
+      $(
+        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <i class="right-arrow"></i></button></div>'
+      )
+    );
     //Build rest of content
     client
       .getEntries({ order: "sys.createdAt" })
       .then(function(response) {
-        console.log(response.items);
-        for (var i = 0; i < response.items.length; i++) {
-          var lessonData = response.items;
-          var type = lessonData[i].sys.contentType.sys.id;
-          // console.log(type);
-          //append html to $('.content') with correct data
-          //Build each lesson "box" here
-          if (type === "lesson") {
-            var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
-            var currentItemTitle = lessonData[i].fields.title; //Get title
-            var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
-            var currentItemDescr = lessonData[i].fields.description; //Get description
-            var currentItemClassType = lessonData[i].fields.classType; //Get the classType ie(Javascript, HTML, CSS)
-            // console.log('Title: ', currentItemLinkTitle, 'Link: ', currentItemLinkUrl);
-            // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
-            var title = $(
-              `<div class='lesson-title text-wrap'><h3>${currentItemTitle}</h3></div>`
-            ); //Build title
-            lessonDiv.append(title); //Place title inside the lesson box
-            var lessonVideoContainer = $(
-              "<div class='iframe-container embed-responsive embed-responsive-4by3'></div>"
-            ); //Build container for video
-            lessonVideoContainer.append(currentItemVideo); //Place video in video container
-            lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
-            var lessonClassType = $(`<div class='class-type'>${currentItemClassType}</div>`);
-            lessonDiv.append(lessonClassType);
-            var description = $(
-              `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
-            ); //Build description
-            lessonDiv.append(description); //Place description inside lesson box
-            // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
-            // var currentItemLinkTitle = lessonData[i].fields.gitHubLink[0].fields.title
-            for (var j = 0; j < lessonData[i].fields.gitHubLink.length; j++) {
-              var currentItemLinkUrl =
-                lessonData[i].fields.gitHubLink[j].fields.link;
-              var currentItemLinkTitle =
-                lessonData[i].fields.gitHubLink[j].fields.title;
-              var link = $(
-                `<a href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
-              ); //Build link button
-              lessonDiv.append(link); //Place link button inside lesson box
-            }
-            $(".content").append(lessonDiv); //Place the lesson box inside the content area
+        // console.log(response.items);
+        var buildLesson = function(classType) {
+          var appendContentToThis;
+          if (classType === "HTML") {
+            // clickVar = htmlBtn;
+            // console.log("Classtype HTML");
+            appendContentToThis = `.class-html`;
+          } else if (classType === "CSS") {
+            // clickVar = cssBtn;
+            // console.log("Classtype CSS");
+            appendContentToThis = `.class-css`;
+          } else if (classType === "Javascript") {
+            // clickVar = javascriptBtn
+            // console.log("Classtype Javascript");
+            appendContentToThis = `.class-javascript`;
           }
-        }
+          var buildAndAppendAllClassLessons = function() {
+            //I'd recomend minimizing this function... it's large and doesn't get invoked until later
+            for (var i = 0; i < response.items.length; i++) {
+              var lessonData = response.items;
+              var type = lessonData[i].sys.contentType.sys.id;
+              // console.log(type);
+              //append html to $('.content') with correct data
+              //Build each lesson "box" here
+              if (type === "lesson") {
+                var currentItemClassType = lessonData[i].fields.classType[0]; //Get the classType ie(Javascript, HTML, CSS)
+                if (currentItemClassType === classType) {
+                  var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
+                  var currentItemTitle = lessonData[i].fields.title; //Get title
+                  var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
+                  var currentItemDescr = lessonData[i].fields.description; //Get description
+                  // console.log('Title: ', currentItemLinkTitle, 'Link: ', currentItemLinkUrl);
+                  // console.log('Title: ', currentItemTitle, 'Description: ', currentItemDescr, 'GitHub Link: ', currentItemLink);
+                  var title = $(
+                    `<div class='lesson-title text-wrap'><h3>${currentItemTitle}</h3></div>`
+                  ); //Build title
+                  lessonDiv.append(title); //Place title inside the lesson box
+                  var lessonVideoContainer = $(
+                    "<div class='iframe-container embed-responsive embed-responsive-4by3'></div>"
+                  ); //Build container for video
+                  lessonVideoContainer.append(currentItemVideo); //Place video in video container
+                  lessonDiv.append(lessonVideoContainer); //Place the video box inside the lesson box
+                  var lessonClassType = $(
+                    `<div class='class-type'>${currentItemClassType}</div>`
+                  );
+                  lessonDiv.append(lessonClassType);
+                  var description = $(
+                    `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
+                  ); //Build description
+                  lessonDiv.append(description); //Place description inside lesson box
+                  // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
+                  // var currentItemLinkTitle = lessonData[i].fields.gitHubLink[0].fields.title
+                  for (
+                    var j = 0;
+                    j < lessonData[i].fields.gitHubLink.length;
+                    j++
+                  ) {
+                    var currentItemLinkUrl =
+                      lessonData[i].fields.gitHubLink[j].fields.link;
+                    var currentItemLinkTitle =
+                      lessonData[i].fields.gitHubLink[j].fields.title;
+                    var link = $(
+                      `<a href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
+                    ); //Build link button
+                    lessonDiv.append(link); //Place link button inside lesson box
+                  }
+                  $(appendContentToThis).append(lessonDiv); //Place the lesson box inside the content area
+                }
+              }
+            }
+          };
+          //when the button is clicked
+          //if button has already been clicked
+          if (classSelectBtn === true) {
+            //clear the html below it
+            $(appendContentToThis).html(
+              `<button class="full-width">${classType} Lessons <i class="right-arrow"></i></button>`
+            );
+            //set the click var to false
+            classSelectBtn = false;
+            //remove the class class-btn-div from appendContentToThis
+            $(appendContentToThis).removeClass("class-btn-div");
+            //change the arrow class to arrow-right
+          } else if (classSelectBtn === false) {
+            //else if button has not been clicked
+            //set the click var to true
+            classSelectBtn = true;
+            //add the class class-btn-div to appendContentToThis
+            $(appendContentToThis).addClass("class-btn-div");
+            //change the arrow class to arrow-down
+            $(".content")
+              .find(`${appendContentToThis} .right-arrow`)
+              .removeClass("right-arrow")
+              .addClass("down-arrow");
+            //build content
+            buildAndAppendAllClassLessons();
+          }
+        };
+        // console.log('test!')
+        $(".content")
+          .find(".class-javascript")
+          .on("click", "button", function() {
+            // classSelectBtn = false;
+            // console.log("ran!");
+            buildLesson("Javascript");
+          });
       })
       .catch(console.error);
   };
