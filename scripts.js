@@ -32,29 +32,29 @@ $(document).ready(function() {
       '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     ]
   };
-  var contentObj = {
-    "0": [
-      "WebDev Lessons #1-A",
-      '<iframe src="https://www.youtube-nocookie.com/embed/dKfXAoPhDmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      "This video is longer than most of the other lesson videos. In this video you'll learn how to setup the workspace you'll need when taking WebDev lessons. We cover GitHub, Terminal, and finally some of the basics of javascript functions. After watching this video, follow the link below for the GitHub exercise.",
-      "https://github.com/Bruce773/WebDev-functions"
-    ],
-    "1": [
-      "WebDev Lessons #1-B",
-      '<iframe width="560" height="315" src="https://www.youtube.com/embed/ufSTrbu5oyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      "This video covers function arguments. Learn what they are, how to use them, and how NOT to use them. Use the button below labeled Lesson Exercises for this lessons' exercises. Also, be sure to complete the function-exercises (also found below) before moving on to the next video.",
-      {
-        "0": [
-          "Lesson Exercises",
-          "https://github.com/Bruce773/WebDev-function-arguments"
-        ],
-        "1": [
-          "Function-exercises",
-          "https://github.com/Bruce773/WebDev-function-exercises"
-        ]
-      }
-    ]
-  };
+  // var contentObj = {
+  //   "0": [
+  //     "WebDev Lessons #1-A",
+  //     '<iframe src="https://www.youtube-nocookie.com/embed/dKfXAoPhDmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+  //     "This video is longer than most of the other lesson videos. In this video you'll learn how to setup the workspace you'll need when taking WebDev lessons. We cover GitHub, Terminal, and finally some of the basics of javascript functions. After watching this video, follow the link below for the GitHub exercise.",
+  //     "https://github.com/Bruce773/WebDev-functions"
+  //   ],
+  //   "1": [
+  //     "WebDev Lessons #1-B",
+  //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/ufSTrbu5oyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+  //     "This video covers function arguments. Learn what they are, how to use them, and how NOT to use them. Use the button below labeled Lesson Exercises for this lessons' exercises. Also, be sure to complete the function-exercises (also found below) before moving on to the next video.",
+  //     {
+  //       "0": [
+  //         "Lesson Exercises",
+  //         "https://github.com/Bruce773/WebDev-function-arguments"
+  //       ],
+  //       "1": [
+  //         "Function-exercises",
+  //         "https://github.com/Bruce773/WebDev-function-exercises"
+  //       ]
+  //     }
+  //   ]
+  // };
 
   var buildNavBar = function() {
     //Build a navbar on each page when it loads.
@@ -110,17 +110,17 @@ $(document).ready(function() {
     $(".iframe-container-intro").append(currentItemVideo);
     $(".content").append(
       $(
+        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <i class="right-arrow"></i></button></div>'
+      )
+    );
+    $(".content").append(
+      $(
         '<div class="class-html"><button class="full-width class-html">HTML Lessons <i class="right-arrow"></i></button></div>'
       )
     );
     $(".content").append(
       $(
         '<div class="class-css"><button class="full-width class-css">CSS Lessons <i class="right-arrow"></i></button></div>'
-      )
-    );
-    $(".content").append(
-      $(
-        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <i class="right-arrow"></i></button></div>'
       )
     );
     //Build rest of content
@@ -148,7 +148,6 @@ $(document).ready(function() {
             for (var i = 0; i < response.items.length; i++) {
               var lessonData = response.items;
               var type = lessonData[i].sys.contentType.sys.id;
-              // console.log(type);
               //append html to $('.content') with correct data
               //Build each lesson "box" here
               if (type === "lesson") {
