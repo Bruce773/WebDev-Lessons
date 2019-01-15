@@ -190,6 +190,7 @@ $(document).ready(function() {
               .find(`${appendContentToThis} .right-arrow`)
               .removeClass("right-arrow")
               .addClass("down-arrow");
+            // $(".content").find(`${appendContentToThis} .full-width`).removeClass("full-width").addClass("complete-full-width");
             //build content
             buildAndAppendAllClassLessons();
           }

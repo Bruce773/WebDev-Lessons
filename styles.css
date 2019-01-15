@@ -151,7 +151,7 @@ p{
   width: 100%;
 }
 .lesson-div{
-  background-color:rgba(167, 241, 167, 0.308);
+  background-color:rgb(178, 233, 185);
   padding:10px;
   margin:20px;
   border-radius:8px;
@@ -267,4 +267,8 @@ i {
   margin-bottom:5px;
   padding: 8px 0px 8px 0px;
   border-radius: 10px;
+}
+.complete-full-width{
+  width:100%;
+  margin:auto;
 }
