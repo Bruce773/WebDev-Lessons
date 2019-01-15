@@ -1,16 +1,12 @@
 $(document).ready(function() {
   console.log("jQuery is loaded");
   var classSelectBtn = false;
-  // var htmlBtn = false;
-  // var cssBtn = false;
 
   //Grab all the titles:
   //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
   //Change the word title on the last line to the field you want to get data from
 
-  // require(["contentful"], function(contentful) {
   // //Contentful stuff needed for it to run
-  // var contentful = require("contentful");
 
   const client = contentful.createClient({
     space: "w7qayaxgvtbf",
@@ -18,9 +14,6 @@ $(document).ready(function() {
     accessToken:
       "89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9"
   });
-  // client.getEntries().then(function(response) {
-  //     console.log(response.items[0].fields.title);
-  // }).catch(console.error);
 
   var pagesObj = {
     Home: "index.html",
@@ -32,29 +25,6 @@ $(document).ready(function() {
       '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     ]
   };
-  // var contentObj = {
-  //   "0": [
-  //     "WebDev Lessons #1-A",
-  //     '<iframe src="https://www.youtube-nocookie.com/embed/dKfXAoPhDmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-  //     "This video is longer than most of the other lesson videos. In this video you'll learn how to setup the workspace you'll need when taking WebDev lessons. We cover GitHub, Terminal, and finally some of the basics of javascript functions. After watching this video, follow the link below for the GitHub exercise.",
-  //     "https://github.com/Bruce773/WebDev-functions"
-  //   ],
-  //   "1": [
-  //     "WebDev Lessons #1-B",
-  //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/ufSTrbu5oyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-  //     "This video covers function arguments. Learn what they are, how to use them, and how NOT to use them. Use the button below labeled Lesson Exercises for this lessons' exercises. Also, be sure to complete the function-exercises (also found below) before moving on to the next video.",
-  //     {
-  //       "0": [
-  //         "Lesson Exercises",
-  //         "https://github.com/Bruce773/WebDev-function-arguments"
-  //       ],
-  //       "1": [
-  //         "Function-exercises",
-  //         "https://github.com/Bruce773/WebDev-function-exercises"
-  //       ]
-  //     }
-  //   ]
-  // };
 
   var buildNavBar = function() {
     //Build a navbar on each page when it loads.
@@ -115,12 +85,12 @@ $(document).ready(function() {
     );
     $(".content").append(
       $(
-        '<div class="class-html"><button class="full-width class-html">HTML Lessons <i class="right-arrow"></i></button></div>'
+        '<div class="class-html"><button class="full-width">HTML Lessons <i class="right-arrow"></i></button></div>'
       )
     );
     $(".content").append(
       $(
-        '<div class="class-css"><button class="full-width class-css">CSS Lessons <i class="right-arrow"></i></button></div>'
+        '<div class="class-css"><button class="full-width">CSS Lessons <i class="right-arrow"></i></button></div>'
       )
     );
     //Build rest of content
@@ -224,13 +194,35 @@ $(document).ready(function() {
             buildAndAppendAllClassLessons();
           }
         };
-        // console.log('test!')
+        //<------ Class Count Indicators ---->
+        //iterate over every lesson
+        //create variables for each classtype set them to 0
+        //if the type of the class equals one of the vars
+        //increase var count
+        //find each class counter
+        //set their html to equal `(the corresponding variable)`
+
+        //<------ Event Listeners For Class Dropdown Menus ----->
         $(".content")
           .find(".class-javascript")
           .on("click", "button", function() {
             // classSelectBtn = false;
             // console.log("ran!");
             buildLesson("Javascript");
+          });
+        $(".content")
+          .find(".class-html")
+          .on("click", "button", function() {
+            // classSelectBtn = false;
+            // console.log("ran!");
+            buildLesson("HTML");
+          });
+        $(".content")
+          .find(".class-css")
+          .on("click", "button", function() {
+            // classSelectBtn = false;
+            // console.log("ran!");
+            buildLesson("CSS");
           });
       })
       .catch(console.error);
