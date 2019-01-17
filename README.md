@@ -10,3 +10,7 @@ The WebDev Lessons site
     - [x] Slack information
     - [x] Email address
     - [ ] GitHub handle
+
+- [ ] Make jQuery build the <head></head> section for every page
+- [ ] Maybe move the pages object to Contentful rather than having it in the scripts.js file
+- [ ] Work on adding a class count indicator to each dropdown menu
