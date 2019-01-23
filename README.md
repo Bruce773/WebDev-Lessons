@@ -17,5 +17,5 @@ The WebDev Lessons site
 - [ ] Work on adding an About page w/ bio and site mission
 - [ ] Add modal to home page with revolving info:
     - [ ] "If you haven't already, join our Slack group..."
-    - [ ] "..."
+    - [ ] "Enjoying the free content on WebDev Lessosn? Help us provide better learning tools and improved site functionality. Your donation... (PayPal Donate Btn)"
     - [ ] "..."
