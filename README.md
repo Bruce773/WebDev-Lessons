@@ -14,6 +14,9 @@ The WebDev Lessons site
 - [ ] Make jQuery build the header section for every page
 - [ ] Maybe move the pages object to Contentful rather than having it in the scripts.js file
 - [ ] Work on adding a class count indicator to each dropdown menu
+- [ ] Work on adding a "new lesson" indicator on each dropdown menu 
+    - [ ] If there is a class with a date less then a week old show "new lesson"
+- [ ] Maybe look into adding sub-dropdown menus for each section ie. HTML 1:A-F, HTML 2:A-F
 - [ ] Work on adding an About page w/ bio and site mission
 - [ ] Add modal to home page with revolving info:
     - [ ] "If you haven't already, join our Slack group..."
