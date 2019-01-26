@@ -18,7 +18,7 @@ The WebDev Lessons site
     - [ ] If there is a class with a date less then a week old show "new lesson"
 - [ ] Maybe look into adding sub-dropdown menus for each section ie. HTML 1:A-F, HTML 2:A-F
 - [ ] Work on adding an About page w/ bio and site mission
-- [ ] Add modal to home page with revolving info:
+- [ ] Add carousel to home page with revolving info https://getbootstrap.com/docs/4.0/components/carousel/:
     - [ ] "If you haven't already, join our Slack group..."
     - [ ] "Enjoying the free content on WebDev Lessosn? Help us provide better learning tools and improved site functionality. Your donation... (PayPal Donate Btn)"
     - [ ] "..."
