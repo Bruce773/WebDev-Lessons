@@ -13,7 +13,7 @@ h1 {
 button {
   background-color: rgba(107, 151, 107, 0.719);
   border-radius: 6px;
-  border-color: white;
+  /* border-color: white; */
   padding: 6px;
   margin-right: 5px;
   margin-left: 5px;
@@ -52,7 +52,6 @@ p {
   color: rgb(255, 249, 249);
   margin: auto;
   padding: 20px;
-  /* width: 45%; */
   border-radius: 8px;
   box-shadow: 7px 7px lightgrey;
 }
@@ -74,9 +73,6 @@ p {
 .intro-title {
   margin-top: 40px;
   margin-bottom: 0px;
-}
-.navDiv {
-  /* z-index: 99999; */
 }
 .navbarListItem a {
   display: block;
@@ -141,8 +137,6 @@ p {
 }
 .iframe-container iframe {
   display: block;
-  /* width: 560px;
-  height: 315px; */
   border: 0;
   overflow: hidden;
   height: 100%;
@@ -204,8 +198,6 @@ p {
   padding-top: 6px;
   padding-bottom: 10px;
   margin: auto;
-  /* padding-right:30px;
-  padding-left:30px; */
 }
 .lesson-link-button {
   display: inline-block;
@@ -276,7 +268,6 @@ i {
 }
 .headshot-container {
   margin: auto;
-  /* display: inline; */
   width: 10em;
   height: auto;
 }
@@ -284,34 +275,47 @@ i {
   border-radius: 8px;
 }
 #carousel {
+  margin:auto;
   margin-top: 50px;
-  /* display: block; */
-  /* max-width: 80%; */
   width: 80%;
-  height: 200px;
-  margin-bottom: 10px;
+  height: 270px;
+  /* margin-bottom: 5px; */
+  overflow: hidden;
 }
-.slack-header {
+.c-header {
+  font-weight: bolder;
   font-size: 2em;
 }
-.slack-paragraph {
-  font-size: 1.4em;
-  max-width: 80%;
+.c-header-smaller {
+  font-weight: bolder;
+  font-size: 1.9em;
+}
+.c-paragraph {
+  margin-top: 5px;
+  font-size: 1.5em;
+  max-width: 70%;
   margin: auto;
   margin-bottom: 10px;
-  /* display: block; */
+}
+.c-paragraph-smaller {
+  margin-top: 5px;
+  font-size: 1.2em;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
 }
 .carousel-item {
   padding: 20px;
   border-radius: 10px;
   color: white;
   background-color: grey;
-  /* max-width: 80%; */
-  /* min-width: 80%; */
   margin: auto;
-  /* margin: 0px 30px 0px 30px; */
-  /* height: 100px; */
+  height: 270px;
 }
 .signature {
   color: rgb(157, 186, 231);
+}
+.margin-top{
+  margin-top: 90px;
+  right: 90px;
 }
