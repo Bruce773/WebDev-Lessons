@@ -13,7 +13,7 @@ h1 {
 button {
   background-color: rgba(107, 151, 107, 0.719);
   border-radius: 6px;
-  border-color:white;
+  border-color: white;
   padding: 6px;
   margin-right: 5px;
   margin-left: 5px;
@@ -28,16 +28,16 @@ a {
   color: white;
   font-size: 18px;
 }
-a:hover{
+a:hover {
   text-decoration: none;
-  color:white;
+  color: white;
 }
-p{
-  font-family: 'Thasadith', sans-serif;
+p {
+  font-family: "Thasadith", sans-serif;
   font-weight: bold;
 }
 .main-header {
-  margin-top:20px;
+  margin-top: 20px;
   font-size: 40px;
   margin-bottom: 0px;
 }
@@ -47,6 +47,7 @@ p{
   margin-bottom: 30px;
 }
 .headers-container {
+  display: block;
   background-color: rgb(130, 180, 143);
   color: rgb(255, 249, 249);
   margin: auto;
@@ -64,15 +65,15 @@ p{
 }
 .welcome-h2 {
   font-weight: normal;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
-.welcome-h3{
+.welcome-h3 {
   font-weight: normal;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
-.intro-title{
-  margin-top:40px;
-  margin-bottom:0px;
+.intro-title {
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 .navDiv {
   /* z-index: 99999; */
@@ -126,36 +127,36 @@ p{
   top: 0;
   width: 100%;
 }
-.iframe-container{
-  display:block;
+.iframe-container {
+  display: block;
   overflow: hidden;
   padding: 0px;
-  bottom:0;
-  left:0;
-  right:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding-top: 50%;
   position: relative;
-  width:90%;
-  margin:auto;
+  width: 90%;
+  margin: auto;
 }
 .iframe-container iframe {
-  display:block;
+  display: block;
   /* width: 560px;
   height: 315px; */
   border: 0;
   overflow: hidden;
   height: 100%;
   left: 0;
-  bottom:0;
+  bottom: 0;
   position: absolute;
   top: 0;
   width: 100%;
 }
-.lesson-div{
-  background-color:rgb(178, 233, 185);
-  padding:10px;
-  margin:20px;
-  border-radius:8px;
+.lesson-div {
+  background-color: rgb(178, 233, 185);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 8px;
   min-height: 300px;
 }
 .start-btn {
@@ -174,86 +175,86 @@ p{
 }
 .green-accent {
   color: rgba(27, 160, 27, 0.938);
-  margin:auto;
-  font-size:25px;
+  margin: auto;
+  font-size: 25px;
   margin: 20px 5px 20px 5px;
 }
-.contact-page-header{
-  margin-top:10px;
-}
-.contact-page-header h3{
+.contact-page-header {
   margin-top: 10px;
 }
-.lesson-title{
-  font-size:20px;
-  display:inline-block;
+.contact-page-header h3 {
+  margin-top: 10px;
+}
+.lesson-title {
+  font-size: 20px;
+  display: inline-block;
   text-align: right;
 }
-.lesson-title h3{
-  font-size:1.8rem;
+.lesson-title h3 {
+  font-size: 1.8rem;
   font-weight: bolder;
-  padding:6px;
-  margin:auto;
-  margin-bottom:5px;
+  padding: 6px;
+  margin: auto;
+  margin-bottom: 5px;
   text-align: center;
 }
-.lesson-description{
-  font-size:1.4rem;
+.lesson-description {
+  font-size: 1.4rem;
   display: inline-block;
-  padding-top:6px;
-  padding-bottom:10px;
-  margin:auto;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  margin: auto;
   /* padding-right:30px;
   padding-left:30px; */
 }
-.lesson-link-button{
-  display:inline-block;
-  margin-bottom:20px;
+.lesson-link-button {
+  display: inline-block;
+  margin-bottom: 20px;
   text-decoration: none;
   color: white;
   font-size: 15px;
 }
-.italic-md{
+.italic-md {
   font-style: italic;
   font-size: 25px;
 }
-.margin-left{
+.margin-left {
   margin-left: 8px;
 }
-.btn-error-header{
-  padding:1.5em;
-  margin-top:15px;
-  font-size:1.4em;
-  color:lightcoral;
+.btn-error-header {
+  padding: 1.5em;
+  margin-top: 15px;
+  font-size: 1.4em;
+  color: lightcoral;
   font-weight: bold;
 }
-.class-type{
-  background-color:rgba(255, 254, 254, 0.37);
-  max-width:90px;
-  margin:auto;
-  margin-top:10px;
+.class-type {
+  background-color: rgba(255, 254, 254, 0.37);
+  max-width: 90px;
+  margin: auto;
+  margin-top: 10px;
   border-radius: 10px;
-  border-color:black;
+  border-color: black;
   border: solid;
   border-width: thin;
 }
-.full-width{
-  margin:auto;
-  margin-bottom:10px;
+.full-width {
+  margin: auto;
+  margin-bottom: 10px;
   width: 90%;
-  display:block;
-  font-size:1.4em;
-  color:white;
+  display: block;
+  font-size: 1.4em;
+  color: white;
 }
 i {
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  margin-bottom:2.7px;
+  margin-bottom: 2.7px;
 }
 
-.right-arrow{
+.right-arrow {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -261,15 +262,56 @@ i {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-.class-btn-div{
-  background-color:grey;
-  width:90%;
-  margin:auto;
-  margin-bottom:5px;
+.class-btn-div {
+  background-color: grey;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 5px;
   padding: 8px 0px 8px 0px;
   border-radius: 10px;
 }
-.complete-full-width{
-  width:100%;
-  margin:auto;
+.complete-full-width {
+  width: 100%;
+  margin: auto;
+}
+.headshot-container {
+  margin: auto;
+  /* display: inline; */
+  width: 10em;
+  height: auto;
+}
+.headshot-container img {
+  border-radius: 8px;
+}
+#carousel {
+  margin-top: 50px;
+  /* display: block; */
+  /* max-width: 80%; */
+  width: 80%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.slack-header {
+  font-size: 2em;
+}
+.slack-paragraph {
+  font-size: 1.4em;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+  /* display: block; */
+}
+.carousel-item {
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: grey;
+  /* max-width: 80%; */
+  /* min-width: 80%; */
+  margin: auto;
+  /* margin: 0px 30px 0px 30px; */
+  /* height: 100px; */
+}
+.signature {
+  color: rgb(157, 186, 231);
 }
