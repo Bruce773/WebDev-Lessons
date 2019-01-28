@@ -16,7 +16,7 @@ button {
   padding: 6px;
   margin-right: 5px;
   margin-left: 5px;
-  color:white;
+  color: white;
 }
 button:hover {
   cursor: pointer;
@@ -200,7 +200,8 @@ p {
   margin: auto;
 }
 .lesson-link-button {
-  display: inline-block;
+  display: block;
+  margin: auto;
   margin-bottom: 20px;
   text-decoration: none;
   color: white;
@@ -275,7 +276,7 @@ i {
   border-radius: 8px;
 }
 #carousel {
-  margin:auto;
+  margin: auto;
   margin-top: 50px;
   width: 80%;
   height: 270px;
@@ -316,7 +317,7 @@ i {
 .signature {
   color: rgb(157, 186, 231);
 }
-.margin-top{
+.margin-top {
   margin-top: 90px;
   right: 90px;
 }
