@@ -13,10 +13,10 @@ h1 {
 button {
   background-color: rgba(107, 151, 107, 0.719);
   border-radius: 6px;
-  /* border-color: white; */
   padding: 6px;
   margin-right: 5px;
   margin-left: 5px;
+  color:white;
 }
 button:hover {
   cursor: pointer;
@@ -283,6 +283,7 @@ i {
   overflow: hidden;
 }
 .c-header {
+  display: inline-block;
   font-weight: bolder;
   font-size: 2em;
 }
@@ -318,4 +319,12 @@ i {
 .margin-top{
   margin-top: 90px;
   right: 90px;
+}
+.c-headshot-container {
+  display: inline-block;
+}
+.c-headshot-container img {
+  display: inline-block;
+  width: 3em;
+  height: auto;
 }
