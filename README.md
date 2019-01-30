@@ -14,6 +14,7 @@ The WebDev Lessons site
 - [ ] Build the header section for every page with jQuery
 - [ ] Maybe move the pages object to Contentful rather than having it in the scripts.js file
 - [ ] Work on adding a class count indicator to each dropdown menu
+    - [ ] Use Boostrap badges (https://getbootstrap.com/docs/4.2/components/badge/)
 - [ ] Work on adding a "new lesson" indicator on each dropdown menu 
     - [ ] If there is a class with a date less then a week old show "new lesson"
 - [ ] Maybe look into adding sub-dropdown menus for each section ie. HTML 1:A-F, HTML 2:A-F
