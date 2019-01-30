@@ -268,6 +268,7 @@ i {
   margin: auto;
 }
 .headshot-container {
+  display: block;
   margin: auto;
   width: 10em;
   height: auto;
@@ -328,4 +329,26 @@ i {
   display: inline-block;
   width: 3em;
   height: auto;
+}
+.about-p-bio{
+  margin:3px;
+  font-size: 120%;
+  margin-top: 0px;
+  display: block;
+}
+.about-p-bio{
+  margin: 20px 40px 0px 40px;
+}
+.bio-container{
+  width: 90%;
+  margin: auto;
+  margin-top: 5px;
+  padding: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* border-style: solid;
+  border-width: 3px;
+  border-color: grey; */
+  border-radius: 10px;
+  background-color: rgb(194, 191, 191);
 }
