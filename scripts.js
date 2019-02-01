@@ -17,7 +17,8 @@ $(document).ready(function() {
 
   var pagesObj = {
     Home: "index.html",
-    Contact: "contact.html"
+    Contact: "contact.html",
+    About: "about.html",
   };
   var introObj = {
     "0": [
