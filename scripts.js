@@ -6,7 +6,7 @@ $(document).ready(function() {
   //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
   //Change the word title on the last line to the field you want to get data from
 
-  // //Contentful stuff needed for it to run
+  // Contentful stuff needed for it to run
 
   const client = contentful.createClient({
     space: "w7qayaxgvtbf",
@@ -18,7 +18,7 @@ $(document).ready(function() {
   var pagesObj = {
     Home: "index.html",
     Contact: "contact.html",
-    About: "about.html",
+    About: "about.html"
   };
   var introObj = {
     "0": [
@@ -144,7 +144,8 @@ $(document).ready(function() {
                   );
                   lessonDiv.append(lessonClassType);
                   var description = $(
-                    `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
+                    `<div class='d-md-none d-xs-inline small-device-div'>This content is not accessible on a mobile device. Please view on desktop/laptop device.</div>
+                    <div class='lesson-description text-wrap d-none d-md-inline'><p class='lesson-description'>${currentItemDescr}</p></div>`
                   ); //Build description
                   lessonDiv.append(description); //Place description inside lesson box
                   // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
@@ -159,7 +160,7 @@ $(document).ready(function() {
                     var currentItemLinkTitle =
                       lessonData[i].fields.gitHubLink[j].fields.title;
                     var link = $(
-                      `<a href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
+                      `<a class="d-none d-md-inline" href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
                     ); //Build link button
                     lessonDiv.append(link); //Place link button inside lesson box
                   }
