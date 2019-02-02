@@ -144,7 +144,7 @@ $(document).ready(function() {
                   );
                   lessonDiv.append(lessonClassType);
                   var description = $(
-                    `<div class='d-md-none d-xs-inline small-device-div'>This content is not accessible on a mobile device. Please view on desktop/laptop device.</div>
+                    `<div class='d-md-none d-xs-inline small-device-div'>For lesson description and exercises, please view on desktop/laptop device.</div>
                     <div class='lesson-description text-wrap d-none d-md-inline'><p class='lesson-description'>${currentItemDescr}</p></div>`
                   ); //Build description
                   lessonDiv.append(description); //Place description inside lesson box
