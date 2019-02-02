@@ -4,7 +4,7 @@ The WebDev Lessons site
 ## Requirements:
 - [x] Home Page
   - [x] Contain videos and information about each video
-- [ ] About Page
+- [x] About Page
 - [x] Contact Page
   - [ ] Should contain my contact information:
     - [x] Slack information
@@ -29,8 +29,7 @@ The WebDev Lessons site
     - [x] "If you haven't already, join our Slack group..."
     - [x] "Enjoying the free content on WebDev Lessosn? Help us provide better learning tools and improved site functionality. Your donation... (PayPal Donate Btn)"
     
-- [ ] Hide certain things on mobile view and replace with "This content is not accessible on a mobile device. Please switch to a tablet or desktop/laptop device to view this content."
-
- - [ ] Hide:
-      - [ ] Video descriptions
-      - [ ] Exercise buttons
+- [x] Hide certain things on mobile view and replace with "This content is not accessible on a mobile device. Please switch to a tablet or desktop/laptop device to view this content."
+ - [x] Hide:
+      - [x] Video descriptions
+      - [x] Exercise buttons
