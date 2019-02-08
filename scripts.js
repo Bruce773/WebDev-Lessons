@@ -1,28 +1,28 @@
 $(document).ready(function() {
-  console.log("jQuery is loaded");
+  console.log('jQuery is loaded');
   var classSelectBtn = false;
 
   //Grab all the titles:
   //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
   //Change the word title on the last line to the field you want to get data from
 
-  // //Contentful stuff needed for it to run
+  // Contentful stuff needed for it to run
 
   const client = contentful.createClient({
-    space: "w7qayaxgvtbf",
-    environment: "master", // defaults to 'master' if not set
+    space: 'w7qayaxgvtbf',
+    environment: 'master', // defaults to 'master' if not set
     accessToken:
-      "89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9"
+      '89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9'
   });
 
   var pagesObj = {
-    Home: "index.html",
-    Contact: "contact.html",
-    About: "about.html",
+    Home: 'index.html',
+    Contact: 'contact.html',
+    About: 'about.html'
   };
   var introObj = {
-    "0": [
-      "Introduction to WebDev Lessons",
+    '0': [
+      'Introduction to WebDev Lessons',
       '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     ]
   };
@@ -50,80 +50,114 @@ $(document).ready(function() {
     }
     navDiv.append(navList);
     //
-    $("body").prepend(navDiv);
+    $('body').prepend(navDiv);
   };
   buildNavBar();
 
   var buildFooter = function() {
     var date = new Date();
     var year = date.getFullYear();
-    var hr = $("<hr></hr>");
+    var hr = $('<hr></hr>');
     var footer = $(`<p>Copyright ${year} &copy; WebDev Lessons</p>`).prepend(
       hr
     );
-    $(".main").append(footer);
+    $('.main').append(footer);
   };
   buildFooter();
 
   var populateHomePageContent = function() {
+    var buttonsObj = {
+      Javascript:
+        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <span class="Javascript-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>',
+      HTML:
+        '<div class="class-html"><button class="full-width">HTML Lessons <span class="HTML-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>',
+      CSS:
+        '<div class="class-css"><button class="full-width">CSS Lessons <span class="CSS-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>'
+    };
+    var justButtonsObj = {
+      Javascript:
+        '<button class="full-width">JavaScript Lessons <span class="Javascript-badge badge badge-light">0</span><i class="right-arrow"></i></button>',
+      HTML:
+        '<button class="full-width">HTML Lessons <span class="HTML-badge badge badge-light">0</span><i class="right-arrow"></i></button>',
+      CSS:
+        '<button class="full-width">CSS Lessons <span class="CSS-badge badge badge-light">0</span><i class="right-arrow"></i></button>'
+    };
     //iterate over contentObj
-    localStorage.setItem("WebDev-Lessons has been here", true);
+    localStorage.setItem('WebDev-Lessons has been here', true);
     //  add to localstorage that the user has been here
     //  display all the content
-    $(".content").html(" ");
+    $('.content').html(' ');
     //Build intro video and title
     var currentItemVideo = introObj[0][1];
     var currentItemTitle = introObj[0][0];
-    $(".content").append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
-    $(".content").append(
+    $('.content').append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
+    $('.content').append(
       '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
     );
-    $(".iframe-container-intro").append(currentItemVideo);
-    $(".content").append(
-      $(
-        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <i class="right-arrow"></i></button></div>'
-      )
-    );
-    $(".content").append(
-      $(
-        '<div class="class-html"><button class="full-width">HTML Lessons <i class="right-arrow"></i></button></div>'
-      )
-    );
-    $(".content").append(
-      $(
-        '<div class="class-css"><button class="full-width">CSS Lessons <i class="right-arrow"></i></button></div>'
-      )
-    );
+    $('.iframe-container-intro').append(currentItemVideo);
+
+    //* iterate over buttonsObj and append the lesson buttons to .content
+    for (var i = 0; i < Object.keys(buttonsObj).length; i++) {
+      $('.content').append($(buttonsObj[Object.keys(buttonsObj)[i]]));
+    }
+
     //Build rest of content
     client
-      .getEntries({ order: "sys.createdAt" })
+      .getEntries({ order: 'sys.createdAt' })
       .then(function(response) {
         // console.log(response.items);
+
+        //? <------ Class Count Indicators ---->
+        var _updateBadgeIcon = (classType) => {
+          var counter = 0;
+          //iterate over every lesson
+          for (var i = 0; i < response.items.length; i++) {
+            var lessonData = response.items;
+            var type = lessonData[i].sys.contentType.sys.id;
+            //append html to $('.content') with correct data
+            //Build each lesson "box" here
+            if (type === 'lesson') {
+              var currentItemClassType = lessonData[i].fields.classType[0]; //Get the classType ie(Javascript, HTML, CSS)
+              if (currentItemClassType === classType) {
+                counter++;
+              }
+            }
+          }
+          // console.log('ClassType: ', classType, ' Counter: ', counter);
+          $(`.${classType}-badge`).html(counter);
+        };
+
+        _updateBadgeIcon('HTML');
+        _updateBadgeIcon('Javascript');
+        _updateBadgeIcon('CSS');
+
         var buildLesson = function(classType) {
           var appendContentToThis;
-          if (classType === "HTML") {
+          if (classType === 'HTML') {
             // clickVar = htmlBtn;
             // console.log("Classtype HTML");
             appendContentToThis = `.class-html`;
-          } else if (classType === "CSS") {
+          } else if (classType === 'CSS') {
             // clickVar = cssBtn;
             // console.log("Classtype CSS");
             appendContentToThis = `.class-css`;
-          } else if (classType === "Javascript") {
+          } else if (classType === 'Javascript') {
             // clickVar = javascriptBtn
             // console.log("Classtype Javascript");
             appendContentToThis = `.class-javascript`;
           }
           var buildAndAppendAllClassLessons = function() {
-            //I'd recomend minimizing this function... it's large and doesn't get invoked until later
+            //! I'd recomend minimizing this function... it's large and doesn't get invoked until later
+            // debugger;
             for (var i = 0; i < response.items.length; i++) {
               var lessonData = response.items;
               var type = lessonData[i].sys.contentType.sys.id;
               //append html to $('.content') with correct data
               //Build each lesson "box" here
-              if (type === "lesson") {
+              if (type === 'lesson') {
                 var currentItemClassType = lessonData[i].fields.classType[0]; //Get the classType ie(Javascript, HTML, CSS)
                 if (currentItemClassType === classType) {
+                  // console.log(currentItemClassType);
                   var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
                   var currentItemTitle = lessonData[i].fields.title; //Get title
                   var currentItemVideo = lessonData[i].fields.videoIframeLink; //Get video link
@@ -144,7 +178,8 @@ $(document).ready(function() {
                   );
                   lessonDiv.append(lessonClassType);
                   var description = $(
-                    `<div class='lesson-description text-wrap'><p class='lesson-description'>${currentItemDescr}</p></div>`
+                    `<div class='d-md-none d-xs-inline small-device-div'>For lesson description and exercises, please view on desktop/laptop device.</div>
+                    <div class='lesson-description text-wrap d-none d-md-inline'><p class='lesson-description'>${currentItemDescr}</p></div>`
                   ); //Build description
                   lessonDiv.append(description); //Place description inside lesson box
                   // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
@@ -159,7 +194,7 @@ $(document).ready(function() {
                     var currentItemLinkTitle =
                       lessonData[i].fields.gitHubLink[j].fields.title;
                     var link = $(
-                      `<a href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
+                      `<a class="d-none d-md-inline" href='${currentItemLinkUrl}' target='_blank'><button class='lesson-link-button'>${currentItemLinkTitle}</button></a>`
                     ); //Build link button
                     lessonDiv.append(link); //Place link button inside lesson box
                   }
@@ -172,59 +207,53 @@ $(document).ready(function() {
           //if button has already been clicked
           if (classSelectBtn === true) {
             //clear the html below it
-            $(appendContentToThis).html(
-              `<button class="full-width">${classType} Lessons <i class="right-arrow"></i></button>`
-            );
+
+            $(appendContentToThis).html(justButtonsObj[classType]);
+
+            _updateBadgeIcon(classType);
             //set the click var to false
             classSelectBtn = false;
             //remove the class class-btn-div from appendContentToThis
-            $(appendContentToThis).removeClass("class-btn-div");
+            $(appendContentToThis).removeClass('class-btn-div');
             //change the arrow class to arrow-right
           } else if (classSelectBtn === false) {
             //else if button has not been clicked
             //set the click var to true
             classSelectBtn = true;
             //add the class class-btn-div to appendContentToThis
-            $(appendContentToThis).addClass("class-btn-div");
+            $(appendContentToThis).addClass('class-btn-div');
             //change the arrow class to arrow-down
-            $(".content")
+            $('.content')
               .find(`${appendContentToThis} .right-arrow`)
-              .removeClass("right-arrow")
-              .addClass("down-arrow");
+              .removeClass('right-arrow')
+              .addClass('down-arrow');
             // $(".content").find(`${appendContentToThis} .full-width`).removeClass("full-width").addClass("complete-full-width");
             //build content
             buildAndAppendAllClassLessons();
           }
         };
-        //<------ Class Count Indicators ---->
-        //iterate over every lesson
-        //create variables for each classtype set them to 0
-        //if the type of the class equals one of the vars
-        //increase var count
-        //find each class counter
-        //set their html to equal `(the corresponding variable)`
 
-        //<------ Event Listeners For Class Dropdown Menus ----->
-        $(".content")
-          .find(".class-javascript")
-          .on("click", "button", function() {
+        //? <------ Event Listeners For Class Dropdown Menus ----->
+        $('.content')
+          .find('.class-javascript')
+          .on('click', 'button', function() {
             // classSelectBtn = false;
             // console.log("ran!");
-            buildLesson("Javascript");
+            buildLesson('Javascript');
           });
-        $(".content")
-          .find(".class-html")
-          .on("click", "button", function() {
+        $('.content')
+          .find('.class-html')
+          .on('click', 'button', function() {
             // classSelectBtn = false;
             // console.log("ran!");
-            buildLesson("HTML");
+            buildLesson('HTML');
           });
-        $(".content")
-          .find(".class-css")
-          .on("click", "button", function() {
+        $('.content')
+          .find('.class-css')
+          .on('click', 'button', function() {
             // classSelectBtn = false;
             // console.log("ran!");
-            buildLesson("CSS");
+            buildLesson('CSS');
           });
       })
       .catch(console.error);
@@ -232,18 +261,18 @@ $(document).ready(function() {
 
   var checkForPreviousSiteVisit = function() {
     var localStorageItemCheck = localStorage.getItem(
-      "WebDev-Lessons has been here"
+      'WebDev-Lessons has been here'
     );
     //If the user is visiting the site for the first time
     if (localStorageItemCheck === null) {
       // localStorage.setItem("WebDev-Lessons has been here", true);
       // display click here to start button
-      $(".content").html(" ");
-      $(".content").prepend(
+      $('.content').html(' ');
+      $('.content').prepend(
         $("<button class='start-btn'>Click here to start</button>")
       );
       //if the button gets clicked
-      $(".start-btn").on("click", populateHomePageContent);
+      $('.start-btn').on('click', populateHomePageContent);
 
       //Else if the user has already visited the site
     } else if (localStorageItemCheck) {
