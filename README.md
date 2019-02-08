@@ -33,3 +33,7 @@ The WebDev Lessons site
  - [x] Hide:
       - [x] Video descriptions
       - [x] Exercise buttons
+      
+ - [ ] Add URL check at the beginning of the scripts.js file
+    - [ ] Home page ? display home page content
+    - [ ] Each course should have it's own page based on the URL
