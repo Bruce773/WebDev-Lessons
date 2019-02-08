@@ -15,8 +15,8 @@ The WebDev Lessons site
 
 - [ ] Maybe move the pages object to Contentful rather than having it in the scripts.js file
 
-- [ ] Work on adding a class count indicator to each dropdown menu
-    - [ ] Use Boostrap badges (https://getbootstrap.com/docs/4.2/components/badge/)
+- [x] Work on adding a class count indicator to each dropdown menu
+    - [x] Use Boostrap badges (https://getbootstrap.com/docs/4.2/components/badge/)
     
 - [ ] Work on adding a "new lesson" indicator on each dropdown menu 
     - [ ] If there is a class with a date less then a week old show "new lesson"
