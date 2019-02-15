@@ -38,7 +38,8 @@ The WebDev Lessons site
  - [ ] Add URL check at the beginning of the scripts.js file
     - [ ] Home page ? display home page content
     - [ ] Each course should have it's own page based on the URL
- - [ ] Create a courses page that gives a breif overview of each course and links to their "pages"
+ - [ ] Create a course overview page that gives a breif overview of each course and links to their "pages"
+ - [ ] Add dropdown menu to navbar with an item for each course
  - [ ] To create a course page, the code should
     - [ ] (1) Check the URL
     - [ ] (2) Clear the HTML of the page
