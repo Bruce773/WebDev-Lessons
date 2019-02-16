@@ -389,6 +389,11 @@ i {
 .mainCourseHeader{
   margin-top: 20px;
 }
-.dropdown-item a:active{
+a:active.dropdown-item {
   color: green;
+}
+.course-benefits-sub{
+  padding-left: 0px;
+  font-weight: 400;
+  color: rgb(93, 109, 66);
 }

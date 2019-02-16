@@ -1,30 +1,70 @@
-//? <-- updateBadgeIcon helper function -->
-var _updateBadgeIcon = (classType, response) => {
-  var counter = 0;
-  //iterate over every lesson
-  for (var i = 0; i < response.items.length; i++) {
-    var lessonData = response.items;
-    var type = lessonData[i].sys.contentType.sys.id;
-    //append html to $('.content') with correct data
-    //Build each lesson "box" here
-    if (type === 'lesson') {
-      var currentItemClassType = lessonData[i].fields.classType[0]; //Get the classType ie(Javascript, HTML, CSS)
-      if (currentItemClassType === classType) {
-        counter++;
-      }
-    }
+var routes = {
+  '/': homePageHTML,
+  '/contact': contactPageHTML,
+  '/about': aboutPageHTML,
+  '/courses': coursesPageHTML,
+};
+
+// Contentful stuff needed for it to run
+
+const client = contentful.createClient({
+  space: 'w7qayaxgvtbf',
+  environment: 'master', // defaults to 'master' if not set
+  accessToken:
+    '89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9',
+});
+
+var introObj = {
+  '0': [
+    'Introduction to WebDev Lessons',
+    '<iframe src="https://player.vimeo.com/video/308895468" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+  ],
+};
+
+var checkForPreviousSiteVisit = function() {
+  var localStorageItemCheck = localStorage.getItem(
+    'WebDev-Lessons has been here'
+  );
+  //If the user is visiting the site for the first time
+  if (localStorageItemCheck === null) {
+    // localStorage.setItem("WebDev-Lessons has been here", true);
+    // display click here to start button
+    $('.content').html(' ');
+    $('.content').prepend(
+      $("<button class='start-btn'>Click here to start</button>")
+    );
+    //if the button gets clicked
+    $('.start-btn').on('click', populateHomePageContent);
+
+    //Else if the user has already visited the site
+  } else if (localStorageItemCheck) {
+    //display all the content
+    populateHomePageContent();
   }
-  // console.log('ClassType: ', classType, ' Counter: ', counter);
-  $(`.${classType}-badge`).html(counter);
+};
+
+var populateHomePageContent = function() {
+  localStorage.setItem('WebDev-Lessons has been here', true);
+  //  add to localstorage that the user has been here
+  //  display all the content
+  $('.content').html(' ');
+  //Build intro video and title
+  var currentItemVideo = introObj[0][1];
+  var currentItemTitle = introObj[0][0];
+  $('.content').append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
+  $('.content').append(
+    '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
+  );
+  $('.iframe-container-intro').append(currentItemVideo);
 };
 
 //? <-- buildLesson helper function -->
 var buildLesson = function(classType, response) {
   var appendContentToThis = `.main`;
+  var classExists = false;
 
   var buildAndAppendAllClassLessons = function() {
     // debugger;
-    var classExists = false;
     $(appendContentToThis).append(
       `<h1 class="mainCourseHeader">${classType}</h1>`
     );
@@ -75,44 +115,22 @@ var buildLesson = function(classType, response) {
             lessonDiv.append(link); //Place link button inside lesson box
           }
           $(appendContentToThis).append(lessonDiv); //Place the lesson box inside the content area
+        } else if (
+          i === response.items.length - 1 &&
+          currentItemClassType !== classType &&
+          !classExists
+        ) {
+          $('.main').html(fourOhFourErroHTML);
         }
-      } else if (
-        i === response.items.length - 1 &&
-        currentItemClassType !== classType &&
-        !classExists
-      ) {
-        $('.main').html(fourOhFourErroHTML);
       }
     }
   };
   buildAndAppendAllClassLessons();
 };
-
-var _buildNavBar = function(pagesObj) {
-  //Build a navbar on each page when it loads.
-  //Strategy: Using the information from pagesObj append a div containing a list containing all
-  //the links in the pagesObj
-
-  //On page load
-  // var navDiv = $("<div class='navDiv'></div>");
-  // var navList = $("<ul class='navList'></ul>");
-  // var currentItemName;
-  // var currentItemLink;
-  // //iterate over pagesObj
-  // for (var i = 0; i < Object.keys(pagesObj).length; i++) {
-  //   // console.log(i);
-  //   currentItemName = Object.keys(pagesObj)[i];
-  //   currentItemLink = pagesObj[currentItemName];
-  //   // console.log(currentItemName, currentItemLink);
-  //   var listItem = $(
-  //     `<li class='navbarListItem'><a class='navbarLink' data-link='${currentItemLink}' href='${currentItemLink}'>${currentItemName}</a></li>`
-  //   );
-  //   navList.append(listItem);
-  // }
-  // navDiv.append(navList);
-  //
+var _buildNavBar = function() {
+  $('body').html('<div class="main"></div>');
   $('body').prepend(navbarHTML);
-  // console.log('navbar constructed');
+  _linkButtonClickToAnotherPage('navbarLink', routes);
 };
 
 var _buildFooter = function() {
@@ -127,3 +145,43 @@ var _buildFooter = function() {
 window.onpopstate = (routes) => {
   $('.main').html(routes[window.location.pathname]);
 };
+
+var _linkButtonClickToCoursePage = function(buttonClass, pagesObj) {
+  $(`.${buttonClass}`).on('click', function(event) {
+    event.preventDefault();
+    var pathName = $(this).data('link');
+    window.history.pushState({}, pathName, window.location.origin + pathName);
+    _buildNavBar();
+    $('.main').html(' ');
+    var className = $(this).data('class');
+    client.getEntries({ order: 'sys.createdAt' }).then(function(response) {
+      buildLesson(`${className}`, response);
+      _buildFooter();
+    });
+  });
+};
+
+var _linkButtonClickToAnotherPage = function(buttonClass, pagesObj) {
+  var pathArr = window.location.pathname.split('/');
+  if (!routes[`/${pathArr[1]}`]) {
+    client.getEntries({ order: 'sys.createdAt' }).then(function(response) {
+      $('.main').html(' ');
+      buildLesson(`${pathArr[1]}`, response);
+      _buildFooter();
+    });
+  }
+  $(`.${buttonClass}`).on('click', function(event) {
+    event.preventDefault();
+    var pathName = $(this).data('link');
+    window.history.pushState({}, pathName, window.location.origin + pathName);
+    _buildNavBar();
+    $('.main').html(routes[pathName]);
+    if (pathName === '/') {
+      checkForPreviousSiteVisit();
+    }
+    _linkButtonClickToCoursePage('courseLink', pagesObj);
+    _buildFooter();
+  });
+  _linkButtonClickToCoursePage('courseLink', pagesObj);
+};
+_linkButtonClickToAnotherPage('navbarLink', routes);
