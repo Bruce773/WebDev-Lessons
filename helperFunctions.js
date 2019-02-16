@@ -20,32 +20,14 @@ var _updateBadgeIcon = (classType, response) => {
 
 //? <-- buildLesson helper function -->
 var buildLesson = function(classType, response) {
-  var appendContentToThis;
+  var appendContentToThis = `.main`;
 
-  var justButtonsObj = {
-    Javascript:
-      '<button class="full-width">JavaScript Lessons <span class="Javascript-badge badge badge-light">0</span><i class="right-arrow"></i></button>',
-    HTML:
-      '<button class="full-width">HTML Lessons <span class="HTML-badge badge badge-light">0</span><i class="right-arrow"></i></button>',
-    CSS:
-      '<button class="full-width">CSS Lessons <span class="CSS-badge badge badge-light">0</span><i class="right-arrow"></i></button>',
-  };
-
-  if (classType === 'HTML') {
-    // clickVar = htmlBtn;
-    // console.log("Classtype HTML");
-    appendContentToThis = `.class-html`;
-  } else if (classType === 'CSS') {
-    // clickVar = cssBtn;
-    // console.log("Classtype CSS");
-    appendContentToThis = `.class-css`;
-  } else if (classType === 'Javascript') {
-    // clickVar = javascriptBtn
-    // console.log("Classtype Javascript");
-    appendContentToThis = `.class-javascript`;
-  }
   var buildAndAppendAllClassLessons = function() {
     // debugger;
+    var classExists = false;
+    $(appendContentToThis).append(
+      `<h1 class="mainCourseHeader">${classType}</h1>`
+    );
     for (var i = 0; i < response.items.length; i++) {
       var lessonData = response.items;
       var type = lessonData[i].sys.contentType.sys.id;
@@ -54,6 +36,7 @@ var buildLesson = function(classType, response) {
       if (type === 'lesson') {
         var currentItemClassType = lessonData[i].fields.classType[0]; //Get the classType ie(Javascript, HTML, CSS)
         if (currentItemClassType === classType) {
+          classExists = true;
           // console.log(currentItemClassType);
           var lessonDiv = $('<div class="lesson-div"></div>'); //Build box for lesson
           var currentItemTitle = lessonData[i].fields.title; //Get title
@@ -76,7 +59,7 @@ var buildLesson = function(classType, response) {
           lessonDiv.append(lessonClassType);
           var description = $(
             `<div class='d-md-none d-xs-inline small-device-div'>For lesson description and exercises, please view on desktop/laptop device.</div>
-            <div class='lesson-description text-wrap d-none d-md-inline'><p class='lesson-description'>${currentItemDescr}</p></div>`
+                  <div class='lesson-description text-wrap d-none d-md-inline'><p class='lesson-description'>${currentItemDescr}</p></div>`
           ); //Build description
           lessonDiv.append(description); //Place description inside lesson box
           // var currentItemLinkUrl = lessonData[i].fields.gitHubLink[0].fields.link
@@ -93,37 +76,16 @@ var buildLesson = function(classType, response) {
           }
           $(appendContentToThis).append(lessonDiv); //Place the lesson box inside the content area
         }
+      } else if (
+        i === response.items.length - 1 &&
+        currentItemClassType !== classType &&
+        !classExists
+      ) {
+        $('.main').html(fourOhFourErroHTML);
       }
     }
   };
-  //when the button is clicked
-  //if button has already been clicked
-  if (classSelectBtn === true) {
-    //clear the html below it
-
-    $(appendContentToThis).html(justButtonsObj[classType]);
-
-    _updateBadgeIcon(classType, response);
-    //set the click var to false
-    classSelectBtn = false;
-    //remove the class class-btn-div from appendContentToThis
-    $(appendContentToThis).removeClass('class-btn-div');
-    //change the arrow class to arrow-right
-  } else if (classSelectBtn === false) {
-    //else if button has not been clicked
-    //set the click var to true
-    classSelectBtn = true;
-    //add the class class-btn-div to appendContentToThis
-    $(appendContentToThis).addClass('class-btn-div');
-    //change the arrow class to arrow-down
-    $('.content')
-      .find(`${appendContentToThis} .right-arrow`)
-      .removeClass('right-arrow')
-      .addClass('down-arrow');
-    // $(".content").find(`${appendContentToThis} .full-width`).removeClass("full-width").addClass("complete-full-width");
-    //build content
-    buildAndAppendAllClassLessons();
-  }
+  buildAndAppendAllClassLessons();
 };
 
 var _buildNavBar = function(pagesObj) {
@@ -132,25 +94,25 @@ var _buildNavBar = function(pagesObj) {
   //the links in the pagesObj
 
   //On page load
-  var navDiv = $("<div class='navDiv'></div>");
-  var navList = $("<ul class='navList'></ul>");
-  var currentItemName;
-  var currentItemLink;
-  //iterate over pagesObj
-  for (var i = 0; i < Object.keys(pagesObj).length; i++) {
-    // console.log(i);
-    currentItemName = Object.keys(pagesObj)[i];
-    currentItemLink = pagesObj[currentItemName];
-    // console.log(currentItemName, currentItemLink);
-    var listItem = $(
-      `<li class='navbarListItem'><a class='navbarLink' data-link='${currentItemLink}' href='${currentItemLink}'>${currentItemName}</a></li>`
-    );
-    navList.append(listItem);
-  }
-  navDiv.append(navList);
+  // var navDiv = $("<div class='navDiv'></div>");
+  // var navList = $("<ul class='navList'></ul>");
+  // var currentItemName;
+  // var currentItemLink;
+  // //iterate over pagesObj
+  // for (var i = 0; i < Object.keys(pagesObj).length; i++) {
+  //   // console.log(i);
+  //   currentItemName = Object.keys(pagesObj)[i];
+  //   currentItemLink = pagesObj[currentItemName];
+  //   // console.log(currentItemName, currentItemLink);
+  //   var listItem = $(
+  //     `<li class='navbarListItem'><a class='navbarLink' data-link='${currentItemLink}' href='${currentItemLink}'>${currentItemName}</a></li>`
+  //   );
+  //   navList.append(listItem);
+  // }
+  // navDiv.append(navList);
   //
-  $('body').prepend(navDiv);
-  console.log('navbar constructed');
+  $('body').prepend(navbarHTML);
+  // console.log('navbar constructed');
 };
 
 var _buildFooter = function() {
@@ -159,12 +121,7 @@ var _buildFooter = function() {
   var hr = $('<hr></hr>');
   var footer = $(`<p>Copyright ${year} &copy; WebDev Lessons</p>`).prepend(hr);
   $('.main').append(footer);
-  console.log('footer constructed');
-};
-
-let onNavItemClick = (pathName, routes) => {
-  window.history.pushState({}, pathName, window.location.origin + pathName);
-  $('.main').html(routes[pathName]);
+  // console.log('footer constructed');
 };
 
 window.onpopstate = (routes) => {

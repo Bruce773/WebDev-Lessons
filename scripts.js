@@ -22,6 +22,7 @@ $(document).ready(function() {
     Home: '/',
     Contact: '/contact',
     About: '/about',
+    Courses: '/courses',
   };
   var introObj = {
     '0': [
@@ -34,6 +35,7 @@ $(document).ready(function() {
     '/': homePageHTML,
     '/contact': contactPageHTML,
     '/about': aboutPageHTML,
+    '/courses': coursesPageHTML,
   };
 
   // console.log(window.location.pathname);
@@ -43,15 +45,6 @@ $(document).ready(function() {
   _buildFooter();
 
   var populateHomePageContent = function() {
-    var buttonsObj = {
-      Javascript:
-        '<div class="class-javascript"><button class="full-width">JavaScript Lessons <span class="Javascript-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>',
-      HTML:
-        '<div class="class-html"><button class="full-width">HTML Lessons <span class="HTML-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>',
-      CSS:
-        '<div class="class-css"><button class="full-width">CSS Lessons <span class="CSS-badge badge badge-light">0</span><i class="right-arrow"></i></button></div>',
-    };
-    //iterate over contentObj
     localStorage.setItem('WebDev-Lessons has been here', true);
     //  add to localstorage that the user has been here
     //  display all the content
@@ -64,48 +57,6 @@ $(document).ready(function() {
       '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
     );
     $('.iframe-container-intro').append(currentItemVideo);
-
-    //* iterate over buttonsObj and append the lesson buttons to .content
-    for (var i = 0; i < Object.keys(buttonsObj).length; i++) {
-      $('.content').append($(buttonsObj[Object.keys(buttonsObj)[i]]));
-    }
-
-    //Build rest of content
-    client
-      .getEntries({ order: 'sys.createdAt' })
-      .then(function(response) {
-        // console.log(response.items);
-
-        //? <------ Class Count Indicators ---->
-
-        _updateBadgeIcon('HTML', response);
-        _updateBadgeIcon('Javascript', response);
-        _updateBadgeIcon('CSS', response);
-
-        //? <------ Event Listeners For Class Dropdown Menus ----->
-        $('.content')
-          .find('.class-javascript')
-          .on('click', 'button', function() {
-            // classSelectBtn = false;
-            // console.log("ran!");
-            buildLesson('Javascript', response);
-          });
-        $('.content')
-          .find('.class-html')
-          .on('click', 'button', function() {
-            // classSelectBtn = false;
-            // console.log("ran!");
-            buildLesson('HTML', response);
-          });
-        $('.content')
-          .find('.class-css')
-          .on('click', 'button', function() {
-            // classSelectBtn = false;
-            // console.log("ran!");
-            buildLesson('CSS', response);
-          });
-      })
-      .catch(console.error);
   };
 
   var checkForPreviousSiteVisit = function() {
@@ -132,16 +83,48 @@ $(document).ready(function() {
   checkForPreviousSiteVisit();
 
   var _linkButtonClickToAnotherPage = function(buttonClass, routes) {
+    var pathArr = window.location.pathname.split('/')
+    console.log(pathArr[1], routes[pathArr[1]]);
+    if(!routes[`/${pathArr[1]}`]){
+      client.getEntries({ order: 'sys.createdAt' }).then(function(response) {
+        $('.main').html(' ');
+        buildLesson(`${pathArr[1]}`, response);
+        _buildFooter();
+      });
+    }
     $(`.${buttonClass}`).on('click', function(event) {
       event.preventDefault();
-      console.log($(this).data('link'));
-      onNavItemClick($(this).data('link'), routes);
+      var pathName = $(this).data('link');
+      // onLinkButtonClick($(this).data('link'), routes);
+      window.history.pushState({}, pathName, window.location.origin + pathName);
+      $('.main').html(routes[pathName]);
       _buildNavBar(pagesObj);
-      if ($(this).data('link') === '/') {
+      if (pathName === '/') {
         checkForPreviousSiteVisit();
       }
+      // if (pathName === '/courses') {
+      //   _linkButtonClickToCoursePage('courseLink');
+      // }
+      _linkButtonClickToCoursePage('courseLink');
       _buildFooter();
     });
   };
   _linkButtonClickToAnotherPage('navbarLink', routes);
+
+  var _linkButtonClickToCoursePage = function(buttonClass) {
+    $(`.${buttonClass}`).on('click', function(event) {
+      event.preventDefault();
+      var pathName = $(this).data('link');
+      // console.log(pathName);
+      window.history.pushState({}, pathName, window.location.origin + pathName);
+      $('.main').html(' ');
+      _buildNavBar(pagesObj);
+      var className = $(this).data('class');
+      // console.log($(this).data('class'));
+      client.getEntries({ order: 'sys.createdAt' }).then(function(response) {
+        buildLesson(`${className}`, response);
+        _buildFooter();
+      });
+    });
+  };
 });

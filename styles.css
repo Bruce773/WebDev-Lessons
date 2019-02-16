@@ -350,3 +350,45 @@ i {
 .badge{
   margin-right: 5px;
 }
+.course{
+  background-color: rgb(178, 233, 185);
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.course-header{
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.course-description{
+  margin: 5px 10px 5px 10px;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.course-image{
+  border-radius: 4px;
+}
+
+.course-benefits{
+  /* text-align: center;
+  margin:auto; */
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  list-style: inside;
+  padding-left:0px;
+}
+.course-benefits li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mainCourseHeader{
+  margin-top: 20px;
+}
+.dropdown-item a:active{
+  color: green;
+}
