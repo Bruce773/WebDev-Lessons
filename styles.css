@@ -1,17 +1,21 @@
 body {
   text-align: center;
-  background-image: url("images/hex.png");
+  /* background-color: rgb(238, 238, 238); */
+  /* background-image: url("images/hex.png"); */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 h1,
 h2,
 h3 {
-  font-family: "Thasadith", sans-serif;
+  /* font-family: "Thasadith", sans-serif; */
+  font-weight: 200;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 h1 {
   padding-top: 45px;
 }
 button {
-  background-color: rgba(107, 151, 107, 0.719);
+  background-color: rgb(76, 141, 86);
   border-radius: 6px;
   padding: 6px;
   margin-right: 5px;
@@ -33,8 +37,7 @@ a:hover {
   color: white;
 }
 p {
-  font-family: "Thasadith", sans-serif;
-  font-weight: bold;
+  /* font-family: "Thasadith", sans-serif; */
 }
 .main-header {
   margin-top: 20px;
@@ -55,51 +58,40 @@ p {
   border-radius: 8px;
   box-shadow: 7px 7px lightgrey;
 }
+@media only screen and (max-width: 540px) {
+  .headers-container {
+    width: 70%;
+  }
+  .headers-container h2 {
+    font-size: 25px;
+  }
+  .headers-container h3 {
+    font-size: 20px;
+  }
+}
 .main {
   padding: 10px;
-  background-color: rgb(238, 238, 238);
+  /* background-color: rgb(238, 238, 238); */
   width: 70%;
   margin: auto;
   border-radius: 10px;
 }
+@media only screen and (max-width: 540px) {
+  .main {
+    width: 100%;
+  }
+}
 .welcome-h2 {
-  font-weight: normal;
+  font-weight: 200;
   font-size: 1.5rem;
 }
 .welcome-h3 {
-  font-weight: normal;
+  font-weight: 200;
   font-size: 1.5rem;
 }
 .intro-title {
   margin-top: 40px;
   margin-bottom: 0px;
-}
-.navbarListItem a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-}
-.navbarListItem {
-  padding-left: 10px;
-  float: left;
-}
-.navbarListItem a:hover {
-  background-color: #111;
-}
-.navList {
-  z-index: 99999;
-  left: 0px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
 }
 .content {
   margin-top: 15px;
@@ -147,8 +139,10 @@ p {
   width: 100%;
 }
 .lesson-div {
-  background-color: rgb(178, 233, 185);
-  padding: 10px;
+  /* background-color: rgb(178, 233, 185); */
+  background-color: rgba(228, 224, 224, 0.212);
+  box-shadow: 10px 10px 8px #888888;
+  padding: 15px;
   margin: 20px;
   border-radius: 8px;
   min-height: 300px;
@@ -180,17 +174,24 @@ p {
   margin-top: 10px;
 }
 .lesson-title {
+  color: rgb(76, 141, 86);
   font-size: 20px;
   display: inline-block;
   text-align: right;
+  font-weight: bolder;
 }
 .lesson-title h3 {
-  font-size: 1.8rem;
-  font-weight: bolder;
+  font-size: 2rem;
+  font-weight: 500;
   padding: 6px;
   margin: auto;
   margin-bottom: 5px;
   text-align: center;
+}
+@media only screen and (max-width: 540px) {
+  .lesson-title h3{
+    font-size: 20px;
+  }
 }
 .lesson-description {
   font-size: 1.4rem;
@@ -198,6 +199,7 @@ p {
   padding-top: 6px;
   padding-bottom: 10px;
   margin: auto;
+  font-weight: 100;
 }
 .lesson-link-button {
   display: block;
@@ -278,23 +280,20 @@ i {
 }
 #carousel {
   margin: auto;
-  margin-top: 50px;
-  width: 80%;
+  width: 70%;
   height: 270px;
   overflow: hidden;
 }
 .c-header {
   display: inline-block;
-  font-weight: bolder;
-  font-size: 2em;
+  font-size: 30px;
 }
 .c-header-smaller {
-  font-weight: bolder;
-  font-size: 1.9em;
+  font-size: 25px;
 }
 .c-paragraph {
   margin-top: 5px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   max-width: 70%;
   margin: auto;
   margin-bottom: 10px;
@@ -329,11 +328,12 @@ i {
   width: 3em;
   height: auto;
 }
-.about-p-bio{
+.about-p-bio {
   font-size: 120%;
   display: block;
+  font-weight: 100;
 }
-.bio-container{
+.bio-container {
   width: 90%;
   margin: auto;
   margin-top: 5px;
@@ -343,57 +343,99 @@ i {
   border-radius: 10px;
   background-color: rgb(194, 191, 191);
 }
-.about-page-bio-container{
-  padding-right:0px;
+.about-page-bio-container {
+  padding-right: 0px;
   padding-left: 0px;
 }
-.badge{
+.badge {
   margin-right: 5px;
 }
-.course{
-  background-color: rgb(178, 233, 185);
+.course {
   padding: 15px;
   margin: 15px;
   border-radius: 5px;
+  background-color: rgba(228, 224, 224, 0.212);
+  box-shadow: 10px 10px 8px #888888;
 }
 
-.course-header{
-  font-weight: bolder;
+.course-header {
+  color: rgb(76, 141, 86);
+  font-weight: bold;
   font-size: 2.5rem;
 }
 
-.course-description{
-  margin: 5px 10px 5px 10px;
+.course-description {
+  margin: auto;
+  width: 70%;
   font-size: 1.2rem;
   font-weight: 100;
 }
 
-.course-image{
+.course-image {
   border-radius: 4px;
 }
 
-.course-benefits{
-  /* text-align: center;
-  margin:auto; */
-  margin-top: 5px;
+.course-benefits {
+  margin: auto;
+  padding: 18px;
+  text-align: center;
+  border-width: 1px;
+  border: solid;
+  border-radius: 10px;
+  border-color: rgb(76, 141, 86);
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-weight: 600;
   font-size: 1.2rem;
-  text-align: center;
-  list-style: inside;
-  padding-left:0px;
+  width: 70%;
 }
-.course-benefits li:hover{
-  text-decoration: underline;
-  cursor: pointer;
+@media only screen and (max-width: 540px) {
+  .course-benefits {
+    padding: 8px;
+    padding-left: 15px;
+    width: 100%;
+  }
+  .course-benefits-sub {
+    padding-left: inherit;
+  }
 }
-.mainCourseHeader{
+.course-benefits li {
+  font-weight: 100;
+  text-align: left;
+}
+.mainCourseHeader {
   margin-top: 20px;
 }
 a:active.dropdown-item {
   color: green;
 }
-.course-benefits-sub{
-  padding-left: 0px;
+.course-benefits-sub {
+  padding-left: 30px;
   font-weight: 400;
   color: rgb(93, 109, 66);
+}
+.sm-spacer {
+  margin-top: 70px;
+}
+.no-padding-top {
+  padding-top: 3px;
+}
+.home-page-h3{
+  font-size: 30px;
+  width: 50%;
+  /* margin: 5px 10px 20px 10px; */
+  margin: auto;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+@media only screen and (max-width: 540px) {
+  .home-page-h3 {
+    width: 100%;
+    font-size: 22px;
+  }
+}
+.lg-btn{
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
 }

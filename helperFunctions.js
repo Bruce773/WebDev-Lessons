@@ -1,6 +1,6 @@
 var routes = {
   '/': homePageHTML,
-  '/contact': contactPageHTML,
+  // '/contact': contactPageHTML,
   '/about': aboutPageHTML,
   '/courses': coursesPageHTML,
 };
@@ -21,42 +21,42 @@ var introObj = {
   ],
 };
 
-var checkForPreviousSiteVisit = function() {
-  var localStorageItemCheck = localStorage.getItem(
-    'WebDev-Lessons has been here'
-  );
-  //If the user is visiting the site for the first time
-  if (localStorageItemCheck === null) {
-    // localStorage.setItem("WebDev-Lessons has been here", true);
-    // display click here to start button
-    $('.content').html(' ');
-    $('.content').prepend(
-      $("<button class='start-btn'>Click here to start</button>")
-    );
-    //if the button gets clicked
-    $('.start-btn').on('click', populateHomePageContent);
+// var checkForPreviousSiteVisit = function() {
+//   var localStorageItemCheck = localStorage.getItem(
+//     'WebDev-Lessons has been here'
+//   );
+//   //If the user is visiting the site for the first time
+//   if (localStorageItemCheck === null) {
+//     // localStorage.setItem("WebDev-Lessons has been here", true);
+//     // display click here to start button
+//     $('.content').html(' ');
+//     $('.content').prepend(
+//       $("<button class='start-btn'>Click here to start</button>")
+//     );
+//     //if the button gets clicked
+//     $('.start-btn').on('click', populateHomePageContent);
 
-    //Else if the user has already visited the site
-  } else if (localStorageItemCheck) {
-    //display all the content
-    populateHomePageContent();
-  }
-};
+//     //Else if the user has already visited the site
+//   } else if (localStorageItemCheck) {
+//     //display all the content
+//     populateHomePageContent();
+//   }
+// };
 
-var populateHomePageContent = function() {
-  localStorage.setItem('WebDev-Lessons has been here', true);
-  //  add to localstorage that the user has been here
-  //  display all the content
-  $('.content').html(' ');
-  //Build intro video and title
-  var currentItemVideo = introObj[0][1];
-  var currentItemTitle = introObj[0][0];
-  $('.content').append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
-  $('.content').append(
-    '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
-  );
-  $('.iframe-container-intro').append(currentItemVideo);
-};
+// var populateHomePageContent = function() {
+//   localStorage.setItem('WebDev-Lessons has been here', true);
+//   //  add to localstorage that the user has been here
+//   //  display all the content
+//   $('.content').html(' ');
+//   //Build intro video and title
+//   var currentItemVideo = introObj[0][1];
+//   var currentItemTitle = introObj[0][0];
+//   $('.content').append($(`<h2 class='intro-title'>${currentItemTitle}</h2>`));
+//   $('.content').append(
+//     '<div class="iframe-container-intro embed-responsive embed-responsive-4by3"></div>'
+//   );
+//   $('.iframe-container-intro').append(currentItemVideo);
+// };
 
 //? <-- buildLesson helper function -->
 var buildLesson = function(classType, response) {
@@ -176,9 +176,9 @@ var _linkButtonClickToAnotherPage = function(buttonClass, pagesObj) {
     window.history.pushState({}, pathName, window.location.origin + pathName);
     _buildNavBar();
     $('.main').html(routes[pathName]);
-    if (pathName === '/') {
-      checkForPreviousSiteVisit();
-    }
+    // if (pathName === '/') {
+    //   checkForPreviousSiteVisit();
+    // }
     _linkButtonClickToCoursePage('courseLink', pagesObj);
     _buildFooter();
   });

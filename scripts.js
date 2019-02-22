@@ -17,10 +17,10 @@ $(document).ready(function() {
   };
 
   _buildNavBar();
+  $('.main').html(routes[window.location.pathname]);
   _buildFooter();
 
-  checkForPreviousSiteVisit();
+  // checkForPreviousSiteVisit();
 
   _linkButtonClickToAnotherPage('navbarLink', pagesObj);
-  $('.main').html(routes[window.location.pathname]);
 });

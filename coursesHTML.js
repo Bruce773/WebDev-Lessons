@@ -1,8 +1,7 @@
 var coursesPageHTML = `
-<h1 class="main-header">Courses</h1>
+<div class='sm-spacer'></div>
 <div class="course">
   <h2 class="course-header">JavaScript</h2>
-  <img class="course-image img-fluid" src="images/javascriptCourse.jpg" />
   <div class="course-description">
     This course covers everything you'll need to start coding in the JavaScript
     language. We begin by introducing the tools you'll use as a 21st-century web
@@ -10,12 +9,20 @@ var coursesPageHTML = `
     and of course JavaScript! We then cover the fundamentals of the JavaScript
     language from functions to data structures and beyond. You'll learn:
     <ul class="course-benefits">
-      <li>Functions</li>
-      <li>Data Types in JavaScript</li>
-      <li>Objects and Arrays</li>
-      <li>Iteration</li>
-      <li>Debugging skills</li>
-      <li>And much more</li>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md' >
+            <li>Functions</li>
+            <li>Data Types in JavaScript</li>
+            <li>Objects and Arrays</li>
+          </div>
+          <div class='col-md'>
+            <li>Iteration</li>
+            <li>Debugging skills</li>
+            <li>And much more</li>
+          </div>
+        </div>
+      </div>
     </ul>
   </div>
   <span class="course-level"></span>
@@ -25,28 +32,35 @@ var coursesPageHTML = `
 </div>
 <div class="course">
   <h2 class="course-header">HTML</h2>
-  <img class="course-image img-fluid" src="images/htmlCourse.jpg" />
   <div class="course-description">
-  This course is perfect for brand new web developers who have little to no experience. Learn how to fluently program in the langue used at the heart of every website. This course covers:
+  This course is perfect for brand new web developers who have little to no experience. Learn how to fluently program in the language used at the heart of every website. This course covers:
   <ul class="course-benefits">
-  <li>Some Git and GitHub</li>
-  <li>Over 20 different HTML tags including:
-  <ul class="course-benefits-sub">
-  <li>Headers</li>
-    <li>Anchor tags</li>
-    <li>Lists</li>
-    <li>Tables</li>
-    <li>Some HTML styling tags</li>
-    </ul>
-  </li>
-  <li>The HTML Skeleton</li>
-  <li>HTML Semantics</li>
-  <li>Tag properties</li>
-  <li>And much more</li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <li>
+          Over 20 different HTML tags including:
+          <ul class="course-benefits-sub">
+            <li>Headers</li>
+            <li>Anchor tags</li>
+            <li>Lists</li>
+            <li>Tables</li>
+            <li>Some HTML styling tags</li>
+          </ul>
+        </li>
+      </div>
+      <div class="col-md">
+        <li>Some Git and GitHub</li>
+        <li>The HTML Skeleton</li>
+        <li>HTML Semantics</li>
+        <li>Tag properties</li>
+        <li>And much more</li>
+      </div>
+    </div>
   </div>
+</ul>
   <span class="course-level"></span>
-  <button data-link="/HTML" data-class="HTML" class="courseLink">
+  <button data-link="/HTML" data-class="HTML" class="courseLink ">
     Start Course
   </button>
 </div>`
