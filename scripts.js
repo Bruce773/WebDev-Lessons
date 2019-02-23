@@ -9,18 +9,8 @@ $(document).ready(function() {
   //https://cdn.contentful.com/spaces/w7qayaxgvtbf/entries?access_token=89920bb55647070de973bbff6554a38e7e95e8c2f65bbc2fa868476bc2d488e9&content_type=lesson&select=fields.title
   //Change the word title on the last line to the field you want to get data from
 
-  var pagesObj = {
-    Home: '/',
-    Contact: '/contact',
-    About: '/about',
-    Courses: '/courses',
-  };
-
   _buildNavBar();
   $('.main').html(routes[window.location.pathname]);
   _buildFooter();
 
-  // checkForPreviousSiteVisit();
-
-  _linkButtonClickToAnotherPage('navbarLink', pagesObj);
 });
