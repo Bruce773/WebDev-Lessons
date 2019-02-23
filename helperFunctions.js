@@ -93,7 +93,7 @@ var buildLesson = function(classType, response) {
 var _buildNavBar = function() {
   $('body').html('<div class="main"></div>');
   $('body').prepend(navbarHTML);
-  _linkButtonClickToAnotherPage('navbarLink', routes);
+  _linkButtonClickToAnotherPage('navbarLink');
 };
 
 var _buildFooter = function() {
@@ -147,4 +147,4 @@ var _linkButtonClickToAnotherPage = function(buttonClass) {
   });
   _linkButtonClickToCoursePage('courseLink');
 };
-_linkButtonClickToAnotherPage('navbarLink', routes);
+_linkButtonClickToAnotherPage('navbarLink');

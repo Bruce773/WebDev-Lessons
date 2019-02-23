@@ -13,4 +13,7 @@ $(document).ready(function() {
   $('.main').html(routes[window.location.pathname]);
   _buildFooter();
 
+  //TODO: Fix Courses button on home page not working after navigating to the home page from somewhere else
+
+  _linkButtonClickToAnotherPage('navbarLink');
 });
