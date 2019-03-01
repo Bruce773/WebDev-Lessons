@@ -36,9 +36,9 @@ a:hover {
   text-decoration: none;
   color: white;
 }
-p {
-  /* font-family: "Thasadith", sans-serif; */
-}
+/* p {
+  font-family: "Thasadith", sans-serif;
+} */
 .main-header {
   margin-top: 20px;
   font-size: 40px;
@@ -249,14 +249,14 @@ i {
   margin-bottom: 2.7px;
 }
 
-.right-arrow {
+/* .right-arrow {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 .down-arrow {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-}
+} */
 .class-btn-div {
   background-color: grey;
   width: 90%;
@@ -356,15 +356,16 @@ i {
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
-  background-color: rgb(194, 191, 191);
+  background-color: rgba(228, 224, 224, 0.212);
+  box-shadow: 10px 10px 8px #888888;
 }
 .about-page-bio-container {
   padding-right: 0px;
   padding-left: 0px;
 }
-.badge {
+/* .badge {
   margin-right: 5px;
-}
+} */
 .course {
   padding: 15px;
   margin: 15px;
