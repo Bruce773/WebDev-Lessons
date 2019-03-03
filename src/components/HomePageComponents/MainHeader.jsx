@@ -1,17 +1,19 @@
+import React from 'react';
+
 const MainHeader = () => (
   <div>
-    <h1 class="main-header">WebDev Lessons</h1>
-    <h2 class="main-sub-header">(Lessons in Website Development)</h2>
-    <div class="container">
-      <div class="row col-sm-20">
-        <div class="headers-container">
-          <div class="row justify-content-sm-center">
-            <h2 class="welcome-h2 text-wrap col-sm-auto">
+    <h1 className="main-header">WebDev Lessons</h1>
+    <h2 className="main-sub-header">(Lessons in Website Development)</h2>
+    <div className="container">
+      <div className="row col-sm-20">
+        <div className="headers-container">
+          <div className="row justify-content-sm-center">
+            <h2 className="welcome-h2 text-wrap col-sm-auto">
               Welcome to WebDev Lessons!
             </h2>
           </div>
-          <div class="row justify-content-md-center">
-            <h3 class="welcome-h3 text-wrap col-sm-auto">
+          <div className="row justify-content-md-center">
+            <h3 className="welcome-h3 text-wrap col-sm-auto">
               Learn JavaScript, HTML, CSS, and more!
             </h3>
           </div>

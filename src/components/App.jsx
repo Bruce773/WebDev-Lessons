@@ -1,5 +1,6 @@
 import React from 'react';
-import HomePage from './HomePage';
+import NavBar from './NavBar.jsx';
+import HomePage from './HomePage.jsx';
 import LessonList from './LessonList.jsx';
 
 export default class App extends React.Component {
@@ -18,6 +19,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    return <HomePage />;
+    return (
+      <div>
+        <NavBar />
+        <HomePage />
+      </div>
+    );
   }
 }
