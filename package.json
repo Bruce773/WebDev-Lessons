@@ -1,3 +1,17 @@
 {
-  "start": "live-server --port='3000' --entry-file='index.html'"
+  "scripts": {
+    "start": "live-server --port='3000' --entry-file='index.html'",
+    "build": "webpack -d --watch"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-router": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
 }
