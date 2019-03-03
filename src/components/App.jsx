@@ -1,22 +1,23 @@
 import React from 'react';
-import LessonList from './LessonList.jsx'
+import HomePage from './HomePage';
+import LessonList from './LessonList.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      classType: null
-    }
+      classType: null,
+    };
   }
 
-  _renderClass(classType){
+  _renderClass(classType) {
     this.setState({
-      classType: classType
+      classType: classType,
     });
   }
 
-  render(){
-    
+  render() {
+    return <HomePage />;
   }
 }
