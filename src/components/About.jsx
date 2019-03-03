@@ -2,22 +2,22 @@ import React from 'react';
 
 const About = () => (
   <div>
-    <h1 class="main-header">About</h1>
-    <div class="container about-page-bio-container">
-      <div class="bio-container">
+    <h1 className="main-header">About</h1>
+    <div className="container about-page-bio-container">
+      <div className="bio-container">
         <h3>Bruce Johnson</h3>
-        <div class="row no-gutters about-bio-section">
-          <div class="col-lg-3">
-            <div class="headshot-container">
+        <div className="row no-gutters about-bio-section">
+          <div className="col-lg-3">
+            <div className="headshot-container">
               <img
                 src="../../images/headshot.jpeg"
                 alt="Headshot Img"
-                class="img-fluid"
+                className="img-fluid"
               />
             </div>
           </div>
-          <div class="col-lg-9">
-            <p class="about-p-bio">
+          <div className="col-lg-9">
+            <p className="about-p-bio">
               Bruce Johnson began coding when he was 13 years old practicing the
               Python language. He has since learned HTML, CSS, Arduino (a
               derivative of C++), and JavaScript. In 2015, Bruce founded a class
@@ -42,24 +42,24 @@ const About = () => (
       </div>
     </div>
     <hr />
-    <h1 class="no-padding-top">Contact Me</h1>
-    <div class="container">
-      <div class="row justify-content-center">
-        <h2 class="green-accent">
+    <h1 className="no-padding-top">Contact Me</h1>
+    <div className="container">
+      <div className="row justify-content-center">
+        <h2 className="green-accent">
           Send me a message with your question(s) and I will get back to you as
           soon as I can.
         </h2>
       </div>
-      <div class="row justify-content-center row-12 row-sm-4">
-        <h3 class="contact-page-header">
-          Email: <span class="italic-md">bruce@webdevlessons.com</span>
+      <div className="row justify-content-center row-12 row-sm-4">
+        <h3 className="contact-page-header">
+          Email: <span className="italic-md">bruce@webdevlessons.com</span>
         </h3>
       </div>
-      <div class="row justify-content-center">
-        <h3 class="contact-page-header">
+      <div className="row justify-content-center">
+        <h3 className="contact-page-header">
           Join the WebDev Lessons Slack group:
         </h3>
-        <button class="margin-left">
+        <button className="margin-left">
           <a
             href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
             target="_blank"

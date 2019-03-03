@@ -3,9 +3,10 @@ import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 import HomePage from './HomePage.jsx';
 import About from '../components/About.jsx';
-import Courses from '../components/Courses.jsx'
+import Courses from '../components/Courses.jsx';
 import LessonList from './LessonList.jsx';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import FourOFour from './FourOFour.jsx';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,11 +28,12 @@ export default class App extends React.Component {
       <Router>
         <div className="main">
           <NavBar />
-
-          <Route path="/" exact component={HomePage} />
-          <Route path="/about/" component={About} />
-          <Route path='/courses/' component={Courses} />
-
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/about/" component={About} />
+            <Route path="/courses/" component={Courses} />
+            <Route component={FourOFour} />
+          </Switch>
           <Footer />
         </div>
       </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const HomePageBody = () => (
   <div>
@@ -18,9 +19,11 @@ const HomePageBody = () => (
     <h3 className="home-page-h3">
       Check out the Introduction Overview page to see a full list of our courses
     </h3>
-    <button data-link="/courses" className="navbarLink lg-btn">
-      Courses
-    </button>
+    <Link to="/courses/">
+      <button data-link="/courses" className="navbarLink lg-btn">
+        Courses
+      </button>
+    </Link>
     <div className="container">
       <div className="row justify-content-center d-none d-lg-inline">
         <div
