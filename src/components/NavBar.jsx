@@ -35,13 +35,7 @@ const NavBar = () => (
                 className="dropdown-menu dropdown-menu-right"
                 aria-labelledby="navbarDropdown"
               >
-                <a
-                  className="dropdown-item navbarLink"
-                  data-link="/courses"
-                  href="/courses"
-                >
-                  Introduction Overview
-                </a>
+                <Link className="dropdown-item" to="/courses/">Introduction Overview</Link>
                 <div className="dropdown-divider" />
                 <a
                   className="dropdown-item courseLink"
