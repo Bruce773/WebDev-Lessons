@@ -35,7 +35,7 @@ const HomePageBody = () => (
                 <div className="row">
                   <div className="col-12">
                     <div className="c-headshot-container">
-                      <img src="images/slack-logo-icon.png" />
+                      <img src="./../../images/slack-logo-icon.png" />
                     </div>
                     <h3 className="c-header">Join our Slack group!</h3>
                     <p className="c-paragraph">
