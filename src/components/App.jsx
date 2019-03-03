@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar.jsx';
+import Footer from './Footer.jsx';
 import HomePage from './HomePage.jsx';
 import LessonList from './LessonList.jsx';
 
@@ -23,6 +24,7 @@ export default class App extends React.Component {
       <div>
         <NavBar />
         <HomePage />
+        <Footer />
       </div>
     );
   }

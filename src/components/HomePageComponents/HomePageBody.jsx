@@ -8,10 +8,10 @@ const HomePageBody = () => (
           src="https://player.vimeo.com/video/308895468"
           width="640"
           height="360"
-          frameBorder="0"
+          frameorder="0"
           webkitallowfullscreen=""
           mozallowfullscreen=""
-          allowFullScreen=""
+          allowullcreen=""
         />
       </div>
     </div>
