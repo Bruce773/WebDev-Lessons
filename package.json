@@ -8,6 +8,7 @@
     "babel-core": "6.24.1",
     "babel-plugin-react": "1.0.0",
     "babel-preset-react": "6.24.1",
+    "contentful": "^7.3.0",
     "history": "^4.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",

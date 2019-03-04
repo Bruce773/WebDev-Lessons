@@ -6,6 +6,7 @@ import About from '../components/About.jsx';
 import Courses from '../components/Courses.jsx';
 import LessonList from './LessonList.jsx';
 import FourOFour from './FourOFour.jsx';
+import JavaScriptLesson from '../components/JavaScriptLesson.jsx';
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends React.Component {
@@ -32,6 +33,7 @@ export default class App extends React.Component {
             <Route path="/" exact component={HomePage} />
             <Route path="/about/" component={About} />
             <Route path="/courses/" component={Courses} />
+            <Route path="/javascript/" component={JavaScriptLesson} />
             <Route component={FourOFour} />
           </Switch>
           <Footer />

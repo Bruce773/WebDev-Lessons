@@ -1,3 +1,5 @@
+const contentful = require("contentful");
+
 const client = contentful.createClient({
   space: 'w7qayaxgvtbf',
   environment: 'master', // defaults to 'master' if not set
