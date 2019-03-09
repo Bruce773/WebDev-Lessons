@@ -1,10 +1,8 @@
-import client from "../src/config/contentfulConfig.js";
+// import client from '../src/config/contentfulConfig.js';
 
-var response;
+// var response = '_blank';
 
-client.getEntries({ order: 'sys.createdAt' }).then((returnedData) => {
-  response = returnedData;
-});
+// response = client.getEntries({ order: 'sys.createdAt' });
 
-
-export default response;
+// console.log(response);
+// export default response;

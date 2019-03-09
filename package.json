@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "live-server --port='3000' --entry-file='index.html'",
+    "start": "live-server --port='8080' --entry-file='index.html'",
     "build": "webpack -d --watch",
-    "dev": "webpack -d --watch & live-server"
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
     "babel-core": "6.24.1",
@@ -10,6 +10,7 @@
     "babel-preset-react": "6.24.1",
     "contentful": "^7.3.0",
     "history": "^4.7.2",
+    "path": "^0.12.7",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router": "^4.3.1",
@@ -24,6 +25,7 @@
     "babel-preset-stage-0": "6.24.1",
     "react-dom": "0.14.9",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }

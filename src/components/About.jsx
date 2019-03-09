@@ -27,7 +27,7 @@ const About = () => (
               <br />
               <br />
               In 2017, Bruce started as an intern at Yoga International. Since
-              most of their business takes place online, many of Bruce\'s work
+              most of their business takes place online, many of Bruce's work
               hours were spent taking courses in Bootstrap, JavaScript, CSS,
               HTML, and jQuery. With these new skills, Bruce began his journey
               into web development. In late 2018, he started training through a
