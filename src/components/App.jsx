@@ -7,7 +7,13 @@ import Courses from '../components/Courses.jsx';
 import LessonList from './LessonList.jsx';
 import FourOFour from './FourOFour.jsx';
 import JavaScriptLesson from '../components/JavaScriptLesson.jsx';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,10 +30,21 @@ export default class App extends React.Component {
     });
   }
 
+  RemoveTrailingSlash({ location }) {
+    const { pathname } = location;
+
+    if (pathname.substr(-1) === '/') {
+      return <Redirect to={pathname.substr(0, pathname.length - 1)} />;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <Router>
         <div className="main">
+        <Route pattern="/" render={this.RemoveTrailingSlash} />
           <NavBar />
           <Switch>
             <Route path="/" exact component={HomePage} />
