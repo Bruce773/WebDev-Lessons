@@ -44,7 +44,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="main">
-        <Route pattern="/" render={this.RemoveTrailingSlash} />
+          <Route pattern="/" render={this.RemoveTrailingSlash} />
           <NavBar />
           <Switch>
             <Route path="/" exact component={HomePage} />
