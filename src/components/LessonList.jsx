@@ -38,7 +38,7 @@ class LessonList extends React.Component {
                 classType={fields.classType[0]}
               />
             ))
-          : 'Loading'}
+          : <h2>Loading...</h2>}
       </div>
     );
   }
