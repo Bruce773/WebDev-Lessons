@@ -117,6 +117,8 @@ class LessonList extends React.Component {
                 lessonTitle={fields.title}
                 classDescription={fields.description}
                 lessonLink={fields.gitHubLink}
+                lessonVideo={[fields.videoIframeLink]}
+                classType={fields.classType[0]}
               />
             ))
           : 'Loading'}

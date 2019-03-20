@@ -23,8 +23,8 @@ var Lesson = ({
       <p className="lesson-description">{classDescription}</p>
     </div>
     {lessonLink.map((item) => (
-      <a className="d-none d-md-inline" href={item.link} target="_blank">
-        <button className="lesson-link-button">{item.title}</button>
+      <a className="d-none d-md-inline" href={item.fields.link} target="_blank">
+        <button className="lesson-link-button">{item.fields.title}</button>
       </a>
     ))}
   </div>
