@@ -11,9 +11,10 @@ var Lesson = ({
     <div className="lesson-title text-wrap">
       <h3>{lessonTitle}</h3>
     </div>
-    <div className="iframe-container embed-responsive embed-responsive-4by3">
-      {lessonVideo}
-    </div>
+    <div
+      dangerouslySetInnerHTML={{ __html: lessonVideo }}
+      className="iframe-container embed-responsive embed-responsive-4by3"
+    />
     <div className="class-type">{classType}</div>
     <div className="d-md-none d-xs-inline small-device-div">
       For lesson description and exercises, please view on desktop/laptop

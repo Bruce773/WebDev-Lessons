@@ -44,14 +44,9 @@ const NavBar = () => (
               <Link className="dropdown-item " to="/javascript/">
                 Javascript
               </Link>
-              <a
-                className="dropdown-item courseLink"
-                data-link="/HTML"
-                data-class="HTML"
-                href=""
-              >
+              <Link className="dropdown-item" to="/html/">
                 HTML
-              </a>
+              </Link>
             </div>
           </li>
           <li className="nav-item">

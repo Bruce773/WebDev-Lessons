@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Courses = () => (
   <div>
@@ -30,13 +31,9 @@ const Courses = () => (
         </ul>
       </div>
       <span className="course-level" />
-      <button
-        data-link="/Javascript"
-        data-class="Javascript"
-        className="courseLink"
-      >
-        Start Course
-      </button>
+      <Link to="/javascript/">
+        <button>Start Course</button>
+      </Link>
     </div>
     <div className="course">
       <h2 className="course-header">HTML</h2>
@@ -70,9 +67,9 @@ const Courses = () => (
           </div>
         </ul>
         <span className="course-level" />
-        <button data-link="/HTML" data-class="HTML" className="courseLink ">
-          Start Course
-        </button>
+        <Link to="/html/">
+          <button>Start Course</button>
+        </Link>
       </div>
     </div>
   </div>

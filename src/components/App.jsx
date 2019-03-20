@@ -4,13 +4,12 @@ import Footer from './Footer.jsx';
 import HomePage from './HomePage.jsx';
 import About from '../components/About.jsx';
 import Courses from '../components/Courses.jsx';
-import LessonList from './LessonList.jsx';
 import FourOFour from './FourOFour.jsx';
 import JavaScriptLesson from '../components/JavaScriptLesson.jsx';
+import HTMLLesson from '../components/HtmlLesson.jsx';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
   Redirect,
 } from 'react-router-dom';
@@ -51,6 +50,7 @@ export default class App extends React.Component {
             <Route path="/about/" component={About} />
             <Route path="/courses/" component={Courses} />
             <Route path="/javascript/" component={JavaScriptLesson} />
+            <Route path="/html/" component={HTMLLesson} />
             <Route component={FourOFour} />
           </Switch>
           <Footer />
