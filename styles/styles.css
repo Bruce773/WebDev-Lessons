@@ -160,10 +160,18 @@ a:hover {
   background-color: rgb(8, 187, 8);
 }
 .green-accent {
-  color: rgba(27, 160, 27, 0.938);
+  color: rgb(76, 141, 86);
   margin: auto;
-  font-size: 25px;
   margin: 20px 5px 20px 5px;
+  font-weight: 600;
+}
+.smaller-h2 {
+  font-size: 25px;
+}
+@media only screen and (max-width: 540px) {
+  .smaller-h2 {
+    font-size: 20px;
+  }
 }
 .contact-page-header {
   margin-top: 10px;
@@ -345,6 +353,18 @@ i {
   font-size: 120%;
   display: block;
   font-weight: 100;
+}
+.left-align {
+  text-align: left;
+  padding-left: 10px;
+}
+@media only screen and (max-width: 840px) {
+  .left-align {
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 10px;
+    font-size: 15px;
+  }
 }
 .bio-container {
   width: 90%;

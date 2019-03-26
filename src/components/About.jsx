@@ -2,10 +2,11 @@ import React from 'react';
 
 const About = () => (
   <div>
-    <h1 className="main-header">About</h1>
+    {/* <h1 className="main-header">About</h1> */}
+    <div className="sm-spacer" />
     <div className="container about-page-bio-container">
       <div className="bio-container">
-        <h3>Bruce Johnson</h3>
+        {/* <h3>Bruce Johnson</h3> */}
         <div className="row no-gutters about-bio-section">
           <div className="col-lg-3">
             <div className="headshot-container">
@@ -17,13 +18,14 @@ const About = () => (
             </div>
           </div>
           <div className="col-lg-9">
-            <p className="about-p-bio">
-              Bruce Johnson began coding when he was 13 years old practicing the
-              Python language. He has since learned HTML, CSS, Arduino (a
-              derivative of C++), and JavaScript. In 2015, Bruce founded a class
-              called Pi Crafters that taught kids basic programming and
-              electronic skills. In 5 months, kids learned how to construct a
-              website, design circuits, and code robotic projects.
+            <p className="about-p-bio left-align">
+              <span className="green-accent">Bruce Johnson</span>
+              began coding when he was 13 years old practicing the Python
+              language. He has since learned HTML, CSS, Arduino (a derivative of
+              C++), and JavaScript. In 2015, Bruce founded a class called Pi
+              Crafters that taught kids basic programming and electronic skills.
+              In 5 months, kids learned how to construct a website, design
+              circuits, and code robotic projects.
               <br />
               <br />
               In 2017, Bruce started as an intern at Yoga International. Since
@@ -45,7 +47,7 @@ const About = () => (
     <h1 className="no-padding-top">Contact Me</h1>
     <div className="container">
       <div className="row justify-content-center">
-        <h2 className="green-accent">
+        <h2 className="green-accent smaller-h2">
           Send me a message with your question(s) and I will get back to you as
           soon as I can.
         </h2>

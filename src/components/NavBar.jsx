@@ -5,7 +5,15 @@ const NavBar = () => (
   <div>
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        WebDev Lessons
+        <div className="headshot-container">
+          <img
+            className="img-fluid"
+            height="190px"
+            width="230px"
+            src="./../../images/main_logo_nav_bar.svg"
+          />
+        </div>
+        {/* WebDev Lessons */}
       </Link>
       <button
         className="navbar-toggler"
