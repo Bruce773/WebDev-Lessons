@@ -20,10 +20,20 @@ const HomePageBody = () => (
       Check out the Introduction Overview page to see a full list of our courses
     </h3>
     <Link to="/courses/">
-      <button data-link="/courses" className="navbarLink lg-btn">
-        Courses
-      </button>
+      <button className="navbarLink lg-btn">Courses</button>
     </Link>
+    <div className="xs-spacer" />
+    <h3 className="home-page-h3">
+      Have a question? Contact&nbsp;us&nbsp;
+      <div className="green-accent-link">
+        <Link to="/about/">
+          <div className="green-accent-link home-page-h3">here</div>
+        </Link>
+      </div>
+    </h3>
+    {/* <Link to="/about/">
+      <button className="navbarLink lg-btn">About</button>
+    </Link> */}
     <div className="container">
       <div className="row justify-content-center d-none d-lg-inline">
         <div
