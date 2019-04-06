@@ -9,9 +9,9 @@ const HomePageBody = () => (
           width="640"
           height="360"
           src="https://www.youtube.com/embed/nLNzeoFjCSU"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         />
       </div>
       <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
@@ -19,10 +19,10 @@ const HomePageBody = () => (
           src="https://player.vimeo.com/video/308895468"
           width="640"
           height="360"
-          frameorder="0"
+          frameBorder="0"
           webkitallowfullscreen=""
           mozallowfullscreen=""
-          allowullcreen=""
+          allowFullScreen=""
         />
       </div>
     </div>
