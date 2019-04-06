@@ -6,6 +6,16 @@ const HomePageBody = () => (
     <div className="content">
       <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
         <iframe
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/nLNzeoFjCSU"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+      <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
+        <iframe
           src="https://player.vimeo.com/video/308895468"
           width="640"
           height="360"
