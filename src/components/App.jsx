@@ -7,6 +7,7 @@ import Courses from '../components/Courses.jsx';
 import FourOFour from './FourOFour.jsx';
 import JavaScriptLesson from '../components/JavaScriptLesson.jsx';
 import HTMLLesson from '../components/HtmlLesson.jsx';
+import ScrollToTop from '../components/ScrollToTop.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -42,19 +43,21 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="main">
-          <Route pattern="/" render={this.RemoveTrailingSlash} />
-          <NavBar />
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/about/" component={About} />
-            <Route path="/courses/" component={Courses} />
-            <Route path="/javascript/" component={JavaScriptLesson} />
-            <Route path="/html/" component={HTMLLesson} />
-            <Route component={FourOFour} />
-          </Switch>
-          <Footer />
-        </div>
+        <ScrollToTop>
+          <div className="main">
+            <Route pattern="/" render={this.RemoveTrailingSlash} />
+            <NavBar />
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/about/" component={About} />
+              <Route path="/courses/" component={Courses} />
+              <Route path="/javascript/" component={JavaScriptLesson} />
+              <Route path="/html/" component={HTMLLesson} />
+              <Route component={FourOFour} />
+            </Switch>
+            <Footer />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
