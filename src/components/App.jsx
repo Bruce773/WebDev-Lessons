@@ -42,7 +42,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <div className="main">
             <Route pattern="/" render={this.RemoveTrailingSlash} />
