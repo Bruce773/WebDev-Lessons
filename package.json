@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "live-server --port='8080' --entry-file='index.html'",
+    "start-dev": "live-server --port='8080' --entry-file='index.html'",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "build-dev": "webpack -d --watch"
