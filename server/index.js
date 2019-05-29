@@ -5,7 +5,7 @@ const path = require('path');
 app.use(express.static(__dirname + '/../index.html'));
 
 app.get('/', (req, res) => {
-  res.send('Testing... homepage');
+  res.send(express.static(__dirname + '/../index.html'));
 });
 
 app.listen(process.env.PORT || 4000, () => {
