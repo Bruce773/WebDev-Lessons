@@ -1,9 +1,9 @@
 {
   "scripts": {
     "start": "live-server --port='8080' --entry-file='index.html'",
-    "build": "webpack -d --watch",
+    "build": "webpack",
     "dev": "webpack-dev-server",
-    "build-production": "webpack -d"
+    "build-dev": "webpack -d --watch"
   },
   "dependencies": {
     "babel-core": "6.24.1",
