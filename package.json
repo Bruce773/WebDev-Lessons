@@ -2,7 +2,7 @@
   "scripts": {
     "start-dev": "live-server --port='8080' --entry-file='index.html'",
     "start": "node ./server/index.js",
-    "build": "webpack",
+    "build": "webpack -p",
     "dev": "webpack-dev-server",
     "build-dev": "webpack -d --watch"
   },
