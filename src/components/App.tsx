@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { ClassType } from 'react';
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
-import { HomePage } from './HomePage/HomePage.tsx';
-import { GlobalStyles } from './elements.tsx';
-import About from '../components/About.jsx';
-import Courses from '../components/Courses.jsx';
+import { HomePage } from './HomePage/HomePage';
+import { GlobalStyles } from './elements';
+import About from './About.jsx';
+import Courses from './Courses.jsx';
 import FourOFour from './FourOFour.jsx';
-import JavaScriptLesson from '../components/JavaScriptLesson.jsx';
-import HTMLLesson from '../components/HtmlLesson.jsx';
-import ScrollToTop from '../components/ScrollToTop.jsx';
+import JavaScriptLesson from './JavaScriptLesson.jsx';
+import HTMLLesson from './HtmlLesson.jsx';
+import ScrollToTop from './ScrollToTop.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -16,22 +16,12 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-export default class App extends React.Component {
-  constructor(props) {
+export default class App extends React.Component<null, {}> {
+  constructor(props: null) {
     super(props);
-
-    this.state = {
-      classType: null,
-    };
   }
 
-  _renderClass(classType) {
-    this.setState({
-      classType: classType,
-    });
-  }
-
-  RemoveTrailingSlash({ location }) {
+  RemoveTrailingSlash(location: Location) {
     const { pathname } = location;
 
     if (pathname.substr(-1) === '/') {
