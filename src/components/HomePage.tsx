@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const HomePage = () => (
-  <>
+  <div>
     <h1 className="main-header">WebDev Lessons</h1>
     <h2 className="main-sub-header">(Lessons in Website Development)</h2>
     <div className="container">
@@ -166,7 +166,7 @@ const HomePage = () => (
         </div>
       </div>
     </div>
-  </>
+  </div>
 );
 
 export default HomePage;
