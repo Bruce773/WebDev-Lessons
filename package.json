@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start-dev": "live-server --port='8080' --entry-file='index.html'",
-    "start": "concurrently --kill-others \"npm run server\" \"npm run build-dev\" ",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run build\" ",
     "build": "webpack -p",
     "server": "nodemon server/index.js",
     "dev": "webpack-dev-server",
