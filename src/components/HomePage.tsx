@@ -38,8 +38,6 @@ const HomePage = () => (
           width="640"
           height="360"
           frameBorder="0"
-          webkitallowfullscreen=""
-          mozallowfullscreen=""
           allowFullScreen={true}
         />
       </div>
