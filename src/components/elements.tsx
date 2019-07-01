@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const GlobalStyles = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,8 +7,8 @@ export const GlobalStyles = styled.div`
   width: 70%;
   margin: auto;
   border-radius: 10px;
+
   @media only screen and (max-width: 540px) {
-    .main {
-      width: 100%;
-    }
+    width: 100% !important;
+  }
 `;

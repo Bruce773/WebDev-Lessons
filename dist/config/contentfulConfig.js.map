@@ -1,0 +1,1 @@
+{"version":3,"file":"contentfulConfig.js","sourceRoot":"","sources":["../../src/config/contentfulConfig.js"],"names":[],"mappings":"AAAA,IAAM,UAAU,GAAG,OAAO,CAAC,YAAY,CAAC,CAAC;AAEzC,IAAM,MAAM,GAAG,UAAU,CAAC,YAAY,CAAC;IACrC,KAAK,EAAE,cAAc;IACrB,WAAW,EAAE,QAAQ;IACrB,WAAW,EACT,kEAAkE;CACrE,CAAC,CAAC;AAEH,eAAe,MAAM,CAAC"}

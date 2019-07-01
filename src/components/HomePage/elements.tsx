@@ -17,11 +17,24 @@ export const MainHeader = styled(Header)`
 `;
 
 export const MainSubHeader = styled(Header)`
-  font-weight: 200;
-  font-family: 'Source Sans Pro', sans-serif;
   margin-top: 0px;
   font-size: 20px;
   margin-bottom: 30px;
+`;
+
+export const WelcomeHeader = styled(Header)`
+  font-weight: 200;
+  font-size: 1.5rem;
+  @media only screen and (max-width: 540px) {
+    font-size: 25px !important;
+  }
+`;
+
+export const WelcomeHeaderSmSize = styled(Header)`
+  font-size: 1.5rem;
+  @media only screen and (max-width: 540px) {
+    font-size: 20px !important;
+  }
 `;
 
 export const HeadersContainer = styled.div`
@@ -32,4 +45,8 @@ export const HeadersContainer = styled.div`
   padding: 20px;
   border-radius: 8px;
   box-shadow: 7px 7px lightgrey;
+
+  @media only screen and (max-width: 540px) {
+    width: auto;
+  }
 `;

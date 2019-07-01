@@ -64,7 +64,7 @@ a:hover {
     font-size: 20px;
   }
 }
-.main {
+/* .main {
   padding: 10px;
   /* background-color: rgb(238, 238, 238); */
   width: 70%;
@@ -75,15 +75,15 @@ a:hover {
   .main {
     width: 100%;
   }
-}
-.welcome-h2 {
+} */
+/* .welcome-h2 {
   font-weight: 200;
   font-size: 1.5rem;
-}
-.welcome-h3 {
+} */
+/* .welcome-h3 {
   font-weight: 200;
   font-size: 1.5rem;
-}
+} */
 .intro-title {
   margin-top: 40px;
   margin-bottom: 0px;
