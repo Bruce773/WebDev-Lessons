@@ -45,8 +45,10 @@ export const HeadersContainer = styled.div`
   padding: 20px;
   border-radius: 8px;
   box-shadow: 7px 7px lightgrey;
+  text-align: center;
+  width: fit-content;
 
   @media only screen and (max-width: 540px) {
-    width: auto;
+    width: 70%;
   }
 `;

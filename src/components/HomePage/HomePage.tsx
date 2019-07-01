@@ -14,28 +14,24 @@ export const HomePage = () => (
   <div>
     <MainHeader as="h1">WebDev Lessons</MainHeader>
     <MainSubHeader as="h2">(Lessons in Website Development)</MainSubHeader>
-    <Box width="70%" textAlign="center" margin="auto">
-      <Grid container>
-        <Grid item sm={12}>
-          <HeadersContainer>
-            <Grid item>
-              <Box justifyContent={{ sm: 'center' }}>
-                <WelcomeHeader as="h2">
-                  Welcome to WebDev Lessons!
-                </WelcomeHeader>
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box justifyContent={{ md: 'center' }}>
-                <WelcomeHeaderSmSize as="h3">
-                  Learn JavaScript, HTML, CSS, and more!
-                </WelcomeHeaderSmSize>
-              </Box>
-            </Grid>
-          </HeadersContainer>
-        </Grid>
+    <Grid container>
+      <Grid item sm={12}>
+        <HeadersContainer>
+          <Grid item>
+            <Box justifyContent={{ sm: 'center' }}>
+              <WelcomeHeader as="h2">Welcome to WebDev Lessons!</WelcomeHeader>
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box justifyContent={{ md: 'center' }}>
+              <WelcomeHeaderSmSize as="h3">
+                Learn JavaScript, HTML, CSS, and more!
+              </WelcomeHeaderSmSize>
+            </Box>
+          </Grid>
+        </HeadersContainer>
       </Grid>
-    </Box>
+    </Grid>
     <div className="content">
       <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
         <iframe
