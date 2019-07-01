@@ -1,26 +1,31 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { MainHeader, MainSubHeader, HeadersContainer } from './elements';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 export const HomePage = () => (
   <div>
-    <h1 className="main-header">WebDev Lessons</h1>
-    <h2 className="main-sub-header">(Lessons in Website Development)</h2>
-    <div className="container">
-      <div className="row col-sm-20">
-        <div className="headers-container">
-          <div className="row justify-content-sm-center">
-            <h2 className="welcome-h2 text-wrap col-sm-auto">
-              Welcome to WebDev Lessons!
-            </h2>
-          </div>
+    <MainHeader as="h1">WebDev Lessons</MainHeader>
+    <MainSubHeader as="h2">(Lessons in Website Development)</MainSubHeader>
+    <Grid container>
+      <Grid item sm={12}>
+        <HeadersContainer>
+          <Box justifyContent={{ sm: 'center' }}>
+            <Grid item>
+              <h2 className="welcome-h2 text-wrap col-sm-auto">
+                Welcome to WebDev Lessons!
+              </h2>
+            </Grid>
+          </Box>
           <div className="row justify-content-md-center">
             <h3 className="welcome-h3 text-wrap col-sm-auto">
               Learn JavaScript, HTML, CSS, and more!
             </h3>
           </div>
-        </div>
-      </div>
-    </div>
+        </HeadersContainer>
+      </Grid>
+    </Grid>
     <div className="content">
       <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
         <iframe

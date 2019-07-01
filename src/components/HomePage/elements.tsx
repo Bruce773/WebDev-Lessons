@@ -1,10 +1,35 @@
 import styled from 'styled-components';
 
-export const MainHeader = styled.h1`
+// All h1s, h2s, and h3s need:
+// font-weight: 200;
+// font-family: 'Source Sans Pro', sans-serif;
+
+const Header = styled.h1`
   font-weight: 200;
   font-family: 'Source Sans Pro', sans-serif;
+`;
+
+export const MainHeader = styled(Header)`
   padding-top: 45px;
   margin-top: 20px;
   font-size: 40px;
   margin-bottom: 0px;
+`;
+
+export const MainSubHeader = styled(Header)`
+  font-weight: 200;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 30px;
+`;
+
+export const HeadersContainer = styled.div`
+  display: block;
+  background-color: rgb(130, 180, 143);
+  color: rgb(255, 249, 249);
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 7px 7px lightgrey;
 `;

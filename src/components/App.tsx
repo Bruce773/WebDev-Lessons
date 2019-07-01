@@ -1,4 +1,4 @@
-import React, { ClassType } from 'react';
+import * as React from 'react';
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 import { HomePage } from './HomePage/HomePage';
@@ -21,8 +21,8 @@ export default class App extends React.Component<null, {}> {
     super(props);
   }
 
-  RemoveTrailingSlash(location: Location) {
-    const { pathname } = location;
+  RemoveTrailingSlash(location: any) {
+    const { pathname } = window.location;
 
     if (pathname.substr(-1) === '/') {
       return <Redirect to={pathname.substr(0, pathname.length - 1)} />;
