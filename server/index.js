@@ -1,13 +1,17 @@
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const path = require('path');
 
-app.use(express.static(__dirname + '/../index.html'));
+const app = express();
+// const port = process.env.PORT || 4000
+const port = 4000;
 
-app.use('/', express.static(__dirname + '../index.html'));
+app.use(cors());
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log(
-    `Server running on port ${process.env.PORT ? process.env.PORT : 4000}`
-  );
+app.use(express.static(__dirname + '/../dist'));
+
+app.use('/:pages', express.static(__dirname + '/../dist'));
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
