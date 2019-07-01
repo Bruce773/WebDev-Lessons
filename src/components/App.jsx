@@ -1,7 +1,8 @@
 import React from 'react';
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
-import HomePage from './HomePage.tsx';
+import { HomePage } from './HomePage/HomePage.tsx';
+import { GlobalStyles } from './elements.tsx';
 import About from '../components/About.jsx';
 import Courses from '../components/Courses.jsx';
 import FourOFour from './FourOFour.jsx';
@@ -45,17 +46,19 @@ export default class App extends React.Component {
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <div className="main">
-            <Route pattern="/" render={this.RemoveTrailingSlash} />
-            <NavBar />
-            <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/about/" component={About} />
-              <Route path="/courses/" component={Courses} />
-              <Route path="/javascript/" component={JavaScriptLesson} />
-              <Route path="/html/" component={HTMLLesson} />
-              <Route component={FourOFour} />
-            </Switch>
-            <Footer />
+            <GlobalStyles>
+              <Route pattern="/" render={this.RemoveTrailingSlash} />
+              <NavBar />
+              <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/about/" component={About} />
+                <Route path="/courses/" component={Courses} />
+                <Route path="/javascript/" component={JavaScriptLesson} />
+                <Route path="/html/" component={HTMLLesson} />
+                <Route component={FourOFour} />
+              </Switch>
+              <Footer />
+            </GlobalStyles>
           </div>
         </ScrollToTop>
       </Router>
