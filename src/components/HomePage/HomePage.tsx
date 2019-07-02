@@ -9,6 +9,7 @@ import {
 } from './elements';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import CardMedia from '@material-ui/core/CardMedia';
 
 export const HomePage = () => (
   <div>
@@ -32,17 +33,14 @@ export const HomePage = () => (
         </HeadersContainer>
       </Grid>
     </Grid>
-    <div className="content">
-      <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
-        <iframe
-          width="640"
-          height="360"
-          src="https://www.youtube.com/embed/nLNzeoFjCSU"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
+    <Box style={{ marginTop: '15px', paddingBottom: '10px' }}>
+      <CardMedia
+        width="640"
+        height="360"
+        src="https://www.youtube.com/embed/nLNzeoFjCSU"
+        frameBorder="0"
+        component="iframe"
+      />
       <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
         <iframe
           src="https://player.vimeo.com/video/308895468"
@@ -52,7 +50,7 @@ export const HomePage = () => (
           allowFullScreen={true}
         />
       </div>
-    </div>
+    </Box>
     <h3 className="home-page-h3">
       Check out the Introduction Overview page to see a full list of our courses
     </h3>

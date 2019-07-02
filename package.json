@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
+    "@types/material-ui": "^0.21.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-cli": "^6.6.5",
     "babel-core": "6.24.1",

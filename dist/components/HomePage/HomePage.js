@@ -1,22 +1,23 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { MainHeader, MainSubHeader, HeadersContainer } from './elements';
+import { MainHeader, MainSubHeader, HeadersContainer, WelcomeHeader, WelcomeHeaderSmSize, } from './elements';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import CardMedia from '@material-ui/core/CardMedia';
 export var HomePage = function () { return (React.createElement("div", null,
     React.createElement(MainHeader, { as: "h1" }, "WebDev Lessons"),
     React.createElement(MainSubHeader, { as: "h2" }, "(Lessons in Website Development)"),
     React.createElement(Grid, { container: true },
         React.createElement(Grid, { item: true, sm: 12 },
             React.createElement(HeadersContainer, null,
-                React.createElement(Box, { justifyContent: { sm: 'center' } },
-                    React.createElement(Grid, { item: true },
-                        React.createElement("h2", { className: "welcome-h2 text-wrap col-sm-auto" }, "Welcome to WebDev Lessons!"))),
-                React.createElement("div", { className: "row justify-content-md-center" },
-                    React.createElement("h3", { className: "welcome-h3 text-wrap col-sm-auto" }, "Learn JavaScript, HTML, CSS, and more!"))))),
-    React.createElement("div", { className: "content" },
-        React.createElement("div", { className: "iframe-container-intro embed-responsive embed-responsive-4by3" },
-            React.createElement("iframe", { width: "640", height: "360", src: "https://www.youtube.com/embed/nLNzeoFjCSU", frameBorder: "0", allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowFullScreen: true })),
+                React.createElement(Grid, { item: true },
+                    React.createElement(Box, { justifyContent: { sm: 'center' } },
+                        React.createElement(WelcomeHeader, { as: "h2" }, "Welcome to WebDev Lessons!"))),
+                React.createElement(Grid, { item: true },
+                    React.createElement(Box, { justifyContent: { md: 'center' } },
+                        React.createElement(WelcomeHeaderSmSize, { as: "h3" }, "Learn JavaScript, HTML, CSS, and more!")))))),
+    React.createElement(Box, { style: { marginTop: '15px', paddingBottom: '10px' } },
+        React.createElement(CardMedia, { width: "640", height: "360", src: "https://www.youtube.com/embed/nLNzeoFjCSU", frameBorder: "0", component: "iframe" }),
         React.createElement("div", { className: "iframe-container-intro embed-responsive embed-responsive-4by3" },
             React.createElement("iframe", { src: "https://player.vimeo.com/video/308895468", width: "640", height: "360", frameBorder: "0", allowFullScreen: true }))),
     React.createElement("h3", { className: "home-page-h3" }, "Check out the Introduction Overview page to see a full list of our courses"),

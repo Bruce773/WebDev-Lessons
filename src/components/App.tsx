@@ -7,8 +7,8 @@ import About from './About.jsx';
 import Courses from './Courses.jsx';
 import FourOFour from './FourOFour.jsx';
 import JavaScriptLesson from './JavaScriptLesson.jsx';
-import HTMLLesson from './HtmlLesson.jsx';
-import ScrollToTop from './ScrollToTop.jsx';
+import HTMLLesson from './HtmlLesson';
+import ScrollToTop from './ScrollToTop';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +22,7 @@ export default class App extends React.Component<null, {}> {
   }
 
   RemoveTrailingSlash(location: any) {
-    const { pathname } = window.location;
+    const { pathname } = location;
 
     if (pathname.substr(-1) === '/') {
       return <Redirect to={pathname.substr(0, pathname.length - 1)} />;
