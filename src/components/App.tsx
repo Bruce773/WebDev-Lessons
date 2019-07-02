@@ -1,12 +1,12 @@
 import * as React from 'react';
-import NavBar from './NavBar.jsx';
-import Footer from './Footer.jsx';
+import NavBar from './NavBar';
+import Footer from './Footer';
 import { HomePage } from './HomePage/HomePage';
 import { GlobalStyles } from './elements';
-import About from './About.jsx';
-import Courses from './Courses.jsx';
-import FourOFour from './FourOFour.jsx';
-import JavaScriptLesson from './JavaScriptLesson.jsx';
+import About from './About';
+import Courses from './Courses';
+import FourOFour from './FourOFour';
+import JavaScriptLesson from './JavaScriptLesson';
 import HTMLLesson from './HtmlLesson';
 import ScrollToTop from './ScrollToTop';
 import {

@@ -1,7 +1,6 @@
 import React from 'react';
-import Lesson from './Lesson.jsx';
-import client from '../config/contentfulConfig.js';
-import { string } from 'prop-types';
+import Lesson from './Lesson';
+import client from '../config/contentfulConfig';
 
 interface ResponseTypes {
   items: [

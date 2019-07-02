@@ -1,5 +1,5 @@
-import React from 'react';
-import LessonList from './LessonList.jsx';
+import * as React from 'react';
+import LessonList from './LessonList';
 
 const JavaScriptLesson = () => <LessonList classType={'Javascript'} />;
 

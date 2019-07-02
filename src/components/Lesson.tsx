@@ -1,12 +1,20 @@
-import React from 'react';
+import * as React from 'react';
+
+interface PropTypes {
+  lessonTitle: string;
+  classDescription: string;
+  lessonLink: [{ fields: { link: string; title: string } }];
+  lessonVideo: string;
+  classType: [string];
+}
 
 var Lesson = ({
   lessonTitle,
-  lessonVideo,
-  classType,
   classDescription,
   lessonLink,
-}) => (
+  lessonVideo,
+  classType,
+}: PropTypes) => (
   <div className="lesson-div">
     <div className="lesson-title text-wrap">
       <h3>{lessonTitle}</h3>
