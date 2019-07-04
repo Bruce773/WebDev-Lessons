@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
 
-export const HomePage = () => (
+export const HomePage: React.SFC = () => (
   <div>
     <MainHeader as="h1">WebDev Lessons</MainHeader>
     <MainSubHeader as="h2">(Lessons in Website Development)</MainSubHeader>

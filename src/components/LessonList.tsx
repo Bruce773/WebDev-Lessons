@@ -1,34 +1,35 @@
 import React from 'react';
-import Lesson from './Lesson';
+import { Lesson } from './Lesson';
 import client from '../config/contentfulConfig';
+
+interface FieldsTypes {
+  title: string;
+  description: string;
+  gitHubLink: [{ fields: { link: string; title: string } }];
+  videoIframeLink: string;
+  classType: [string];
+}
 
 interface ResponseTypes {
   items: [
     {
       sys: { contentType: { sys: { id: string } } };
-      fields: { classType: [string] };
+      fields: FieldsTypes;
     }
   ];
+}
+
+interface StateTypes {
+  lessons: Array<{
+    fields: FieldsTypes;
+  } | null>;
 }
 
 interface PropTypes {
   classType: string;
 }
 
-class LessonList extends React.Component<
-  PropTypes,
-  {
-    lessons: Array<{
-      fields: {
-        title: string;
-        description: string;
-        gitHubLink: {};
-        videoIframeLink: string;
-        classType: [string];
-      };
-    }>;
-  }
-> {
+class LessonList extends React.Component<PropTypes, StateTypes> {
   constructor(props: PropTypes) {
     super(props);
 
@@ -57,15 +58,27 @@ class LessonList extends React.Component<
       <div>
         <div className="sm-spacer" />
         {lessons.length ? (
-          lessons.map(({ fields }) => (
-            <Lesson
-              lessonTitle={fields.title}
-              classDescription={fields.description}
-              lessonLink={fields.gitHubLink}
-              lessonVideo={fields.videoIframeLink}
-              classType={fields.classType[0]}
-            />
-          ))
+          lessons.map((item) => {
+            if (item !== null) {
+              const {
+                title,
+                description,
+                gitHubLink,
+                videoIframeLink,
+                classType,
+              } = item.fields;
+
+              return (
+                <Lesson
+                  lessonTitle={title}
+                  classDescription={description}
+                  lessonLink={gitHubLink}
+                  lessonVideo={videoIframeLink}
+                  classType={classType[0]}
+                />
+              );
+            }
+          })
         ) : (
           <h2>Loading...</h2>
         )}

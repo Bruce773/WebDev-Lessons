@@ -1,7 +1,7 @@
 import * as React from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import { HomePage } from './HomePage/HomePage';
+import { HomePage } from './HomePage';
 import { GlobalStyles } from './elements';
 import About from './About';
 import Courses from './Courses';

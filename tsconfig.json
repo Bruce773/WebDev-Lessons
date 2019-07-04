@@ -9,9 +9,9 @@
     "jsx": "react-native",
     "lib": ["es6", "dom"],
     "moduleResolution": "node",
-    "noEmit": true,
+    "module": "ESNext",
     "strict": true,
-    "target": "es6"
+    "target": "es6",
   },
   "exclude": ["node_modules"]
 }

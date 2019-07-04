@@ -5,16 +5,16 @@ interface PropTypes {
   classDescription: string;
   lessonLink: [{ fields: { link: string; title: string } }];
   lessonVideo: string;
-  classType: [string];
+  classType: string;
 }
 
-var Lesson = ({
+export const Lesson: React.SFC<PropTypes> = ({
   lessonTitle,
   classDescription,
   lessonLink,
   lessonVideo,
   classType,
-}: PropTypes) => (
+}) => (
   <div className="lesson-div">
     <div className="lesson-title text-wrap">
       <h3>{lessonTitle}</h3>
@@ -38,5 +38,3 @@ var Lesson = ({
     ))}
   </div>
 );
-
-export default Lesson;
