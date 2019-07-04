@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const NavBar = () => (
-  <div>
+export const NavBar: React.SFC = () => (
+  <>
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
         <div className="headshot-container">
@@ -65,7 +65,5 @@ const NavBar = () => (
         </ul>
       </div>
     </nav>
-  </div>
+  </>
 );
-
-export default NavBar;

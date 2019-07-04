@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-const Courses = () => (
-  <div>
+export const Courses: React.SFC = () => (
+  <>
     <div className="sm-spacer" />
     <div className="course">
       <h2 className="course-header">JavaScript</h2>
@@ -72,7 +72,5 @@ const Courses = () => (
         </Link>
       </div>
     </div>
-  </div>
+  </>
 );
-
-export default Courses;

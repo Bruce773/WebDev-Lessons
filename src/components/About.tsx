@@ -1,7 +1,7 @@
 import React from 'react';
 
-const About = () => (
-  <div>
+export const About: React.SFC = () => (
+  <>
     {/* <h1 className="main-header">About</h1> */}
     <div className="sm-spacer" />
     <div className="container about-page-bio-container">
@@ -71,7 +71,5 @@ const About = () => (
         </button>
       </div>
     </div>
-  </div>
+  </>
 );
-
-export default About;
