@@ -6,8 +6,8 @@ import { GlobalStyles } from './elements';
 import { About } from './About';
 import { Courses } from './Courses';
 import { FourOFour } from './FourOFour';
-import JavaScriptLesson from './JavaScriptLesson';
-import HTMLLesson from './HtmlLesson';
+import { JavaScriptLesson } from './JavaScriptLesson';
+import { HTMLLesson } from './HtmlLesson';
 import ScrollToTop from './ScrollToTop';
 import {
   BrowserRouter as Router,
