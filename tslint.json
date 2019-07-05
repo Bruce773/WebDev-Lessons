@@ -1,0 +1,23 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "no-empty-interface": true,
+    "no-any": true,
+    "only-arrow-functions": true,
+    "no-duplicate-variable": true,
+    "no-submodule-imports": true,
+    "no-string-literal": true,
+    "no-unsafe-any": true,
+    "no-unused-expression": true,
+    "no-unused-variable": true,
+    "prefer-conditional-expression": true,
+    "no-use-before-declare": true,
+    "radix": true,
+    "triple-equals": true,
+    "no-default-export": true,
+    "no-default-import": true,
+    "arrow-return-shorthand": true,
+    "no-unnecessary-qualifier": true,
+    "quotemark": [true, "single", "jsx-double"]
+  }
+}

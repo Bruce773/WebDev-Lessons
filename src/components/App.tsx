@@ -1,20 +1,20 @@
 import * as React from 'react';
-import { NavBar } from './NavBar';
-import { Footer } from './Footer';
-import { HomePage } from './HomePage';
-import { GlobalStyles } from './elements';
-import { About } from './About';
-import { Courses } from './Courses';
-import { FourOFour } from './FourOFour';
-import { JavaScriptLesson } from './JavaScriptLesson';
-import { HTMLLesson } from './HtmlLesson';
-import ScrollToTop from './ScrollToTop';
 import {
   BrowserRouter as Router,
+  Redirect,
   Route,
   Switch,
-  Redirect,
 } from 'react-router-dom';
+import { About } from './About';
+import { Courses } from './Courses';
+import { GlobalStyles } from './elements';
+import { Footer } from './Footer';
+import { FourOFour } from './FourOFour';
+import { HomePage } from './HomePage';
+import { HTMLLesson } from './HtmlLesson';
+import { JavaScriptLesson } from './JavaScriptLesson';
+import { NavBar } from './NavBar';
+import {ScrollToTop} from './ScrollToTop';
 
 export const App: React.SFC = () => {
   const RemoveTrailingSlash = (location: any) => {
