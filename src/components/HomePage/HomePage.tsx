@@ -1,17 +1,16 @@
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Button, StyledIframe } from '../GlobalComponents';
 import {
+  HeadersContainer,
   MainHeader,
   MainSubHeader,
-  HeadersContainer,
+  StyledHeadingThree,
   WelcomeHeader,
   WelcomeHeaderSmSize,
-  StyledHeadingThree,
 } from './elements';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import CardMedia from '@material-ui/core/CardMedia';
-import { StyledIframe, Button } from '../GlobalComponents';
 
 export const HomePage: React.SFC = () => (
   <div>
