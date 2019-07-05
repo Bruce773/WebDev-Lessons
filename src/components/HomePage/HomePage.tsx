@@ -11,8 +11,7 @@ import {
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
-import { StyledIframe } from '../utilityComponents/';
-import { Button } from '../GlobalComponents';
+import { StyledIframe, Button } from '../GlobalComponents';
 
 export const HomePage: React.SFC = () => (
   <div>

@@ -8,10 +8,13 @@ const StyledButton = styled.button`
   margin-right: 5px;
   margin-left: 5px;
   color: white;
+  line-height: initial;
+  transition: background-color 0.4s ease;
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
-    background-color: rgb(84, 173, 84);
+    background-color: transparent;
+    border: rgb(76, 141, 86) solid;
+    color: rgb(76, 141, 86);
   }
 `;
 
