@@ -65,7 +65,9 @@ export const About: React.SFC = () => (
           href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
           target="_blank"
         >
-          <Button style={{ marginLeft: '8px' }}>Join Slack Group</Button>
+          <Button lg style={{ marginLeft: '8px', width: 'auto' }}>
+            Join Slack Group
+          </Button>
         </a>
       </div>
     </div>

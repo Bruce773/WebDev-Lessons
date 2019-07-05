@@ -445,9 +445,9 @@ a:active.dropdown-item {
   font-weight: 400;
   color: rgb(93, 109, 66);
 }
-.sm-spacer {
+/* .sm-spacer {
   margin-top: 70px;
-}
+} */
 .no-padding-top {
   padding-top: 3px;
 }
@@ -481,17 +481,17 @@ a:active.dropdown-item {
   }
 } */
 
-.xs-spacer {
+/* .xs-spacer {
   padding-top: 25px;
-}
+} */
 
-.green-accent-link {
+/* .green-accent-link {
   display: inline;
   color: rgb(76, 141, 86);
   /* font-weight: 600; */
-  text-decoration: underline;
+  /* text-decoration: underline;
 }
 
 .green-accent-link:hover {
-  color: rgb(84, 173, 84);
-}
+  color: rgb(84, 173, 84); */
+/* } */

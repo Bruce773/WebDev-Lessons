@@ -1,5 +1,3 @@
-import { StyledIframe } from '../GlobalComponents/StyledIframe';
-import { Button } from './Button';
-
-export { StyledIframe };
-export { Button };
+export * from './StyledIframe';
+export * from './Button';
+export * from './Spacers';

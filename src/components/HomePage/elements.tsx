@@ -65,3 +65,13 @@ export const StyledHeadingThree = styled.h3`
     margin-bottom: 8px;
   }
 `;
+
+export const LinkStyles = styled.div`
+  display: inline;
+  color: rgb(76, 141, 86);
+  text-decoration: underline;
+
+  &:hover {
+    color: rgb(84, 173, 84);
+  }
+`;
