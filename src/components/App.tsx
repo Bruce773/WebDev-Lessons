@@ -14,10 +14,11 @@ import { HomePage } from './HomePage';
 import { HTMLLesson } from './HtmlLesson';
 import { JavaScriptLesson } from './JavaScriptLesson';
 import { NavBar } from './NavBar';
-import {ScrollToTop} from './ScrollToTop';
+// tslint:disable-next-line: no-default-import
+import ScrollToTop from './ScrollToTop';
 
 export const App: React.SFC = () => {
-  const RemoveTrailingSlash = (location: any) => {
+  const RemoveTrailingSlash = () => {
     const { pathname } = window.location;
 
     return pathname.substr(-1) === '/' ? (
