@@ -10,6 +10,7 @@ import {
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
+import { StyledIframe } from '../utilityComponents/';
 
 export const HomePage: React.SFC = () => (
   <div>
@@ -33,24 +34,11 @@ export const HomePage: React.SFC = () => (
         </HeadersContainer>
       </Grid>
     </Grid>
-    <Box style={{ marginTop: '15px', paddingBottom: '10px' }}>
-      <CardMedia
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/nLNzeoFjCSU"
-        frameBorder="0"
-        component="iframe"
-      />
-      <div className="iframe-container-intro embed-responsive embed-responsive-4by3">
-        <iframe
-          src="https://player.vimeo.com/video/308895468"
-          width="640"
-          height="360"
-          frameBorder="0"
-          allowFullScreen={true}
-        />
-      </div>
-    </Box>
+    <StyledIframe src="https://www.youtube.com/embed/nLNzeoFjCSU" />
+    <StyledIframe
+      src="https://player.vimeo.com/video/308895468"
+      paddingTop="10px"
+    />
     <h3 className="home-page-h3">
       Check out the Introduction Overview page to see a full list of our courses
     </h3>
