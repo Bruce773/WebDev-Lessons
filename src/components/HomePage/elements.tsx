@@ -52,3 +52,16 @@ export const HeadersContainer = styled.div`
     width: 70%;
   }
 `;
+
+export const StyledHeadingThree = styled.h3`
+  font-size: 26px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  font-weight: 400;
+  @media only screen and (max-width: 540px) {
+    width: 90%;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+`;

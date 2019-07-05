@@ -6,11 +6,13 @@ import {
   HeadersContainer,
   WelcomeHeader,
   WelcomeHeaderSmSize,
+  StyledHeadingThree,
 } from './elements';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
 import { StyledIframe } from '../utilityComponents/';
+import { Button } from '../GlobalComponents';
 
 export const HomePage: React.SFC = () => (
   <div>
@@ -39,21 +41,21 @@ export const HomePage: React.SFC = () => (
       src="https://player.vimeo.com/video/308895468"
       paddingTop="10px"
     />
-    <h3 className="home-page-h3">
+    <StyledHeadingThree>
       Check out the Introduction Overview page to see a full list of our courses
-    </h3>
+    </StyledHeadingThree>
     <Link to="/courses/">
-      <button className="navbarLink lg-btn">Courses</button>
+      <Button lg>Courses</Button>
     </Link>
     <div className="xs-spacer" />
-    <h3 className="home-page-h3">
+    <StyledHeadingThree>
       Have a question? Contact&nbsp;us&nbsp;
       <div className="green-accent-link">
         <Link to="/about/">
           <div className="green-accent-link home-page-h3">here</div>
         </Link>
       </div>
-    </h3>
+    </StyledHeadingThree>
     {/* <Link to="/about/">
       <button className="navbarLink lg-btn">About</button>
     </Link> */}
