@@ -19,6 +19,7 @@
     "arrow-return-shorthand": true,
     "no-unnecessary-qualifier": true,
     "quotemark": [true, "single", "jsx-double"],
-    "max-line-length": false
+    "max-line-length": false,
+    "interface-name": false
   }
 }
