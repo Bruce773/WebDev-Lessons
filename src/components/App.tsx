@@ -18,7 +18,7 @@ import {
 
 export const App: React.SFC = () => {
   const RemoveTrailingSlash = (location: any) => {
-    const { pathname } = location;
+    const { pathname } = window.location;
 
     return pathname.substr(-1) === '/' ? (
       <Redirect to={pathname.substr(0, pathname.length - 1)} />
