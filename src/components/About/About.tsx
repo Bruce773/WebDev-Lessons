@@ -1,8 +1,8 @@
 import React from 'react';
+import { Button } from '../GlobalComponents';
 
 export const About: React.SFC = () => (
   <>
-    {/* <h1 className="main-header">About</h1> */}
     <div className="sm-spacer" />
     <div className="container about-page-bio-container">
       <div className="bio-container">
@@ -61,14 +61,12 @@ export const About: React.SFC = () => (
         <h3 className="contact-page-header">
           Join the WebDev Lessons Slack group:
         </h3>
-        <button className="margin-left">
-          <a
-            href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
-            target="_blank"
-          >
-            Join Slack Group
-          </a>
-        </button>
+        <a
+          href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
+          target="_blank"
+        >
+          <Button style={{ marginLeft: '8px' }}>Join Slack Group</Button>
+        </a>
       </div>
     </div>
   </>

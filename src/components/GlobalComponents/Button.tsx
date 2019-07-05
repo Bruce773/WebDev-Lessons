@@ -34,7 +34,8 @@ const StyledLgButton = styled(StyledButton)`
 interface PropTypes {
   children: string;
   lg?: boolean;
+  style?: React.CSSProperties;
 }
 
-export const Button = ({ children, lg }: PropTypes) =>
-  lg ? <StyledLgButton>{children}</StyledLgButton> : null;
+export const Button = ({ children, lg, style }: PropTypes) =>
+  lg ? <StyledLgButton style={style}>{children}</StyledLgButton> : null;
