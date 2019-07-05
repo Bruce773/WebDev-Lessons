@@ -5,7 +5,7 @@
     "no-any": true,
     "only-arrow-functions": true,
     "no-duplicate-variable": true,
-    "no-submodule-imports": true,
+    "no-submodule-imports": [true, ["@material-ui"]],
     "no-string-literal": true,
     "no-unsafe-any": true,
     "no-unused-expression": true,
@@ -18,6 +18,7 @@
     "no-default-import": true,
     "arrow-return-shorthand": true,
     "no-unnecessary-qualifier": true,
-    "quotemark": [true, "single", "jsx-double"]
+    "quotemark": [true, "single", "jsx-double"],
+    "max-line-length": false
   }
 }
