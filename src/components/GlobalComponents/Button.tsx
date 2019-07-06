@@ -18,7 +18,11 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledLgButton = styled(StyledButton)`
+interface LgButtonProps {
+  hover?: React.CSSProperties;
+}
+
+const StyledLgButton = styled(StyledButton)<LgButtonProps>`
   height: 50px;
   width: 100px;
   font-size: 20px;
@@ -28,6 +32,7 @@ const StyledLgButton = styled(StyledButton)`
     height: 40px;
     width: 80px;
     font-size: 16px;
+    ${({ hover }) => `${hover}`}
   }
 `;
 
@@ -35,7 +40,13 @@ interface PropTypes {
   children: string;
   lg?: boolean;
   style?: React.CSSProperties;
+  hover?: React.CSSProperties;
 }
 
-export const Button = ({ children, lg, style }: PropTypes) =>
-  lg ? <StyledLgButton style={style}>{children}</StyledLgButton> : null;
+export const Button = ({ children, lg, style, hover }: PropTypes) =>
+  lg ? (
+    // tslint:disable-next-line: no-unsafe-any
+    <StyledLgButton hover={hover} style={style}>
+      {children}
+    </StyledLgButton>
+  ) : null;

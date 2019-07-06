@@ -281,19 +281,19 @@ i {
 .headshot-container img {
   border-radius: 8px;
 }
-#carousel {
+/* #carousel {
   margin: auto;
   width: 70%;
   height: 270px;
   overflow: hidden;
-}
-.c-header {
+} */
+/* .c-header {
   display: inline-block;
   font-size: 30px;
 }
 .c-header-smaller {
   font-size: 25px;
-}
+} */
 .c-paragraph {
   margin-top: 5px;
   font-size: 1.4em;
@@ -308,23 +308,23 @@ i {
   margin: auto;
   margin-bottom: 10px;
 }
-.carousel-item {
+/* .carousel-item {
   padding: 20px;
   border-radius: 10px;
   color: white;
   background-color: grey;
   margin: auto;
   height: 270px;
-}
-.signature {
+} */
+/* .signature {
   color: rgb(157, 186, 231);
-}
+} */
 .margin-top {
   margin-top: 90px;
   right: 90px;
 }
 @media only screen and (max-width: 1190px) {
-  .c-paragraph {
+  /* .c-paragraph {
     font-size: 20px;
   }
   .c-paragraph-smaller {
@@ -332,20 +332,20 @@ i {
     font-size: 14px;
     font-weight: 600;
     max-width: 80%;
-  }
+  } */
   .margin-top {
     margin-top: 80px;
     right: 80px;
   }
 }
-.c-headshot-container {
+/* .c-headshot-container {
   display: inline-block;
-}
-.c-headshot-container img {
+} */
+/* .c-headshot-container img {
   display: inline-block;
   width: 3em;
   height: auto;
-}
+} */
 .about-p-bio {
   font-size: 120%;
   display: block;
@@ -489,7 +489,7 @@ a:active.dropdown-item {
   display: inline;
   color: rgb(76, 141, 86);
   /* font-weight: 600; */
-  /* text-decoration: underline;
+/* text-decoration: underline;
 }
 
 .green-accent-link:hover {

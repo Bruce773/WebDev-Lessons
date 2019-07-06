@@ -5,6 +5,8 @@ import * as React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { Button, StyledIframe, XsSpacer } from '../GlobalComponents';
 import {
+  CarouselHeader,
+  CarouselParagraph,
   HeadersContainer,
   LinkStyles,
   MainHeader,
@@ -59,53 +61,92 @@ export const HomePage: React.SFC = () => (
         <Grid container>
           <div
             id="carousel"
+            style={{
+              height: '270px',
+              margin: 'auto',
+              overflow: 'hidden',
+              width: '70%',
+            }}
             className="carousel slide"
             data-pause="hover"
             data-ride="carousel"
           >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
+            <Box className="carousel-inner">
+              <Box
+                style={{
+                  backgroundColor: 'grey',
+                  borderRadius: '10px',
+                  color: 'white',
+                  height: '270px',
+                  margin: 'auto',
+                  padding: '20px',
+                }}
+                className="carousel-item active"
+              >
                 <Container>
                   <Grid container>
                     <Grid item xs={12}>
-                      <div className="c-headshot-container">
-                        <img src="./../../images/slack-logo-icon.png" />
-                      </div>
-                      <h3 className="c-header">Join our Slack group!</h3>
-                      <p className="c-paragraph">
+                      <Box display="inline-block">
+                        <img
+                          src="../../../images/slack-logo-icon.png"
+                          style={{
+                            display: 'inline-block',
+                            height: 'auto',
+                            width: '3em',
+                          }}
+                        />
+                      </Box>
+                      <CarouselHeader>Join our Slack group!</CarouselHeader>
+                      <CarouselParagraph>
                         Ask questions, learn from other WebDev Lessons coders,
                         and get notified when a new
                         lesson&nbsp;is&nbsp;available.
-                      </p>
+                      </CarouselParagraph>
                       <a
                         href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
                         target="_blank"
                       >
-                        <button>Join now!</button>
+                        <Button
+                          lg
+                          hover={{ backgroundColor: 'white !important' }}
+                          style={{ width: 'auto' }}
+                        >
+                          Join now!
+                        </Button>
                       </a>
                     </Grid>
                   </Grid>
                 </Container>
-              </div>
-              <div className="carousel-item">
+              </Box>
+              <Box
+                style={{
+                  backgroundColor: 'grey',
+                  borderRadius: '10px',
+                  color: 'white',
+                  height: '270px',
+                  margin: 'auto',
+                  padding: '20px',
+                }}
+                className="carousel-item"
+              >
                 <Container>
                   <Grid container>
-                    <div className="col-9">
-                      <h3 className="c-header-smaller">
+                    <Grid item xs={9}>
+                      <CarouselHeader sm>
                         Help us continue to deliver free content!
-                      </h3>
-                      <p className="c-paragraph-smaller">
+                      </CarouselHeader>
+                      <CarouselParagraph sm>
                         We work hard to ensure that your coding experience with
                         us is of the utmost quality. Help us increase that
                         quality and keep the content free at the same time. 😉
                         Every&nbsp;little&nbsp;bit&nbsp;helps!
                         <br />
-                        <span className="signature">
+                        <Box color="rgb(157, 186, 231)">
                           -Bruce Johnson (WebDev Lessons Instructor)
-                        </span>
-                      </p>
-                    </div>
-                    <div className="col-3 margin-top">
+                        </Box>
+                      </CarouselParagraph>
+                    </Grid>
+                    <Grid xs={3}>
                       <form
                         action="https://www.paypal.com/cgi-bin/webscr"
                         method="post"
@@ -134,11 +175,11 @@ export const HomePage: React.SFC = () => (
                           height="1"
                         />
                       </form>
-                    </div>
+                    </Grid>
                   </Grid>
                 </Container>
-              </div>
-            </div>
+              </Box>
+            </Box>
             <a
               className="carousel-control-prev"
               href="#carousel"

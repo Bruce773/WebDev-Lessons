@@ -75,3 +75,28 @@ export const LinkStyles = styled.div`
     color: rgb(84, 173, 84);
   }
 `;
+
+export const CarouselHeader = styled.h3<{ sm?: boolean }>`
+  ${({ sm }) =>
+    sm
+      ? 'font-size: 25px'
+      : `
+    font-size: 30px;
+    display: inline-block;
+    `}
+`;
+
+export const CarouselParagraph = styled.p<{ sm?: boolean }>`
+  margin-top: 5px;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+  ${({ sm }) => (sm ? 'font-size: 1.2em;' : 'font-size: 1.4em;')}
+
+  @media only screen and (max-width: 1190px) {
+    ${({ sm }) =>
+      sm
+        ? 'margin-top: 0px; font-size: 14px; font-weight: 600; max-width: 80%;'
+        : 'font-size: 20px;'}
+  }
+`;
