@@ -32,6 +32,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "@types/material-ui": "^0.21.6",
+    "@types/netlify-identity-widget": "^1.4.1",
     "@types/react": "^16.8.23",
     "@types/react-router": "^5.0.3",
     "awesome-typescript-loader": "^5.2.1",

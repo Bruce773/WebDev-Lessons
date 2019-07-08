@@ -1,3 +1,4 @@
+import netlifyIdentity from 'netlify-identity-widget';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -61,6 +62,11 @@ export const NavBar: React.SFC = () => (
             <Link className="nav-link" to="/about/">
               About
             </Link>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link" onClick={() => netlifyIdentity.open()}>
+              Login
+            </div>
           </li>
         </ul>
       </div>
