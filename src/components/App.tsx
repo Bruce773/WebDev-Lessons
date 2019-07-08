@@ -15,7 +15,7 @@ import { FourOFour } from './FourOFour';
 import { HomePage } from './HomePage';
 import { HTMLLesson } from './HtmlLesson';
 import { JavaScriptLesson } from './JavaScriptLesson';
-import { NavBar } from './NavBar';
+import { NavBar } from './NavBar/NavBar';
 // tslint:disable-next-line: no-default-import
 import ScrollToTop from './ScrollToTop';
 
@@ -24,6 +24,7 @@ netlifyIdentity.init();
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
   const [currentUser, setCurrentUser] = useState(user);
+  console.log(currentUser);
 
   netlifyIdentity.on('logout', () => setCurrentUser(null));
   netlifyIdentity.on('login', (userInfo) => setCurrentUser(userInfo));
