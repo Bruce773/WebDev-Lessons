@@ -381,32 +381,32 @@ i {
 .badge {
   margin-right: 5px;
 }
-.course {
+/* .course {
   padding: 15px;
   margin: 15px;
   border-radius: 5px;
   background-color: rgba(228, 224, 224, 0.212);
   box-shadow: 0px 3px 3px 2px #e2e0e0;
-}
+} */
 
-.course-header {
+/* .course-header {
   color: rgb(76, 141, 86);
   font-weight: bold;
   font-size: 2.5rem;
-}
+} */
 
-.course-description {
+/* .course-description {
   margin: auto;
   width: 70%;
   font-size: 1.2rem;
   font-weight: 100;
-}
+} */
 
 .course-image {
   border-radius: 4px;
 }
 
-.course-benefits {
+/* .course-benefits {
   margin: auto;
   padding: 18px;
   text-align: center;
@@ -419,21 +419,21 @@ i {
   font-weight: 600;
   font-size: 1.2rem;
   width: 70%;
-}
+} */
 @media only screen and (max-width: 540px) {
-  .course-benefits {
+  /* .course-benefits {
     padding: 8px;
     padding-left: 15px;
     width: 100%;
-  }
+  } */
   .course-benefits-sub {
     padding-left: inherit;
   }
 }
-.course-benefits li {
+/* .course-benefits li {
   font-weight: 100;
   text-align: left;
-}
+} */
 .mainCourseHeader {
   margin-top: 20px;
 }

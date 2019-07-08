@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import { About } from './About';
 import { Account } from './Account';
-import { Courses } from './Courses';
+import { Courses } from './Courses/Courses';
 import { GlobalStyles } from './elements';
 import { Footer } from './Footer';
 import { FourOFour } from './FourOFour';
