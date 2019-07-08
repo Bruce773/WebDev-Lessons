@@ -1,3 +1,5 @@
+import netlifyIdentity from 'netlify-identity-widget';
+import { useState } from 'react';
 import * as React from 'react';
 import {
   BrowserRouter as Router,
@@ -17,7 +19,15 @@ import { NavBar } from './NavBar';
 // tslint:disable-next-line: no-default-import
 import ScrollToTop from './ScrollToTop';
 
+netlifyIdentity.init();
+
 export const App: React.SFC = () => {
+  const user = netlifyIdentity.currentUser();
+  const [currentUser, setCurrentUser] = useState(user);
+
+  netlifyIdentity.on('logout', () => setCurrentUser(null));
+  netlifyIdentity.on('login', (userInfo) => setCurrentUser(userInfo));
+
   const RemoveTrailingSlash = () => {
     const { pathname } = window.location;
 
@@ -32,7 +42,7 @@ export const App: React.SFC = () => {
         <div className="main">
           <GlobalStyles>
             <Route pattern="/" render={RemoveTrailingSlash} />
-            <NavBar />
+            <NavBar currentUser={currentUser} />
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/about/" component={About} />

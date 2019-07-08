@@ -2,7 +2,11 @@ import netlifyIdentity from 'netlify-identity-widget';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const NavBar: React.SFC = () => (
+interface PropTypes {
+  currentUser: { email: string } | null;
+}
+
+export const NavBar: React.SFC<PropTypes> = ({ currentUser }) => (
   <>
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -65,7 +69,9 @@ export const NavBar: React.SFC = () => (
           </li>
           <li className="nav-item">
             <div className="nav-link" onClick={() => netlifyIdentity.open()}>
-              Login
+              {currentUser !== null
+                ? `Logged in as ${currentUser.email}`
+                : 'Login'}
             </div>
           </li>
         </ul>
