@@ -97,11 +97,13 @@ export const HomePage: React.SFC = () => (
                         />
                       </Box>
                       <CarouselHeader>Join our Slack group!</CarouselHeader>
+                      <br />
                       <CarouselParagraph>
                         Ask questions, learn from other WebDev Lessons coders,
                         and get notified when a new
                         lesson&nbsp;is&nbsp;available.
                       </CarouselParagraph>
+                      <br />
                       <a
                         href="https://join.slack.com/t/webdev-lessons/shared_invite/enQtNTE1NjQyNDcxNDE1LWFmZGExNGNjNzQ0OWYzOTQ2MGRhYjBiMGQ0NWE5ODJkMTA0NTNlNjE1Yzc2NTcyODZmMjY1MTE3M2RhOWY1YTk"
                         target="_blank"
@@ -141,7 +143,7 @@ export const HomePage: React.SFC = () => (
                         quality and keep the content free at the same time. 😉
                         Every&nbsp;little&nbsp;bit&nbsp;helps!
                         <br />
-                        <Box color="rgb(157, 186, 231)">
+                        <Box component="p" color="rgb(157, 186, 231)">
                           -Bruce Johnson (WebDev Lessons Instructor)
                         </Box>
                       </CarouselParagraph>

@@ -86,7 +86,7 @@ export const CarouselHeader = styled.h3<{ sm?: boolean }>`
     `}
 `;
 
-export const CarouselParagraph = styled.p<{ sm?: boolean }>`
+export const CarouselParagraph = styled.span<{ sm?: boolean }>`
   margin-top: 5px;
   max-width: 70%;
   margin: auto;

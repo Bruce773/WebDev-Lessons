@@ -1,11 +1,13 @@
 import netlifyIdentity from 'netlify-identity-widget';
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { NavBarLogo } from '../../images';
 import { StyledLink } from './elements';
 
-interface PropTypes {
+export interface PropTypes {
   currentUser: {
     email: string;
+    created_at: string;
     id: string;
     user_metadata: { full_name: string };
   } | null;
@@ -17,14 +19,15 @@ export const NavBar: React.SFC<PropTypes> = ({ currentUser }) => (
       <StyledLink>
         <Link className="navbar-brand" to="/">
           <div className="headshot-container">
-            <img
+            {/* <img
               className="img-fluid"
               height="190px"
               width="230px"
-              src="./../../images/main_logo_nav_bar.svg"
-            />
+              src="../../images/main_logo_nav_bar.svg"
+            /> */}
+            {/* <NavBarLogo /> */}
           </div>
-          {/* WebDev Lessons */}
+          WebDev Lessons
         </Link>
       </StyledLink>
       <button
@@ -74,17 +77,51 @@ export const NavBar: React.SFC<PropTypes> = ({ currentUser }) => (
               About
             </Link>
           </li>
-          <li className="nav-item">
-            <StyledLink>
-              <div className="nav-link" onClick={() => netlifyIdentity.open()}>
-                {currentUser !== null
-                  ? `Logged in as ${
-                      currentUser.user_metadata.full_name.split(' ')[0]
-                    }`
-                  : 'Login'}
+          {currentUser !== null ? (
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {`Logged in as ${
+                  currentUser.user_metadata.full_name.split(' ')[0]
+                }`}
+              </a>
+              <div
+                className="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdown"
+              >
+                <Link to="/account/">
+                  <StyledLink
+                    style={{ color: '#0085ff' }}
+                    className="dropdown-item"
+                  >
+                    Account
+                  </StyledLink>
+                </Link>
+                <div className="dropdown-divider" />
+                <StyledLink
+                  className="dropdown-item"
+                  style={{ color: '#ff0000cc' }}
+                  onClick={() => netlifyIdentity.logout()}
+                >
+                  Logout
+                </StyledLink>
               </div>
+            </li>
+          ) : (
+            <StyledLink
+              className="nav-link"
+              onClick={() => netlifyIdentity.open()}
+            >
+              Login
             </StyledLink>
-          </li>
+          )}
         </ul>
       </div>
     </nav>

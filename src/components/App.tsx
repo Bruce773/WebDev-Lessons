@@ -1,6 +1,6 @@
 import netlifyIdentity from 'netlify-identity-widget';
-import { useState } from 'react';
 import * as React from 'react';
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -8,6 +8,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import { About } from './About';
+import { Account } from './Account';
 import { Courses } from './Courses';
 import { GlobalStyles } from './elements';
 import { Footer } from './Footer';
@@ -24,7 +25,6 @@ netlifyIdentity.init();
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
   const [currentUser, setCurrentUser] = useState(user);
-  console.log(currentUser);
 
   netlifyIdentity.on('logout', () => setCurrentUser(null));
   netlifyIdentity.on('login', (userInfo) => setCurrentUser(userInfo));
@@ -50,6 +50,10 @@ export const App: React.SFC = () => {
               <Route path="/courses/" component={Courses} />
               <Route path="/javascript/" component={JavaScriptLesson} />
               <Route path="/html/" component={HTMLLesson} />
+              <Route
+                path="/account/"
+                render={() => <Account currentUser={currentUser} />}
+              />
               <Route component={FourOFour} />
             </Switch>
             <Footer />
