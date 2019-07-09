@@ -1,5 +1,6 @@
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import netlifyIdentity from 'netlify-identity-widget';
 import * as React from 'react';
 import { SmSpacer, XsSpacer } from '../GlobalComponents';
 import { PropTypes } from '../NavBar';
@@ -41,7 +42,10 @@ export const Account: React.SFC<PropTypes> = ({ currentUser }) => (
         </Box>
       </>
     ) : (
-      <h1>Please login!</h1>
+      <>
+        <h1>Please login!</h1>
+        {netlifyIdentity.open()}
+      </>
     )}
   </>
 );

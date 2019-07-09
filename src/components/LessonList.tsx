@@ -1,6 +1,6 @@
 import React from 'react';
-import { Lesson } from './Lesson';
 import client from '../config/contentfulConfig';
+import { Lesson } from './Lesson';
 
 interface FieldsTypes {
   title: string;

@@ -1,35 +1,43 @@
-import * as React from 'react';
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
+import * as React from 'react';
 
 export const StyledIframe = ({
   src,
   paddingTop = '25px',
+  video,
 }: {
-  src: string;
+  src?: string;
   paddingTop?: string;
+  // tslint:disable-next-line: no-any
+  video?: any;
 }) => (
-  <Box style={{ padding: '25px 0 20px', paddingTop: paddingTop }}>
+  <Box style={{ padding: '25px 0 20px', paddingTop }}>
     <Box
       style={{
         overflow: 'hidden',
-        position: 'relative',
         paddingTop: '56.26%',
+        position: 'relative',
       }}
     >
-      <CardMedia
-        src={src}
-        style={{
-          borderWidth: 0,
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-        }}
-        frameBorder={0}
-        component="iframe"
-      />
+      {src ? (
+        <CardMedia
+          src={src}
+          style={{
+            borderWidth: 0,
+            height: '100%',
+            left: 0,
+            position: 'absolute',
+            top: 0,
+            width: '100%',
+          }}
+          frameBorder={0}
+          component="iframe"
+        />
+      ) : (
+        // tslint:disable-next-line: no-unsafe-any
+        <div dangerouslySetInnerHTML={{ __html: video }} />
+      )}
     </Box>
   </Box>
 );
