@@ -1,4 +1,5 @@
 import React from 'react';
+// tslint:disable-next-line: no-default-import
 import client from '../config/contentfulConfig';
 import { Lesson } from './Lesson';
 
@@ -29,7 +30,7 @@ interface PropTypes {
   classType: string;
 }
 
-class LessonList extends React.Component<PropTypes, StateTypes> {
+export class LessonList extends React.Component<PropTypes, StateTypes> {
   constructor(props: PropTypes) {
     super(props);
 
@@ -38,7 +39,9 @@ class LessonList extends React.Component<PropTypes, StateTypes> {
     };
   }
 
+  // tslint:disable-next-line: member-access
   componentDidMount() {
+    // tslint:disable-next-line: no-unsafe-any
     client
       .getEntries({ order: 'sys.createdAt' })
       .then((response: ResponseTypes) => {
@@ -48,10 +51,11 @@ class LessonList extends React.Component<PropTypes, StateTypes> {
             lessonData.fields.classType[0] === this.props.classType
           );
         });
-        this.setState({ lessons: lessons });
+        this.setState({ lessons });
       });
   }
 
+  // tslint:disable-next-line: member-access
   render() {
     const { lessons } = this.state;
     return (
@@ -86,5 +90,3 @@ class LessonList extends React.Component<PropTypes, StateTypes> {
     );
   }
 }
-
-export default LessonList;

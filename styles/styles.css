@@ -195,22 +195,22 @@ a:hover {
     font-size: 20px;
   }
 } */
-.lesson-description {
+/* .lesson-description {
   font-size: 1.4rem;
   display: inline-block;
   padding-top: 6px;
   padding-bottom: 10px;
   margin: auto;
   font-weight: 100;
-}
-.lesson-link-button {
+} */
+/* .lesson-link-button {
   display: block;
   margin: auto;
   margin-bottom: 20px;
   text-decoration: none;
   color: white;
   font-size: 15px;
-}
+} */
 .italic-md {
   font-style: italic;
   font-size: 25px;
@@ -225,7 +225,7 @@ a:hover {
   color: lightcoral;
   font-weight: bold;
 }
-.class-type {
+/* .class-type {
   background-color: rgba(255, 254, 254, 0.37);
   max-width: 90px;
   margin: auto;
@@ -234,7 +234,7 @@ a:hover {
   border-color: black;
   border: solid;
   border-width: thin;
-}
+} */
 .full-width {
   margin: auto;
   margin-bottom: 10px;

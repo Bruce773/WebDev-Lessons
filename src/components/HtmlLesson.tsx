@@ -1,4 +1,10 @@
 import React from 'react';
-import LessonList from './LessonList';
+import { XsSpacer } from './GlobalComponents';
+import { LessonList } from './LessonList';
 
-export const HTMLLesson: React.SFC = () => <LessonList classType={'HTML'} />;
+export const HTMLLesson: React.SFC = () => (
+  <>
+    <XsSpacer spacing="40px" />
+    <LessonList classType={'HTML'} />
+  </>
+);

@@ -1,6 +1,12 @@
+import Box from '@material-ui/core/Box';
 import * as React from 'react';
-import { StyledIframe } from '../GlobalComponents';
-import { LessonTitle, LessonWrapper } from './elements';
+import { Button, StyledIframe } from '../GlobalComponents';
+import {
+  ClassType,
+  LessonDescription,
+  LessonTitle,
+  LessonWrapper,
+} from './elements';
 
 interface PropTypes {
   lessonTitle: string;
@@ -23,18 +29,22 @@ export const Lesson: React.SFC<PropTypes> = ({
       <h3>{lessonTitle}</h3>
     </LessonTitle>
     <StyledIframe video={{ __html: lessonVideo }} />
-    <div className="class-type">{classType}</div>
-    <div className="d-md-none d-xs-inline small-device-div">
+    <ClassType>{classType}</ClassType>
+    <Box display={{ xs: 'inline', md: 'none' }}>
       For lesson description and exercises, please view on desktop/laptop
       device.
-    </div>
-    <div className="lesson-description text-wrap d-none d-md-inline">
-      <p className="lesson-description">{classDescription}</p>
-    </div>
+    </Box>
+    <Box display={{ xs: 'none', md: 'inline' }}>
+      <LessonDescription>
+        <LessonDescription as="p">{classDescription}</LessonDescription>
+      </LessonDescription>
+    </Box>
     {lessonLink.map((item) => (
-      <a className="d-none d-md-inline" href={item.fields.link} target="_blank">
-        <button className="lesson-link-button">{item.fields.title}</button>
-      </a>
+      <Box display={{ xs: 'none', md: 'inline' }}>
+        <a href={item.fields.link} target="_blank">
+          <Button>{item.fields.title}</Button>
+        </a>
+      </Box>
     ))}
   </LessonWrapper>
 );
