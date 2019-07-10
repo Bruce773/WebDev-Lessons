@@ -110,7 +110,7 @@ export const HomePage: React.SFC = () => (
                       >
                         <Button
                           lg
-                          hover={{ backgroundColor: 'white !important' }}
+                          hover="background-color: white !important"
                           style={{ width: 'auto' }}
                         >
                           Join now!

@@ -48,8 +48,14 @@ export const App: React.SFC = () => {
               <Route path="/" exact component={HomePage} />
               <Route path="/about/" component={About} />
               <Route path="/courses/" component={Courses} />
-              <Route path="/javascript/" component={JavaScriptLesson} />
-              <Route path="/html/" component={HTMLLesson} />
+              <Route
+                path="/javascript/"
+                render={() => <JavaScriptLesson currentUser={currentUser} />}
+              />
+              <Route
+                path="/html/"
+                render={() => <HTMLLesson currentUser={currentUser} />}
+              />
               <Route
                 path="/account/"
                 render={() => <Account currentUser={currentUser} />}

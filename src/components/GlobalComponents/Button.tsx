@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 interface ButtonProps {
-  hover?: React.CSSProperties;
+  hover?: string;
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -33,7 +33,9 @@ const StyledLgButton = styled(StyledButton)`
     height: 40px;
     width: 80px;
     font-size: 16px;
-    ${({ hover }) => `${hover}`}
+  }
+  &:hover {
+    ${({ hover }) => `${hover}`} !important;
   }
 `;
 
@@ -41,7 +43,7 @@ interface PropTypes {
   children: string;
   lg?: boolean;
   style?: React.CSSProperties;
-  hover?: React.CSSProperties;
+  hover?: string;
 }
 
 export const Button = ({ children, lg, style, hover }: PropTypes) =>
