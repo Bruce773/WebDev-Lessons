@@ -28,7 +28,7 @@ export const Lesson: React.SFC<PropTypes> = ({
     <LessonTitle>
       <h3>{lessonTitle}</h3>
     </LessonTitle>
-    <StyledIframe video={{ __html: lessonVideo }} />
+    <StyledIframe video={lessonVideo} />
     <ClassType>{classType}</ClassType>
     <Box display={{ xs: 'inline', md: 'none' }}>
       For lesson description and exercises, please view on desktop/laptop
@@ -40,7 +40,7 @@ export const Lesson: React.SFC<PropTypes> = ({
       </LessonDescription>
     </Box>
     {lessonLink.map((item) => (
-      <Box display={{ xs: 'none', md: 'inline' }}>
+      <Box display={{ xs: 'none', md: 'block' }}>
         <a href={item.fields.link} target="_blank">
           <Button>{item.fields.title}</Button>
         </a>

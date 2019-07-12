@@ -3,6 +3,8 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+// tslint:disable-next-line: no-var-requires
+const SlackLogo = require('../../images/slack-logo-icon.png');
 import { Button, StyledIframe, XsSpacer } from '../GlobalComponents';
 import {
   CarouselHeader,
@@ -15,7 +17,6 @@ import {
   WelcomeHeader,
   WelcomeHeaderSmSize,
 } from './elements';
-
 export const HomePage: React.SFC = () => (
   <>
     <MainHeader as="h1">WebDev Lessons</MainHeader>
@@ -88,7 +89,7 @@ export const HomePage: React.SFC = () => (
                     <Grid item xs={12}>
                       <Box display="inline-block">
                         <img
-                          src="../../../images/slack-logo-icon.png"
+                          src={SlackLogo}
                           style={{
                             display: 'inline-block',
                             height: 'auto',

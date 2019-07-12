@@ -1,6 +1,18 @@
 import Box from '@material-ui/core/Box';
 import CardMedia from '@material-ui/core/CardMedia';
 import * as React from 'react';
+import styled from 'styled-components';
+
+const IframeStyles = styled.div`
+  iframe {
+    border-width: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+`;
 
 export const StyledIframe = ({
   src,
@@ -36,7 +48,19 @@ export const StyledIframe = ({
         />
       ) : (
         // tslint:disable-next-line: no-unsafe-any
-        <div dangerouslySetInnerHTML={{ __html: video }} />
+        <Box
+          style={{
+            overflow: 'hidden',
+            paddingTop: '56.26%',
+            position: 'relative',
+          }}
+        >
+          <IframeStyles>
+            <div
+              dangerouslySetInnerHTML={{ __html: `${video}` }}
+            />
+          </IframeStyles>
+        </Box>
       )}
     </Box>
   </Box>
