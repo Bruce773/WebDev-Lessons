@@ -34,7 +34,6 @@ export const ClassType = styled.div`
   background-color: rgba(255, 254, 254, 0.37);
   max-width: 90px;
   margin: auto;
-  margin-top: 10px;
   border-radius: 10px;
   border-color: black;
   border: solid;

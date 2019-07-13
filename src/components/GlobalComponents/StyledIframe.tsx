@@ -25,14 +25,14 @@ export const StyledIframe = ({
   video?: any;
 }) => (
   <Box style={{ padding: '25px 0 20px', paddingTop }}>
-    <Box
-      style={{
-        overflow: 'hidden',
-        paddingTop: '56.26%',
-        position: 'relative',
-      }}
-    >
-      {src ? (
+    {src ? (
+      <Box
+        style={{
+          overflow: 'hidden',
+          paddingTop: '56.26%',
+          position: 'relative',
+        }}
+      >
         <CardMedia
           src={src}
           style={{
@@ -46,22 +46,20 @@ export const StyledIframe = ({
           frameBorder={0}
           component="iframe"
         />
-      ) : (
-        // tslint:disable-next-line: no-unsafe-any
-        <Box
-          style={{
-            overflow: 'hidden',
-            paddingTop: '56.26%',
-            position: 'relative',
-          }}
-        >
-          <IframeStyles>
-            <div
-              dangerouslySetInnerHTML={{ __html: `${video}` }}
-            />
-          </IframeStyles>
-        </Box>
-      )}
-    </Box>
+      </Box>
+    ) : (
+      // tslint:disable-next-line: no-unsafe-any
+      <Box
+        style={{
+          overflow: 'hidden',
+          paddingTop: '56.26%',
+          position: 'relative',
+        }}
+      >
+        <IframeStyles>
+          <div dangerouslySetInnerHTML={{ __html: `${video}` }} />
+        </IframeStyles>
+      </Box>
+    )}
   </Box>
 );

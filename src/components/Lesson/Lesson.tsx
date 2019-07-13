@@ -40,7 +40,7 @@ export const Lesson: React.SFC<PropTypes> = ({
       </LessonDescription>
     </Box>
     {lessonLink.map((item) => (
-      <Box display={{ xs: 'none', md: 'block' }}>
+      <Box display={{ xs: 'none', md: 'block' }} marginTop="10px">
         <a href={item.fields.link} target="_blank">
           <Button>{item.fields.title}</Button>
         </a>
