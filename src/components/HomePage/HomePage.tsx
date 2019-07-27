@@ -85,9 +85,9 @@ export const HomePage: React.SFC = () => (
                 <Container>
                   <Grid container>
                     <Grid item xs={12}>
-                      <Box display="inline-block">
+                      <Box display="inline-block" p={1}>
                         <img
-                          src="s3://webdevlessons/slack-logo-icon.png"
+                          src="https://webdevlessons.s3.amazonaws.com/slack-logo-icon.png"
                           style={{
                             display: 'inline-block',
                             height: 'auto',

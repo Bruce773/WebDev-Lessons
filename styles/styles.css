@@ -155,12 +155,12 @@ a:hover {
   transform: scale(1.1);
   background-color: rgb(8, 187, 8);
 }
-.green-accent {
+/* .green-accent {
   color: rgb(76, 141, 86);
   margin: auto;
   margin: 20px 5px 20px 5px;
   font-weight: 600;
-}
+} */
 .smaller-h2 {
   font-size: 25px;
 }
@@ -271,7 +271,7 @@ i {
   width: 100%;
   margin: auto;
 }
-.headshot-container {
+/* .headshot-container {
   display: block;
   margin: auto;
   max-width: 10em;
@@ -279,7 +279,7 @@ i {
 }
 .headshot-container img {
   border-radius: 8px;
-}
+} */
 /* #carousel {
   margin: auto;
   width: 70%;
@@ -345,7 +345,7 @@ i {
   width: 3em;
   height: auto;
 } */
-.about-p-bio {
+/* .about-p-bio {
   font-size: 120%;
   display: block;
   font-weight: 100;
@@ -360,9 +360,9 @@ i {
     padding-left: 0px;
     padding-top: 10px;
     font-size: 15px;
-  }
-}
-.bio-container {
+  }reen
+} */
+/* .bio-container {
   width: 90%;
   margin: auto;
   margin-top: 5px;
@@ -372,11 +372,11 @@ i {
   border-radius: 10px;
   background-color: rgba(228, 224, 224, 0.212);
   box-shadow: 0px 3px 3px 2px #e2e0e0;
-}
-.about-page-bio-container {
+} */
+/* .about-page-bio-container {
   padding-right: 0px;
   padding-left: 0px;
-}
+} */
 .badge {
   margin-right: 5px;
 }

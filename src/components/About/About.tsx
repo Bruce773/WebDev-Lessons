@@ -1,48 +1,62 @@
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import React from 'react';
-import { Button } from '../GlobalComponents';
+import { Button, SmSpacer } from '../GlobalComponents';
+import {
+  AboutBioContainer,
+  BioContainer,
+  GreenAccent,
+  HeadshotContainer,
+  InnerBioContainer,
+} from './elements';
 
 export const About: React.SFC = () => (
   <>
-    <div className="sm-spacer" />
-    <div className="container about-page-bio-container">
-      <div className="bio-container">
-        {/* <h3>Bruce Johnson</h3> */}
-        <div className="row no-gutters about-bio-section">
-          <div className="col-lg-3">
-            <div className="headshot-container">
-              <img
-                src="../../images/headshot.jpeg"
-                alt="Headshot Img"
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="col-lg-9">
-            <p className="about-p-bio left-align">
-              <span className="green-accent">Bruce Johnson</span>
-              began coding when he was 13 years old practicing the Python
-              language. He has since learned HTML, CSS, Arduino (a derivative of
-              C++), and JavaScript. In 2015, Bruce founded a class called Pi
-              Crafters that taught kids basic programming and electronic skills.
-              In 5 months, kids learned how to construct a website, design
-              circuits, and code robotic projects.
-              <br />
-              <br />
-              In 2017, Bruce started as an intern at Yoga International. Since
-              most of their business takes place online, many of Bruce's work
-              hours were spent taking courses in Bootstrap, JavaScript, CSS,
-              HTML, and jQuery. With these new skills, Bruce began his journey
-              into web development. In late 2018, he started training through a
-              9-month software engineering boot camp called Hack Reactor. The
-              Hack Reactor program prepares coders for the real world of coding
-              where problems are often difficult to understand and require
-              planning, determination, and resourcefulness to solve. Bruce hopes
-              to graduate from the Hack Reactor program in September 2019.
-            </p>
-          </div>
+    <SmSpacer />
+    <AboutBioContainer>
+      <Container>
+        <div className="bio-container">
+          <InnerBioContainer>
+            <Grid container>
+              <Grid item lg={3}>
+                <HeadshotContainer>
+                  <img
+                    src="https://webdevlessons.s3.amazonaws.com/headshot.jpeg"
+                    alt="Headshot Img"
+                  />
+                </HeadshotContainer>
+              </Grid>
+              <Grid item lg={9}>
+                <BioContainer>
+                  <GreenAccent>Bruce Johnson</GreenAccent>
+                  began coding when he was 13 years old practicing the Python
+                  language. He has since learned HTML, CSS, Arduino (a
+                  derivative of C++), and JavaScript. In 2015, Bruce founded a
+                  class called Pi Crafters that taught kids basic programming
+                  and electronic skills. In 5 months, kids learned how to
+                  construct a website, design circuits, and code robotic
+                  projects.
+                  <br />
+                  <br />
+                  In 2017, Bruce started as an intern at Yoga International.
+                  Since most of their business takes place online, many of
+                  Bruce's work hours were spent taking courses in Bootstrap,
+                  JavaScript, CSS, HTML, and jQuery. With these new skills,
+                  Bruce began his journey into web development. In late 2018, he
+                  started training through a 9-month software engineering boot
+                  camp called Hack Reactor. The Hack Reactor program prepares
+                  coders for the real world of coding where problems are often
+                  difficult to understand and require planning, determination,
+                  and resourcefulness to solve. Bruce hopes to graduate from the
+                  Hack Reactor program in September 2019.
+                </BioContainer>
+              </Grid>
+            </Grid>
+          </InnerBioContainer>
         </div>
-      </div>
-    </div>
+      </Container>
+    </AboutBioContainer>
     <hr />
     <h1 className="no-padding-top">Contact Me</h1>
     <div className="container">
