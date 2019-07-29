@@ -14,6 +14,7 @@ interface PropTypes {
   lessonLink: [{ fields: { link: string; title: string } }];
   lessonVideo: string;
   classType: string;
+  key: number;
 }
 
 export const Lesson: React.SFC<PropTypes> = ({
@@ -22,8 +23,9 @@ export const Lesson: React.SFC<PropTypes> = ({
   lessonLink,
   lessonVideo,
   classType,
+  key,
 }) => (
-  <LessonWrapper>
+  <LessonWrapper key={key}>
     <LessonTitle>
       <h3>{lessonTitle}</h3>
     </LessonTitle>

@@ -4,9 +4,10 @@ import { FieldsTypes } from './LessonList';
 
 interface PropTypes {
   fields: FieldsTypes;
+  key: number;
 }
 
-export const CurrentVideo: React.FC<PropTypes> = ({ fields }) => {
+export const CurrentVideo: React.FC<PropTypes> = ({ fields, key }) => {
   const { title, description, gitHubLink, videoIframeLink, classType } = fields;
   return (
     <Lesson
@@ -15,6 +16,7 @@ export const CurrentVideo: React.FC<PropTypes> = ({ fields }) => {
       lessonLink={gitHubLink}
       lessonVideo={videoIframeLink}
       classType={classType[0]}
+      key={key}
     />
   );
 };
