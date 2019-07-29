@@ -71,7 +71,7 @@ export class LessonList extends React.Component<PropTypes, StateTypes> {
       return (
         <>
           <XsSpacer />
-          {lessons[this.state.currentLesson] ? (
+          {lessons[this.state.currentLesson] !== null ? (
             <CurrentVideo
               key={this.state.currentLesson}
               fields={lessons[this.state.currentLesson].fields}
