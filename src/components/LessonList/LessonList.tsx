@@ -25,7 +25,7 @@ interface ResponseTypes {
 interface StateTypes {
   lessons: Array<{
     fields: FieldsTypes;
-  } | null>;
+  }>;
   currentLesson: number;
 }
 
@@ -71,16 +71,14 @@ export class LessonList extends React.Component<PropTypes, StateTypes> {
       return (
         <>
           <XsSpacer />
-          {lessons[this.state.currentLesson] !== null ? (
+          {lessons && (
             <CurrentVideo
               key={this.state.currentLesson}
               fields={lessons[this.state.currentLesson].fields}
             />
-          ) : null}
+          )}
           <Button
             onClick={() => {
-              // window.scrollTo(0, 0);
-              console.log(lessons.length);
               if (
                 this.state.currentLesson <= lessons.length &&
                 this.state.currentLesson > 0
@@ -95,7 +93,6 @@ export class LessonList extends React.Component<PropTypes, StateTypes> {
           </Button>
           <Button
             onClick={() => {
-              // window.scrollTo(0, 0);
               if (this.state.currentLesson < lessons.length - 1) {
                 this.setState((state) => ({
                   currentLesson: state.currentLesson + 1,
