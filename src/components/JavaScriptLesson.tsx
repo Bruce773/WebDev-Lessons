@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { XsSpacer } from './GlobalComponents';
-import { LessonList } from './LessonList';
+import { LessonList } from './LessonList/LessonList';
 import { PropTypes } from './NavBar';
 import { SimplePaywall } from './SimplePaywall';
 

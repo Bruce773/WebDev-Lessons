@@ -44,16 +44,19 @@ interface PropTypes {
   lg?: boolean;
   style?: React.CSSProperties;
   hover?: string;
+  // tslint:disable-next-line: no-any
+  onClick?: React.MouseEvent | any;
 }
 
-export const Button = ({ children, lg, style, hover }: PropTypes) =>
+export const Button = ({ children, lg, style, hover, onClick }: PropTypes) =>
   lg ? (
     // tslint:disable-next-line: no-unsafe-any
-    <StyledLgButton hover={hover} style={style}>
+    <StyledLgButton onClick={onClick} hover={hover} style={style}>
       {children}
     </StyledLgButton>
   ) : (
-    <StyledButton hover={hover} style={style}>
+    // tslint:disable-next-line: no-unsafe-any
+    <StyledButton onClick={onClick} hover={hover} style={style}>
       {children}
     </StyledButton>
   );

@@ -9,6 +9,7 @@ import {
   GreenAccent,
   HeadshotContainer,
   InnerBioContainer,
+  SmallH2,
 } from './elements';
 
 export const About: React.SFC = () => (
@@ -58,14 +59,18 @@ export const About: React.SFC = () => (
       </Container>
     </AboutBioContainer>
     <hr />
-    <h1 className="no-padding-top">Contact Me</h1>
-    <div className="container">
-      <div className="row justify-content-center">
-        <h2 className="green-accent smaller-h2">
-          Send me a message with your question(s) and I will get back to you as
-          soon as I can.
-        </h2>
-      </div>
+    <h1 style={{ paddingTop: '3px' }}>Contact Me</h1>
+    <Container>
+      <Box justifyContent="center" margin="auto">
+        <Grid container>
+          <GreenAccent>
+            <SmallH2>
+              Send me a message with your question(s) and I will get back to you
+              as soon as I can.
+            </SmallH2>
+          </GreenAccent>
+        </Grid>
+      </Box>
       <div className="row justify-content-center row-12 row-sm-4">
         <h3 className="contact-page-header">
           Email: <span className="italic-md">bruce@webdevlessons.com</span>
@@ -84,6 +89,6 @@ export const About: React.SFC = () => (
           </Button>
         </a>
       </div>
-    </div>
+    </Container>
   </>
 );

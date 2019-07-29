@@ -51,3 +51,10 @@ export const GreenAccent = styled.div`
   font-weight: 600;
   display: inline;
 `;
+
+export const SmallH2 = styled.h2`
+  font-size: 25px;
+  @media only screen and (max-width: 540px) {
+    font-size: 20px;
+  }
+`;

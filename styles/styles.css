@@ -161,14 +161,14 @@ a:hover {
   margin: 20px 5px 20px 5px;
   font-weight: 600;
 } */
-.smaller-h2 {
+/* .smaller-h2 {
   font-size: 25px;
 }
 @media only screen and (max-width: 540px) {
   .smaller-h2 {
     font-size: 20px;
   }
-}
+} */
 .contact-page-header {
   margin-top: 10px;
 }
@@ -447,9 +447,9 @@ a:active.dropdown-item {
 /* .sm-spacer {
   margin-top: 70px;
 } */
-.no-padding-top {
+/* .no-padding-top {
   padding-top: 3px;
-}
+} */
 /* .home-page-h3 {
   font-size: 26px;
   width: 50%;

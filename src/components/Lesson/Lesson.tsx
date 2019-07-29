@@ -24,7 +24,6 @@ export const Lesson: React.SFC<PropTypes> = ({
   classType,
 }) => (
   <LessonWrapper>
-    {console.log(lessonVideo)}
     <LessonTitle>
       <h3>{lessonTitle}</h3>
     </LessonTitle>
