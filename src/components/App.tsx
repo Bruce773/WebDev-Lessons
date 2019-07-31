@@ -1,6 +1,6 @@
 import netlifyIdentity from 'netlify-identity-widget';
-import * as React from 'react';
 import { useState } from 'react';
+import * as React from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -19,10 +19,16 @@ import { JavaScriptLesson } from './JavaScriptLesson';
 import { NavBar } from './NavBar/NavBar';
 // tslint:disable-next-line: no-default-import
 import ScrollToTop from './ScrollToTop';
-import { databasePassword, databaseUserName } from '../config';
+
+require('dotenv').config();
 
 netlifyIdentity.init();
-console.log('Username: ', databaseUserName, 'Password: ', databasePassword);
+console.log(
+  'Username: ',
+  process.env.DATABASE_USER,
+  'Password: ',
+  process.env.DATABASE_PASSWORD
+);
 
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
