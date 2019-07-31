@@ -19,9 +19,10 @@ import { JavaScriptLesson } from './JavaScriptLesson';
 import { NavBar } from './NavBar/NavBar';
 // tslint:disable-next-line: no-default-import
 import ScrollToTop from './ScrollToTop';
+import { databasePassword, databaseUserName } from '../config';
 
 netlifyIdentity.init();
-console.log(process.env.database_user);
+console.log('Username: ', databaseUserName, 'Password: ', databasePassword);
 
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
