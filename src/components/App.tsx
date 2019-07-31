@@ -21,6 +21,7 @@ import { NavBar } from './NavBar/NavBar';
 import ScrollToTop from './ScrollToTop';
 
 netlifyIdentity.init();
+console.log(process.env.database_user);
 
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
