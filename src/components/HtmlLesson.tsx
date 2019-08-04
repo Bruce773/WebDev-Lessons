@@ -1,10 +1,10 @@
 import React from 'react';
+import { CurrentUserTypes } from '../Types';
 import { XsSpacer } from './GlobalComponents';
 import { LessonList } from './LessonList/LessonList';
-import { PropTypes } from './NavBar';
 import { SimplePaywall } from './SimplePaywall';
 
-export const HTMLLesson: React.SFC<PropTypes> = ({ currentUser }) => (
+export const HTMLLesson: React.FC<CurrentUserTypes> = ({ currentUser }) => (
   <>
     {currentUser ? (
       <>

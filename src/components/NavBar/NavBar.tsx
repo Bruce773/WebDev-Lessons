@@ -1,19 +1,11 @@
 import netlifyIdentity from 'netlify-identity-widget';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CurrentUserTypes } from '../../Types';
 // import { NavBarLogo } from '../../images';
 import { StyledLink } from './elements';
 
-export interface PropTypes {
-  currentUser: {
-    email: string;
-    created_at: string;
-    id: string;
-    user_metadata: { full_name: string };
-  } | null;
-}
-
-export const NavBar: React.SFC<PropTypes> = ({ currentUser }) => (
+export const NavBar: React.FC<CurrentUserTypes> = ({ currentUser }) => (
   <>
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <StyledLink>

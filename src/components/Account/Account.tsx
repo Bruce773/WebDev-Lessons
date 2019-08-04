@@ -1,11 +1,11 @@
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
+import { CurrentUserTypes } from '../../Types';
 import { SmSpacer, XsSpacer } from '../GlobalComponents';
-import { PropTypes } from '../NavBar';
 import { SimplePaywall } from '../SimplePaywall';
 
-export const Account: React.SFC<PropTypes> = ({ currentUser }) => (
+export const Account: React.FC<CurrentUserTypes> = ({ currentUser }) => (
   <>
     <SmSpacer />
     {currentUser ? (

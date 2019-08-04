@@ -20,15 +20,15 @@ import { NavBar } from './NavBar/NavBar';
 // tslint:disable-next-line: no-default-import
 import ScrollToTop from './ScrollToTop';
 
-require('dotenv').config();
-
 netlifyIdentity.init();
-console.log(
-  'Username: ',
-  process.env.DATABASE_USER,
-  'Password: ',
-  process.env.DATABASE_PASSWORD
-);
+// require('dotenv').config();
+
+// console.log(
+//   'Username: ',
+//   process.env.DATABASE_USER,
+//   'Password: ',
+//   process.env.DATABASE_PASSWORD
+// );
 
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
