@@ -53,7 +53,11 @@ export const App: React.SFC = () => {
             <Route pattern="/" render={RemoveTrailingSlash} />
             <NavBar currentUser={currentUser} />
             <Switch>
-              <Route path="/" exact component={HomePage} />
+              <Route
+                path="/"
+                exact
+                render={() => <HomePage currentUser={currentUser} />}
+              />
               <Route path="/about/" component={About} />
               <Route path="/courses/" component={Courses} />
               <Route
