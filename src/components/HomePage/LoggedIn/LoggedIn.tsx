@@ -4,7 +4,8 @@ import { Card } from './Card';
 import { ContinueWatching } from './elements';
 
 export const LoggedIn: React.FC<CurrentUserTypes> = ({ currentUser }) => {
-  const { user_metadata } = currentUser;
+  // tslint:disable-next-line: variable-name
+  const user_metadata = currentUser ? currentUser.user_metadata : null;
 
   const stubData = [
     {
@@ -15,7 +16,7 @@ export const LoggedIn: React.FC<CurrentUserTypes> = ({ currentUser }) => {
     },
   ];
 
-  return (
+  return user_metadata !== null ? (
     <>
       <h2>Welcome, {user_metadata.full_name.split(' ')[0]}</h2>
       <ContinueWatching>Continue where you left off</ContinueWatching>
@@ -28,5 +29,5 @@ export const LoggedIn: React.FC<CurrentUserTypes> = ({ currentUser }) => {
         />
       ))}
     </>
-  );
+  ) : null;
 };
