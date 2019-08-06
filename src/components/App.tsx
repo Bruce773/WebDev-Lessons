@@ -21,14 +21,13 @@ import { NavBar } from './NavBar/NavBar';
 import ScrollToTop from './ScrollToTop';
 
 netlifyIdentity.init();
-// require('dotenv').config();
 
-// console.log(
-//   'Username: ',
-//   process.env.DATABASE_USER,
-//   'Password: ',
-//   process.env.DATABASE_PASSWORD
-// );
+const { database_password, DATABASE_PASSWORD } = process.env;
+
+console.log(
+  `database_password: ${database_password}, DATABASE_PASSWORD: ${DATABASE_PASSWORD},
+  process.env: ${process.env}`
+);
 
 export const App: React.SFC = () => {
   const user = netlifyIdentity.currentUser();
